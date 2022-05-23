@@ -19,7 +19,6 @@ for k=1:N
     end
     xb = abs(nX(:,k)+b);
     b = nX(:,k)-xb;
-    b = zeros(size(b));
     nQ(:,:,k) = (b*b')/Pix;
 
     Y_wo_noise = H*(nX(:,k)+b);
@@ -35,6 +34,6 @@ for k=1:N
     BCov = BCov(:);
     nR(:,:,k) = (BCov*BCov')/J^2;
 end
-dispKalman(nX,N,3,3);
+
 end
 

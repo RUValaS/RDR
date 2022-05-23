@@ -18,6 +18,10 @@ X_0 = MEM(Y_mvdr,iMEM);
 X_0 = normarr(X_0);
 P_0 = nQ(:,:,1);
 
+%%%%% ZONE TEST
+
+X_0 = true_image;
+
 %%%%%%%%%%%% Kalman
 X=-1;
 if mode=='CPU'

@@ -1,7 +1,4 @@
-addpath('./fonctions_e1','Kalman')
-addpath('./fonctions_rec')
-addpath('./img_t')
-addpath('./fonctions_clean')
+addpath(genpath(pwd))
 
 close all
 % clear all
@@ -28,37 +25,6 @@ mode = 'GPU';
 inter_fig = 0; % figures autres que originale / traitée
 mode_R = 0; % 0 FFT - 1 S - 2 direct
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%A FAIRE
-% vectoriser les données à traiter sous forme "truc x 1"
-% permet de faciliter les calculs, notamment
-% pour le
-%            y = H*x
-% size(H) = J^2*Q
-% H matrice FFT -> réponse du réseau à la réception des données
-% y = R
-% R(xx) = H.X
-%
-% Xdirty = pinv(H)*R -> a tester
-% pinv -> pseudo inversion, plus efficace avec des matrices
-% mal conditionnée, + fonctionne avec des matrices pas ²
-%
-% A : J x Q
-% S : Q x N
-% X : J x N
-% b : J x N (pour avoir une consistance dans les calculs)
-% R = (A.S + b)^H
-% <=>
-% R = (X.X^H)/N + (b.b^H)/N
-% R =   R(xx)   +  R(noise)
-% On peut tester les deux pour voir que c'est équivalent
-%  pas  exactement égaux tho -> processus aleatoires
-%
-% Puissance du signal
-% Ps -> puissance par antenne
-% dans R -> diagonale -> autocorrélations
-% -> puissances
-% Ps = trace(R)/J
 
 % adaptation image
 adapted = adaptImg(img, Mx);
