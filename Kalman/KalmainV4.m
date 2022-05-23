@@ -13,7 +13,7 @@ Nreal = 1000;
 [nY,nR,nQ,tX] = dataGen_im(H,J,N,Pix,true_image,A,Nreal,SNR_visibilites,RATIO);
 
 % génération image initiale
-P_0 = nQ(:,:,1);
+P_0 = zeros(Pix,Pix);
 % ajout bruit image
 poids = 0.2;
 X_0 = true_image + randn(size(true_image))*poids;

@@ -19,8 +19,9 @@ P(:,:,1) = P_0;
 for k=2:n
     fprintf('itération : %u \n',k);
     %%% PREDICTION
-    Xp = A*X(:,k-1);
+    Xp = A*X(:,k-1) + transpose(mean(nQ(:,:,k-1)));
     Pp = A*P(:,:,k-1)*(A.') + nQ(:,:,k);
+    yp = H*Xp + mean(nR(:,k));
     %%% KALMAN GAIN
     K = Pp*(H.')*pinv(H*Pp*(H.') + nR(:,k));
     %%% ESTIMATION
