@@ -14,7 +14,7 @@ Nreal = 1000;
 
 % génération image initiale
 % ajout bruit image
-poids = 0.01;
+poids = 1e-15;
 X_0 = true_image ;
 tX(:,1) = X_0;
 
@@ -23,12 +23,12 @@ P_0 = X_0*X_0';
 % P_0 = eye(Pix);
 
 %ajout erreur sur A (!!!APRES!!! dataGen => sinon c'est pas une erreur)
-A_err = abs(A + poids*randn(size(A)));
+H_err = abs(H + poids*randn(size(H)));
 
 %%%%%%%%%%%% Kalman
 X=-1;
 if mode=='CPU'
-    X = Kalman_CPU_V2(A_err,H,X_0,P_0,nY,nR,nQ,Pix,N);
+    X = Kalman_CPU_V2(A,H_err,X_0,P_0,nY,nR,nQ,Pix,N);
 end
 if mode=='GPU'
     X = Kalman_GPU_V4(A,H,X_0,P_0,nY,nR,nQ,Pix,N);

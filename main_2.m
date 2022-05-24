@@ -40,3 +40,7 @@ A_ev(7,1) = 1; A_ev(4,2)=1; A_ev(1,3)=1; A_ev(8,4)=1;A_ev(5,5)=1;A_ev(2,6)=1;A_e
 %%% Kalman direct en fait mdr
 [X,tX] = KalmainV4(vadapted,J,z,I,N,f,c,lambda,Mx,My,iMEM,SNR,A_ev,RATIO,mode);
 % dispKalman_t(X,tX,N,Mx,My);
+
+z_err = z+ randn(size(z))*0.01;
+H = matF(J,Pix,z,lambda,I);
+H_err = matF(J,Pix,z_err,lambda,I);
