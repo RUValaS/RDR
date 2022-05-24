@@ -11,7 +11,7 @@ c= 3e8;
 f = 100e6;
 lambda = c/f;
 dist = lambda/2.1; % J_b antennes espacées de dist (normalisé)
-N = 5;
+N = 25;
 SNR = 10;
 iMEM = 1; % nombre itérations MEM 
 RATIO = 10e14; % ratio erreur Kalman
@@ -39,4 +39,4 @@ A_ev(7,1) = 1; A_ev(4,2)=1; A_ev(1,3)=1; A_ev(8,4)=1;A_ev(5,5)=1;A_ev(2,6)=1;A_e
 
 %%% Kalman direct en fait mdr
 [X,tX] = KalmainV4(vadapted,J,z,I,N,f,c,lambda,Mx,My,iMEM,SNR,A_ev,RATIO,mode);
-dispKalman_t(X,tX,N,Mx,My);
+% dispKalman_t(X,tX,N,Mx,My);

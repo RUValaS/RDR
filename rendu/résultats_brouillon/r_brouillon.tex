@@ -75,7 +75,16 @@
 		\caption{En haut : images réelles utilisées pour générer les données. En bas : images reconstruites. Titres : PSNR}
 	\end{figure}
 
-	On utilise une transformation de rotation de l'image de 90°. On remarque grâce au PSNR que les images reconstruites s'approchent des images réelles. 
+	On utilise une transformation de rotation de l'image de 90°. On remarque grâce au PSNR que les images reconstruites s'approchent des images réelles, mais pas parfaitement car le filtre prend en compte l'historique. Une erreur dans une image va donc se diffuser aux images suivantes (précédentes si backwards). On observe la convergence de reconstruction :
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{Perfs/conv02.png}
+		\caption{Evolution psnr en fonction du nombre d'itérations}
+	\end{figure}
+
+	On converge en 4 itérations au plus a chaque essai : les erreurs gaussienne d'amplitude 0.2 se diffusent sur 4 itérations environ.
+	Vérifié pour des amplitude de 0.1 a 1. Pour des amplitudes plus grandes (5 donc SNR=0.1) parfois 5 itérations sont nécessaires
 	
 \end{document}
 
