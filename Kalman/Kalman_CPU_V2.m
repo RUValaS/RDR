@@ -15,7 +15,7 @@ P = zeros(Pix,Pix,n);
 %%% INITIALISATION
 X(:,1) = X_0;
 P(:,:,1) = P_0;
-
+% figure();
 for k=2:n
     fprintf('itération : %u \n',k);
     %%% PREDICTION
@@ -25,7 +25,9 @@ for k=2:n
     %%% KALMAN GAIN
     K = Pp*(H.')*pinv(H*Pp*(H.') + nR(:,k));
     %%% ESTIMATION
-    X(:,k) = Xp + K*(nY(:,k)-H*Xp);
+    X(:,k) = Xp + K*(nY(:,k)-yp);
     P(:,:,k) = Pp - K*H*Pp;
+%     subplot(n-1,1,k-1);
+%     imshow(abs(K));colorbar;axis image;colormap("parula");title(mean(K, 'all'))
 end
 end

@@ -18,8 +18,8 @@ for k=1:N
         nX(:,k) = A*nX(:,k-1);
         b = sqrt(mean(nX(:,k).^2,'all')/RATIO)*randn(size(nX(:,k))); % erreur evolution
     end
-    xb = abs(nX(:,k)+b);
-    b = nX(:,k)-xb;
+%     xb = abs(nX(:,k)+b);
+%     b = nX(:,k)-xb;
     b = zeros(size(b));
     nQ(:,:,k) = (b*b')/Pix;
 
