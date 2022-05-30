@@ -65,7 +65,7 @@
 	\tableofcontents
 	
 	\newpage
-	\section{Robustesse et performances}
+	\section{Influence individuelle de l'erreur sur les matrices}
 	\subsection{Erreur sur l'image de départ}
 	On introduit une erreur gaussienne sur l'image $X_0$. On observe que le fonctionnement du Kalman est bien celui attendu dans ce cas là : l'erreur dans l'image se réduit petit a petit.
 	
@@ -85,6 +85,13 @@
 
 	On converge en 4 itérations au plus a chaque essai : les erreurs gaussienne d'amplitude 0.2 se diffusent sur 4 itérations environ.
 	Vérifié pour des amplitude de 0.1 a 1. Pour des amplitudes plus grandes (5 donc SNR=0.1) parfois 5 itérations sont nécessaires.
+	
+	\subsection{Erreur sur les matrices de covariance}
+	
+	Les matrices $\{P_k\}$ et $\{Q_k\}$ servent à calculer le gain de Kalman et donc sélectionner quelle proportion mesure/prédiction choisir pour estimer l'image. Si on introduit une erreur \emph{uniquement} sur une de ces matrices, l'image prédite et l'image mesurée seront les mêmes (car on y a pas introduit d'erreur) et donc une erreur sur la proportion n'aura aucun effet.\\
+	Une erreur sur ces matrices n'introduit donc pas d'erreur sur la reconstruction de manière directe. Elle peut néanmoins diffuser une erreur déjà présente.
+	
+	\subsection{Erreur sur le modèle d'évolution}
 	
 \end{document}
 
