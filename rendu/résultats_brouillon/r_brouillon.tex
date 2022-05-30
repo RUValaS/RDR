@@ -93,6 +93,15 @@
 	
 	\subsection{Erreur sur le modèle d'évolution}
 	
+	On suppose une erreur sur le modèle d'évolution \emph{dans le filtre de Kalman}, afin de simuler un modèle théorique imprécis. On construit les données simulées avec un modèle sans erreur.\\
+	\begin{minted}{matlab}
+poids = 0.2;
+A = A + poids*randn(size(A));
+	\end{minted}
+	
+	On introduit une erreur gaussienne
+	
+	
 \end{document}
 
 \begin{figure}[H]
