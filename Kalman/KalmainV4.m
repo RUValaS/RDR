@@ -28,7 +28,7 @@ H_err = abs(H + poids*randn(size(H)));
 %%%%%%%%%%%% Kalman
 X=-1;
 if mode=='CPU'
-    X = Kalman_CPU_V2(A,H_err,X_0,P_0,nY,nR,nQ,Pix,N);
+    X = Kalman_CPU_V2(A,H,X_0,P_0,nY,nR,nQ,Pix,N);
 end
 if mode=='GPU'
     X = Kalman_GPU_V4(A,H,X_0,P_0,nY,nR,nQ,Pix,N);
@@ -39,6 +39,12 @@ for k=1:N
     Psr(k) = psnr(abs(X(:,k)),tX(:,k));
 end
 figure();plot(Psr);title('PSNR = f(it)')
+
+%{
+z_err = z+ randn(size(z))*0.01;
+H = matF(J,Pix,z,lambda,I);
+H_err = matF(J,Pix,z_err,lambda,I);
+%}
 
 end
 

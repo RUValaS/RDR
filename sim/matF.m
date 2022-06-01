@@ -12,7 +12,7 @@ end
 dz = reshape(dz,J^2,2);
 
 for q=1:Q
-      F(: ,q) = exp(-1i*2*pi/lambda*(dz(:,1)*I(q,1)+dz(:,2)*I(q,2)));
-end
+    F(: ,q) = exp(-1i*2*pi/lambda*(dz(:,1)*I(q,1)+dz(:,2)*I(q,2)));
+end % .* aussi non ?
 end
 
