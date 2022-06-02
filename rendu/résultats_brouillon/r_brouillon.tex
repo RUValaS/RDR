@@ -101,6 +101,74 @@ A = A + poids*randn(size(A));
 	
 	On introduit une erreur gaussienne
 	
+	\subsection{Erreur sur le masque UV}
+	
+	On cherche à caractériser l'erreur sur la matrice du plan UV $H$. Une manière naïve de faire le calcul serait d'ajouter une erreur gaussienne comme sur la matrice $A$, mais en faisant cela on obtient un modèle très instable et peu réaliste. Effectivement, les termes de cette matrices étant :
+	$$
+		H_{j,q} = \exp(-j\frac{2\pi}{\lambda}\Delta z_j\dotproduct\mathbf{I}_q)
+	$$
+	L'erreur sur cette matrice pouvant provenir de différentes sources : mauvaise mesure des distances entre les antennes, mauvais alignement des antennes donc erreur sur les directions, le modèle d'erreur est :
+	$$
+		H_{j,q}^{err} =  \exp(-j\frac{2\pi}{\lambda}(\Delta z_j\dotproduct\mathbf{I}_q + \epsilon)) =  \exp(-j\frac{2\pi}{\lambda}\Delta z_j\dotproduct\mathbf{I}_q)\exp(-j\frac{2\pi}{\lambda}\epsilon)
+	$$
+	
+	Soit une rotation du complexe associé a chaque direction. \\
+	
+	On implémente donc l'erreur de la manière suivante pour quantifier l'erreur acceptable sur les positions des antennes :
+	
+	\begin{minted}{matlab}
+poids = 1e-2;
+z_err = z+ randn(size(z))*poids;
+H_err = matF(J,Pix,z_err,lambda,I);
+	\end{minted}
+
+	On peut ensuite mesurer l'évolution du PSNR dans le temps, pour différents écarts possibles :
+	
+%	\begin{figure}[H]
+%		\centering
+%		\includegraphics[width=0.7\linewidth]{Perfs/H5e-3}
+%		\caption{Evolution du PSNR pour $<\epsilon^2>=5$mm}
+%		\label{fig:h5e-3}
+%	\end{figure}
+%	
+%	\begin{figure}[H]
+%		\centering
+%		\includegraphics[width=0.7\linewidth]{Perfs/He-3_1}
+%		\caption{Evolution du PSNR pour $<\epsilon^2>=1$mm}
+%		\label{fig:he-3}
+%	\end{figure}
+%	
+%	\begin{figure}[H]
+%		\centering
+%		\includegraphics[width=0.7\linewidth]{Perfs/He-2}
+%		\caption{Evolution du PSNR pour $<\epsilon^2>=1$cm}
+%		\label{fig:he-2}
+%	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[width=0.9\linewidth]{Perfs/He-3_1}
+			\caption{Evolution du PSNR pour $<\epsilon^2>=1$mm}
+			\label{fig:he-3}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[width=0.9\linewidth]{Perfs/H5e-3}
+			\caption{Evolution du PSNR pour $<\epsilon^2>=5$mm}
+			\label{fig:h5e-3}
+		\end{subfigure}
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[width=0.9\linewidth]{Perfs/He-2}
+			\caption{Evolution du PSNR pour $<\epsilon^2>=1$cm}
+			\label{fig:he-2}
+		\end{subfigure}
+		\caption{Mesure du psnr pour différentes erreurs sur la position}
+	\end{figure}
+
+	Les mesures obtenues ont \emph{généralement} cette forme : on obtient parfois des évolutions sans le pic au début, mais la mesure va toujours converger vers une valeur identique tant que $<\epsilon^2>$ reste constant, en oscillant autour de cette valeur. On peut donc tracer l'évolution de l'erreur de reconstruction en fonction de $<\epsilon^2>$ :
 	
 \end{document}
 
@@ -114,12 +182,12 @@ A = A + poids*randn(size(A));
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=.4\linewidth]{image1}
+		\includegraphics[width=.9\linewidth]{image1}
 		\caption{}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=.4\linewidth]{image2}
+		\includegraphics[width=.9\linewidth]{image2}
 		\caption{}
 	\end{subfigure}
 	\caption{}

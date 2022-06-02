@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  30 MAY 2022 17:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  2 JUN 2022 15:34
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -739,7 +739,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             ! on input line 55.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<logo.PNG, id=20, 253.44687pt x 96.86188pt>
+<logo.PNG, id=24, 253.44687pt x 96.86188pt>
 File: logo.PNG Graphic file (type png)
 <use logo.PNG>
 Package pdftex.def Info: logo.PNG  used on input line 59.
@@ -813,7 +813,7 @@ l.67 	\newpage
                [1]
 Package marginnote Info: Using workaround for absolute page number on input lin
 e 67.
-<Perfs/Illustration.JPG, id=45, 1230.84843pt x 607.51968pt>
+<Perfs/Illustration.JPG, id=50, 1230.84843pt x 607.51968pt>
 File: Perfs/Illustration.JPG Graphic file (type jpg)
 <use Perfs/Illustration.JPG>
 Package pdftex.def Info: Perfs/Illustration.JPG  used on input line 74.
@@ -823,7 +823,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
  (c:/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<Perfs/conv02.png, id=46, 421.575pt x 316.18124pt>
+<Perfs/conv02.png, id=51, 421.575pt x 316.18124pt>
 File: Perfs/conv02.png Graphic file (type png)
 <use Perfs/conv02.png>
 Package pdftex.def Info: Perfs/conv02.png  used on input line 82.
@@ -831,16 +831,8 @@ Package pdftex.def Info: Perfs/conv02.png  used on input line 82.
  [2 <./Perfs/illustration.JPG>]
 \openout3 = `r_brouillon.pyg'.
 
-runsystem(pygmentize -S default -f latex -P commandprefix=PYG > _minted-r_broui
-llon\default.pygstyle)...executed.
-
  (./_minted-r_brouillon/default.pygstyle)
-runsystem(pygmentize -l matlab -f latex -P commandprefix=PYG -F tokenmerge -P s
-tripnl=False -o _minted-r_brouillon/FC83387FBAB37351666FA3DA7A6BEF6959D59A7339A
-10BE6CC6D0200E3BCA6C7.pygtex r_brouillon.pyg)...executed.
-
-
-(./_minted-r_brouillon/FC83387FBAB37351666FA3DA7A6BEF6959D59A7339A10BE6CC6D0200
+(./_minted-r_brouillon/2A5933266D804235950ADE2C13F35B4259D59A7339A10BE6CC6D0200
 E3BCA6C7.pygtex
 Underfull \hbox (badness 10000) in paragraph at lines 96--1
 
@@ -850,41 +842,73 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 .
 (c:/texlive/2021/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
+)) [3 <./Perfs/conv02.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
+ []
+
+\openout3 = `r_brouillon.pyg'.
+
+
+(./_minted-r_brouillon/4BC3E19E781C2D4142DB0D92F36533FB59D59A7339A10BE6CC6D0200
+E3BCA6C7.pygtex)
+<Perfs/He-3_1.png, id=72, 421.575pt x 316.18124pt>
+File: Perfs/He-3_1.png Graphic file (type png)
+<use Perfs/He-3_1.png>
+Package pdftex.def Info: Perfs/He-3_1.png  used on input line 152.
+(pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 153.
+<Perfs/H5e-3.png, id=73, 421.575pt x 316.18124pt>
+File: Perfs/H5e-3.png Graphic file (type png)
+<use Perfs/H5e-3.png>
+Package pdftex.def Info: Perfs/H5e-3.png  used on input line 158.
+(pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
+<Perfs/He-2.png, id=74, 421.575pt x 316.18124pt>
+File: Perfs/He-2.png Graphic file (type png)
+<use Perfs/He-2.png>
+Package pdftex.def Info: Perfs/He-2.png  used on input line 164.
+(pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
+ [4 <./Perfs/He-3_1.png (PNG copy)> <./Perfs/H5e-3.png (PNG copy)> <./Perfs/He-
+2.png (PNG copy)>] 
 AED: lastpage setting LastPage
-[3 <./Perfs/conv02.png (PNG copy)>] (./r_brouillon.aux)
+[5] (./r_brouillon.aux)
 Package rerunfilecheck Info: File `r_brouillon.out' has not changed.
-(rerunfilecheck)             Checksum: C73F34A9F6CD2E64BD48FA781197776D;1034.
+(rerunfilecheck)             Checksum: 5D379D644A57F1FCE46B0AA554D5F710;1222.
 runsystem(del r_brouillon.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 20255 strings out of 478278
- 336630 string characters out of 5850546
- 693072 words of memory out of 5000000
- 38112 multiletter control sequences out of 15000+600000
- 526584 words of font info for 78 fonts, out of 8000000 for 9000
+ 20347 strings out of 478278
+ 338422 string characters out of 5850546
+ 697072 words of memory out of 5000000
+ 38178 multiletter control sequences out of 15000+600000
+ 550352 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,81p,519b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2021/tex
+ 75i,12n,81p,519b,576s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2021/tex
 mf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2021/texmf-dist/fonts/enc/
-dvips/lm/lm-mathsy.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ts1.en
-c}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}<c:/texlive/2021/tex
-mf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type
-1/public/lm/lmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmcsc1
-0.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/
-2021/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/texlive/2021/texmf-dist/fon
-ts/type1/public/lm/lmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/
-lmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texli
-ve/2021/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2021/texmf-dist/f
-onts/type1/public/lm/lmri10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/
-lm/lmro10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/
-texlive/2021/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on r_brouillon.pdf (4 pages, 362923 bytes).
+dvips/lm/lm-ec.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2021/
+texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type
+1/public/lm/lmbsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx1
+0.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/
+2021/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2021/texmf-dist/f
+onts/type1/public/lm/lmex10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/
+lm/lmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/t
+exlive/2021/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/texlive/2021/texmf-d
+ist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/pub
+lic/lm/lmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c
+:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2021/texmf
+-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/pu
+blic/lm/lmr9.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb><
+c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2021/te
+xmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/typ
+e1/public/lm/lmtt10.pfb>
+Output written on r_brouillon.pdf (6 pages, 462156 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
+ 16 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
