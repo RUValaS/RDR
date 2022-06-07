@@ -1,10 +1,12 @@
 \documentclass[titlepage]{article}
+\usepackage[upright]{fourier}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage[margin=1in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[colorlinks=true,linkcolor=teal]{hyperref}
-\usepackage{amssymb,amsmath,minted,float,graphicx,textcomp,systeme,listings,physics,lmodern,mathtools,ifthen,esvect,hyperref,fancyhdr,lastpage,marginnote,chngcntr,fancyvrb,subcaption}
+\usepackage{amssymb,amsmath,minted,float,graphicx,textcomp,systeme,listings,physics,mathtools,ifthen,esvect,hyperref,fancyhdr,lastpage,marginnote,chngcntr,fancyvrb,subcaption}
+\usepackage{stmaryrd}
 \DeclareMathOperator{\e}{e}
 \def\mathbi#1{\textbf{\em #1}}
 
@@ -109,7 +111,7 @@ A = A + poids*randn(size(A));
 	$$
 	L'erreur sur cette matrice pouvant provenir de différentes sources : mauvaise mesure des distances entre les antennes, mauvais alignement des antennes donc erreur sur les directions, le modèle d'erreur est :
 	$$
-		H_{j,q}^{err} =  \exp(-j\frac{2\pi}{\lambda}(\Delta z_j\dotproduct\mathbf{I}_q + \epsilon)) =  \exp(-j\frac{2\pi}{\lambda}\Delta z_j\dotproduct\mathbf{I}_q)\exp(-j\frac{2\pi}{\lambda}\epsilon)
+		H_{j,q}^{err} =  \exp(-i\frac{2\pi}{\lambda}(\Delta z_j\dotproduct\mathbf{I}_q + \varepsilon)) =  \exp(-i\frac{2\pi}{\lambda}\Delta z_j\dotproduct\mathbf{I}_q)\exp(-i\frac{2\pi}{\lambda}\varepsilon\dotproduct\mathbf{I}_q)
 	$$
 	
 	Soit une rotation du complexe associé a chaque direction. \\
@@ -127,21 +129,21 @@ H_err = matF(J,Pix,z_err,lambda,I);
 %	\begin{figure}[H]
 %		\centering
 %		\includegraphics[width=0.7\linewidth]{Perfs/H5e-3}
-%		\caption{Evolution du PSNR pour $<\epsilon^2>=5$mm}
+%		\caption{Evolution du PSNR pour $<\varepsilon^2>=5$mm}
 %		\label{fig:h5e-3}
 %	\end{figure}
 %	
 %	\begin{figure}[H]
 %		\centering
 %		\includegraphics[width=0.7\linewidth]{Perfs/He-3_1}
-%		\caption{Evolution du PSNR pour $<\epsilon^2>=1$mm}
+%		\caption{Evolution du PSNR pour $<\varepsilon^2>=1$mm}
 %		\label{fig:he-3}
 %	\end{figure}
 %	
 %	\begin{figure}[H]
 %		\centering
 %		\includegraphics[width=0.7\linewidth]{Perfs/He-2}
-%		\caption{Evolution du PSNR pour $<\epsilon^2>=1$cm}
+%		\caption{Evolution du PSNR pour $<\varepsilon^2>=1$cm}
 %		\label{fig:he-2}
 %	\end{figure}
 	
@@ -150,25 +152,43 @@ H_err = matF(J,Pix,z_err,lambda,I);
 		\begin{subfigure}{.5\textwidth}
 			\centering
 			\includegraphics[width=0.9\linewidth]{Perfs/He-3_1}
-			\caption{Evolution du PSNR pour $<\epsilon^2>=1$mm}
+			\caption{Evolution du PSNR pour $<\varepsilon^2>=1$mm}
 			\label{fig:he-3}
 		\end{subfigure}%
 		\begin{subfigure}{.5\textwidth}
 			\centering
 			\includegraphics[width=0.9\linewidth]{Perfs/H5e-3}
-			\caption{Evolution du PSNR pour $<\epsilon^2>=5$mm}
+			\caption{Evolution du PSNR pour $<\varepsilon^2>=5$mm}
 			\label{fig:h5e-3}
 		\end{subfigure}
 		\begin{subfigure}{.5\textwidth}
 			\centering
 			\includegraphics[width=0.9\linewidth]{Perfs/He-2}
-			\caption{Evolution du PSNR pour $<\epsilon^2>=1$cm}
+			\caption{Evolution du PSNR pour $<\varepsilon^2>=1$cm}
 			\label{fig:he-2}
 		\end{subfigure}
 		\caption{Mesure du psnr pour différentes erreurs sur la position}
 	\end{figure}
 
-	Les mesures obtenues ont \emph{généralement} cette forme : on obtient parfois des évolutions sans le pic au début, mais la mesure va toujours converger vers une valeur identique tant que $<\epsilon^2>$ reste constant, en oscillant autour de cette valeur. On peut donc tracer l'évolution de l'erreur de reconstruction en fonction de $<\epsilon^2>$ :
+	Les mesures obtenues ont \emph{généralement} cette forme : on obtient parfois des évolutions sans le pic au début, mais la mesure va toujours converger vers une valeur identique tant que $<\varepsilon^2>$ reste constant, en oscillant autour de cette valeur. On peut donc tracer l'évolution de l'erreur de reconstruction en fonction de $<\varepsilon^2>$ :
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{Perfs/perf_errF}
+		\caption{Qualité de reconstruction en fonction de l'erreur}
+	\end{figure}
+
+	\subsubsection{Calculs théoriques}
+	
+	On introduit la notation $\odot$ associée au produit de Hadamard, qui effectue la multiplication élément à élément de deux matrices de même taille :
+	$$
+		\forall (A,B)\in\left(\mathbb{C}^{m\times n}\right)^2, \quad A\odot B\in\mathbb{C}^{m\times n} \quad\text{et}\quad \forall (i,j)\in\llbracket1;m\rrbracket\times\llbracket1;n\rrbracket,\, (A\odot B)_{i,j} = A_{i,j}\times B_{i,j}
+	$$
+	
+	On considère la matrice $H$ construite avec une erreur de mesure sur la position des antennes, c'est à dire 
+	$$
+		\forall j \in \llbracket1;J^2\rrbracket,\, \widetilde{\Delta} z_j = \Delta z_j + \boldsymbol{\varepsilon}_j
+	$$
 	
 \end{document}
 
