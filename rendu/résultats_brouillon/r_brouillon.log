@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  7 JUN 2022 14:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  7 JUN 2022 17:12
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1022,9 +1022,14 @@ File: Perfs/perf_errF.jpg Graphic file (type jpg)
 <use Perfs/perf_errF.jpg>
 Package pdftex.def Info: Perfs/perf_errF.jpg  used on input line 177.
 (pdftex.def)             Requested size: 328.82707pt x 193.53261pt.
- 
+ [5 <./Perfs/perf_errF.JPG>]
+Overfull \hbox (55.22917pt too wide) detected at line 211
+[]
+ []
+
+
 AED: lastpage setting LastPage
-[5 <./Perfs/perf_errF.JPG>] (./r_brouillon.aux)
+[6] (./r_brouillon.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1034,29 +1039,30 @@ runsystem(del r_brouillon.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 20854 strings out of 478278
- 344258 string characters out of 5850546
- 700996 words of memory out of 5000000
+ 20858 strings out of 478278
+ 344288 string characters out of 5850546
+ 701996 words of memory out of 5000000
  38658 multiletter control sequences out of 15000+600000
- 579740 words of font info for 143 fonts, out of 8000000 for 9000
+ 580844 words of font info for 146 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,12n,77p,457b,578s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
-ive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fon
+{c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2021/texm
+f-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2021/texmf-dist/fon
 ts/type1/public/fourier/fourier-bb.pfb><c:/texlive/2021/texmf-dist/fonts/type1/
-public/fourier/fourier-mex.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/f
-ourier/fourier-ml.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/fourier/fo
-urier-mlb.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/fourier/fourier-ms
-.pfb><c:/texlive/2021/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb><c:/texliv
-e/2021/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-di
-st/fonts/type1/adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/
-adobe/utopia/putri8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-supe
-r/sftt1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/stmaryrd/stmary10
-.pfb>
-Output written on r_brouillon.pdf (6 pages, 290091 bytes).
+public/fourier/fourier-mcl.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/f
+ourier/fourier-mex.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/fourier/f
+ourier-ml.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/fourier/fourier-ml
+b.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb><c:
+/texlive/2021/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb><c:/texlive/2021/t
+exmf-dist/fonts/type1/adobe/utopia/putbi8a.pfb><c:/texlive/2021/texmf-dist/font
+s/type1/adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/adobe/u
+topia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/adobe/utopia/putri8a.p
+fb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/tex
+live/2021/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
+Output written on r_brouillon.pdf (7 pages, 301090 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
- 18 named destinations out of 1000 (max. 500000)
+ 162 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 19 named destinations out of 1000 (max. 500000)
  84 words of extra memory for PDF output out of 10000 (max. 10000000)
 

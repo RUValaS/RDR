@@ -185,10 +185,49 @@ H_err = matF(J,Pix,z_err,lambda,I);
 		\forall (A,B)\in\left(\mathbb{C}^{m\times n}\right)^2, \quad A\odot B\in\mathbb{C}^{m\times n} \quad\text{et}\quad \forall (i,j)\in\llbracket1;m\rrbracket\times\llbracket1;n\rrbracket,\, (A\odot B)_{i,j} = A_{i,j}\times B_{i,j}
 	$$
 	
-	On considère la matrice $H$ construite avec une erreur de mesure sur la position des antennes, c'est à dire 
+	On considère la matrice $\widetilde{H}$ construite avec une erreur de mesure sur la position des antennes, c'est à dire 
 	$$
 		\forall j \in \llbracket1;J^2\rrbracket,\, \widetilde{\Delta} z_j = \Delta z_j + \boldsymbol{\varepsilon}_j
 	$$
+	On suppose l'erreur $\boldsymbol{\varepsilon}$ suivant une loi normale.\\
+	Les termes de la matrice $\widetilde{H}$ deviennent :
+	$$
+		\widetilde{H}_{j,q} = \exp(-i\frac{2\pi}{\lambda}\widetilde{\Delta}z_j\dotproduct\mathbf{I}_q) = H_{j,q}\times\exp(-i\frac{2\pi}{\lambda}\boldsymbol{\varepsilon_j}\dotproduct\mathbf{I}_q)
+	$$
+	
+	\newcommand{\C}{\mathcal{C}}
+	On peut donc établir une matrice de correction $\mathcal{C}$ telle que :
+	$$
+		H = \mathcal{C}\odot\widetilde{H}
+	$$
+	\newpage
+	
+	On peut vérifier que l'expression de $K$ reste inchangée : on exprime $P_{k|k}$ :
+	\begin{align*}
+		P_{k|k} &= E\left[\left(\widehat{x}_{k|k} - x_k\right)\left(\widehat{x}_{k|k} - x_k\right)^H\right] \\
+		&= E\left[\left(\widehat{x}_{k|k-1} + K(y_k - H\widehat{x}_{k|k-1}) - x_k\right)\left(\widehat{x}_{k|k-1} + K(y_k - H\widehat{x}_{k|k-1}) - x_k\right)^H\right] \\
+		&= E\left[\left(\widehat{x}_{k|k-1} - K(\C\odot\widetilde{H})\widehat{x}_{k|k-1} + Ky_k - x_k\right)\left(\widehat{x}_{k|k-1} - K(\C\odot\widetilde{H})\widehat{x}_{k|k-1} + Ky_k - x_k\right)^H\right] \\
+		&= E\left[\left((\widehat{x}_{k|k-1}-x_k) -K(\C\odot\widetilde{H})(\widehat{x}_{k|k-1}-x_k) + K(y_k - (\C\odot\widetilde{H})x_k)\right)\left((\widehat{x}_{k|k-1}-x_k) -K(\C\odot\widetilde{H})(\widehat{x}_{k|k-1}-x_k) + K(y_k - (\C\odot\widetilde{H})x_k)\right)^H\right]
+	\end{align*}
+	
+	On peut faire apparaître les erreurs de mesure $\varepsilon_{mes}$ et de prédiction $\varepsilon_{pred}$ :
+	\begin{align*}
+		\varepsilon_{mes} &= y_k - (\C\odot\widetilde{H})x_k \\
+		\varepsilon_{pred} &= \widehat{x}_{k|k-1} - x_k
+	\end{align*}
+
+	Ces erreurs sont décorrelées, donc les termes correspondant seront nuls :
+	$$
+		E\left[\varepsilon_{mes}\varepsilon_{pred}^H\right] = 0
+	$$
+	
+	En rappelant de plus :
+	\begin{align*}
+		P_{k|k-1} &= E\left[\varepsilon_{pred}\varepsilon_{pred}^H\right] \\
+		R &=  E\left[\varepsilon_{mes}\varepsilon_{mes}^H\right]
+	\end{align*}
+
+	Erreurs aux indices k, on peut développer la formule de $P_{k|k-1}
 	
 \end{document}
 
