@@ -4,6 +4,7 @@
 \usepackage[french]{babel}
 \usepackage[margin=1in]{geometry}
 \usepackage[T1]{fontenc}
+
 \usepackage[colorlinks=true,linkcolor=teal]{hyperref}
 \usepackage{amssymb,amsmath,minted,float,graphicx,textcomp,systeme,listings,physics,mathtools,ifthen,esvect,hyperref,fancyhdr,lastpage,marginnote,chngcntr,fancyvrb,subcaption}
 \usepackage{stmaryrd}
@@ -49,6 +50,10 @@
 \newcommand{\rstq}{\setcounter{question}{1}\rsubq}
 \newcommand{\skipq}[1]{\addtocounter{question}{#1}\rsubq}
 \newcommand{\subq}{\noindent\alph{subq})\stepcounter{subq}} %a modifier pour mettre dans le margin
+
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\Ht}{\widetilde{H}}
+\newcommand{\Hc}{\C\odot\Ht}
 
 \title{%
 	\UE\, - \type\ifthenelse{\nb > 0}{\nb}{} \\
@@ -192,10 +197,10 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	On suppose l'erreur $\boldsymbol{\varepsilon}$ suivant une loi normale.\\
 	Les termes de la matrice $\widetilde{H}$ deviennent :
 	$$
-		\widetilde{H}_{j,q} = \exp(-i\frac{2\pi}{\lambda}\widetilde{\Delta}z_j\dotproduct\mathbf{I}_q) = H_{j,q}\times\exp(-i\frac{2\pi}{\lambda}\boldsymbol{\varepsilon_j}\dotproduct\mathbf{I}_q)
+		\widetilde{H}_{j,q} = \exp(-i\frac{2\pi}{\lambda}\widetilde{\Delta}z_j\dotproduct\mathbf{I}_q) = H_{j,q}\times\exp(-i\frac{2\pi}{\lambda}\boldsymbol{\varepsilon}_j\dotproduct\mathbf{I}_q)
 	$$
 	
-	\newcommand{\C}{\mathcal{C}}
+
 	On peut donc établir une matrice de correction $\mathcal{C}$ telle que :
 	$$
 		H = \mathcal{C}\odot\widetilde{H}
@@ -227,9 +232,40 @@ H_err = matF(J,Pix,z_err,lambda,I);
 		R &=  E\left[\varepsilon_{mes}\varepsilon_{mes}^H\right]
 	\end{align*}
 
-	Erreurs aux indices k, on peut développer la formule de $P_{k|k-1}
+	Erreurs aux indices k, on peut développer la formule de $P_{k|k}$
 	
+	\begin{align*}
+		P_{k|k} &= P_{k|k-1} + K\left(\C\odot \widetilde{H}\right)P_{k|k-1}\left(\Hc\right)^H - P_{k|k-1}\left(K\Hc\right)^H - K\left(\Hc\right)P_{k|k-1} + KRK^H
+	\end{align*}
+	
+	Cette forme est bien minimisée par 
+	\begin{equation}
+		K_k^c = P_{k|k-1}\left(\Hc\right)^H\left(\left(\Hc\right)P_{k|k-1}\left(\Hc\right)^H + R\right)^{-1}
+	\end{equation}
+	Forme similaire au gain $K$ calculé sans correction :
+	\begin{equation}
+		K_k = P_{k|k-1}\Ht^H\left(\Ht P_{k|k-1}\Ht^H + R\right)^{-1}
+	\end{equation}
+
+	Par la suite, on omettra les dépendances en $k$ en supposant $P=P_{k|k-1}$ et $K = K_k$.
+	
+	On pose l'erreur sur le gain :
+	\begin{equation}
+		\varepsilon_K = K^c - K
+	\end{equation}
+
+	Ainsi que l'erreur d'estimation induite par l'erreur de masque :
+	\begin{equation}
+		\varepsilon_{\widehat{x}} = \widehat{x}_{k|k} - \widehat{x}_{k|k}^c
+	\end{equation}
+	
+	On omettra de la même façon la dépendance en $k$. En développant :
+	\begin{align*}
+		\varepsilon_{\widehat{x}} &= \left[\widehat{x}_{k|k-1} + K(y_k-\Ht\widehat{x}_{k|k-1})\right] - \left[\widehat{x}_{k|k-1} + K^c\left(y_k - \left(\Hc\right)\widehat{x}_{k|k-1}\right)\right] \\
+		&= \left(K-K^c\right)y_k - \left(K\Ht - K^c(\Hc)\right)\widehat{x}_{k|k-1}
+	\end{align*}
 \end{document}
+
 
 \begin{figure}[H]
 	\centering
@@ -251,3 +287,4 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	\end{subfigure}
 	\caption{}
 \end{figure}
+
