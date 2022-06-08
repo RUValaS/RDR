@@ -1,0 +1,200 @@
+<p><img src="logo.PNG" alt="image" /> <span id="fig:logo"
+label="fig:logo"></span></p>
+<h1 id="influence-individuelle-de-lerreur-sur-les-matrices">Influence
+individuelle de l’erreur sur les matrices</h1>
+<h2 id="erreur-sur-limage-de-départ">Erreur sur l’image de départ</h2>
+<p>On introduit une erreur gaussienne sur l’image <span
+class="math inline"><em>X</em><sub>0</sub></span>. On observe que le
+fonctionnement du Kalman est bien celui attendu dans ce cas là :
+l’erreur dans l’image se réduit petit a petit.</p>
+<figure>
+<img src="Perfs/Illustration.JPG"
+alt="En haut : images réelles utilisées pour générer les données. En bas : images reconstruites. Titres : PSNR" />
+<figcaption aria-hidden="true">En haut : images réelles utilisées pour
+générer les données. En bas : images reconstruites. Titres :
+PSNR</figcaption>
+</figure>
+<p>On utilise une transformation de rotation de l’image de 90°. On
+remarque grâce au PSNR que les images reconstruites s’approchent des
+images réelles, mais pas parfaitement car le filtre prend en compte
+l’historique. Une erreur dans une image va donc se diffuser aux images
+suivantes (précédentes si backwards). On observe la convergence de
+reconstruction :</p>
+<figure>
+<img src="Perfs/conv02.png"
+alt="Evolution psnr en fonction du nombre d’itérations" />
+<figcaption aria-hidden="true">Evolution psnr en fonction du nombre
+d’itérations</figcaption>
+</figure>
+<p>On converge en 4 itérations au plus a chaque essai : les erreurs
+gaussienne d’amplitude 0.2 se diffusent sur 4 itérations environ.
+Vérifié pour des amplitude de 0.1 a 1. Pour des amplitudes plus grandes
+(5 donc SNR=0.1) parfois 5 itérations sont nécessaires.</p>
+<h2 id="erreur-sur-les-matrices-de-covariance">Erreur sur les matrices
+de covariance</h2>
+<p>Les matrices <span
+class="math inline">{<em>P</em><sub><em>k</em></sub>}</span> et <span
+class="math inline">{<em>Q</em><sub><em>k</em></sub>}</span> servent à
+calculer le gain de Kalman et donc sélectionner quelle proportion
+mesure/prédiction choisir pour estimer l’image. Si on introduit une
+erreur <em>uniquement</em> sur une de ces matrices, l’image prédite et
+l’image mesurée seront les mêmes (car on y a pas introduit d’erreur) et
+donc une erreur sur la proportion n’aura aucun effet.<br />
+Une erreur sur ces matrices n’introduit donc pas d’erreur sur la
+reconstruction de manière directe. Elle peut néanmoins diffuser une
+erreur déjà présente.</p>
+<h2 id="erreur-sur-le-modèle-dévolution">Erreur sur le modèle
+d’évolution</h2>
+<p>On suppose une erreur sur le modèle d’évolution <em>dans le filtre de
+Kalman</em>, afin de simuler un modèle théorique imprécis. On construit
+les données simulées avec un modèle sans erreur.<br />
+</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">poids</span> <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> <span class="va">A</span> <span class="op">+</span> <span class="va">poids</span><span class="op">*</span><span class="va">randn</span>(<span class="va">size</span>(<span class="va">A</span>))<span class="op">;</span></span></code></pre></div>
+<p>On introduit une erreur gaussienne</p>
+<h2 id="erreur-sur-le-masque-uv">Erreur sur le masque UV</h2>
+<p>On cherche à caractériser l’erreur sur la matrice du plan UV <span
+class="math inline"><em>H</em></span>. Une manière naïve de faire le
+calcul serait d’ajouter une erreur gaussienne comme sur la matrice <span
+class="math inline"><em>A</em></span>, mais en faisant cela on obtient
+un modèle très instable et peu réaliste. Effectivement, les termes de
+cette matrices étant : <span class="math display">$$H_{j,q} =
+\exp(-j\frac{2\pi}{\lambda}\Delta z_j\dotproduct\mathbf{I}_q)$$</span>
+L’erreur sur cette matrice pouvant provenir de différentes sources :
+mauvaise mesure des distances entre les antennes, mauvais alignement des
+antennes donc erreur sur les directions, le modèle d’erreur est : <span
+class="math display">$$H_{j,q}^{err}
+=  \exp(-i\frac{2\pi}{\lambda}(\Delta z_j\dotproduct\mathbf{I}_q +
+\varepsilon)) =  \exp(-i\frac{2\pi}{\lambda}\Delta
+z_j\dotproduct\mathbf{I}_q)\exp(-i\frac{2\pi}{\lambda}\varepsilon\dotproduct\mathbf{I}_q)$$</span></p>
+<p>Soit une rotation du complexe associé a chaque direction.<br />
+On implémente donc l’erreur de la manière suivante pour quantifier
+l’erreur acceptable sur les positions des antennes :</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">poids</span> <span class="op">=</span> <span class="fl">1e-2</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">z_err</span> <span class="op">=</span> <span class="va">z</span><span class="op">+</span> <span class="va">randn</span>(<span class="va">size</span>(<span class="va">z</span>))<span class="op">*</span><span class="va">poids</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">H_err</span> <span class="op">=</span> <span class="va">matF</span>(<span class="va">J</span><span class="op">,</span><span class="va">Pix</span><span class="op">,</span><span class="va">z_err</span><span class="op">,</span><span class="va">lambda</span><span class="op">,</span><span class="va">I</span>)<span class="op">;</span></span></code></pre></div>
+<p>On peut ensuite mesurer l’évolution du PSNR dans le temps, pour
+différents écarts possibles :</p>
+<figure>
+<img src="Perfs/He-3_1.png" id="fig:he-3"
+alt="Evolution du PSNR pour &lt;\varepsilon^2&gt;=1mm" />
+<figcaption aria-hidden="true">Evolution du PSNR pour <span
+class="math inline"> &lt; <em>ε</em><sup>2</sup> &gt;  = 1</span>mm</figcaption>
+</figure>
+<figure>
+<img src="Perfs/H5e-3.png" id="fig:h5e-3"
+alt="Evolution du PSNR pour &lt;\varepsilon^2&gt;=5mm" />
+<figcaption aria-hidden="true">Evolution du PSNR pour <span
+class="math inline"> &lt; <em>ε</em><sup>2</sup> &gt;  = 5</span>mm</figcaption>
+</figure>
+<figure>
+<img src="Perfs/He-2.png" id="fig:he-2"
+alt="Evolution du PSNR pour &lt;\varepsilon^2&gt;=1cm" />
+<figcaption aria-hidden="true">Evolution du PSNR pour <span
+class="math inline"> &lt; <em>ε</em><sup>2</sup> &gt;  = 1</span>cm</figcaption>
+</figure>
+<p>Les mesures obtenues ont <em>généralement</em> cette forme : on
+obtient parfois des évolutions sans le pic au début, mais la mesure va
+toujours converger vers une valeur identique tant que <span
+class="math inline"> &lt; <em>ε</em><sup>2</sup>&gt;</span> reste
+constant, en oscillant autour de cette valeur. On peut donc tracer
+l’évolution de l’erreur de reconstruction en fonction de <span
+class="math inline"> &lt; <em>ε</em><sup>2</sup>&gt;</span> :</p>
+<figure>
+<img src="Perfs/perf_errF.jpg"
+alt="Qualité de reconstruction en fonction de l’erreur" />
+<figcaption aria-hidden="true">Qualité de reconstruction en fonction de
+l’erreur</figcaption>
+</figure>
+<h3 id="calculs-théoriques">Calculs théoriques</h3>
+<p>On introduit la notation <span class="math inline">⊙</span> associée
+au produit de Hadamard, qui effectue la multiplication élément à élément
+de deux matrices de même taille : <span
+class="math display">∀(<em>A</em>,<em>B</em>) ∈ (ℂ<sup><em>m</em> × <em>n</em></sup>)<sup>2</sup>,  <em>A</em> ⊙ <em>B</em> ∈ ℂ<sup><em>m</em> × <em>n</em></sup>  et  ∀(<em>i</em>,<em>j</em>) ∈ ⟦1; <em>m</em>⟧ × ⟦1; <em>n</em>⟧, (<em>A</em>⊙<em>B</em>)<sub><em>i</em>, <em>j</em></sub> = <em>A</em><sub><em>i</em>, <em>j</em></sub> × <em>B</em><sub><em>i</em>, <em>j</em></sub></span></p>
+<p>On considère la matrice <span class="math inline"><em>H̃</em></span>
+construite avec une erreur de mesure sur la position des antennes, c’est
+à dire <span
+class="math display">∀<em>j</em> ∈ ⟦1; <em>J</em><sup>2</sup>⟧, <em>Δ̃</em><em>z</em><sub><em>j</em></sub> = <em>Δ</em><em>z</em><sub><em>j</em></sub> + <strong>ε</strong><sub><em>j</em></sub></span>
+On suppose l’erreur <span class="math inline"><strong>ε</strong></span>
+suivant une loi normale.<br />
+Les termes de la matrice <span class="math inline"><em>H̃</em></span>
+deviennent : <span class="math display">$$\widetilde{H}_{j,q} =
+\exp(-i\frac{2\pi}{\lambda}\widetilde{\Delta}z_j\dotproduct\mathbf{I}_q)
+=
+H_{j,q}\times\exp(-i\frac{2\pi}{\lambda}\boldsymbol{\varepsilon}_j\dotproduct\mathbf{I}_q)$$</span></p>
+<p>On peut donc établir une matrice de correction <span
+class="math inline">𝒞</span> telle que : <span
+class="math display"><em>H</em> = 𝒞 ⊙ <em>H̃</em></span></p>
+<p>On peut vérifier que l’expression de <span
+class="math inline"><em>K</em></span> reste inchangée : on exprime <span
+class="math inline"><em>P</em><sub><em>k</em>|<em>k</em></sub></span> :
+<span class="math display">$$\begin{aligned}
+        P_{k|k} &amp;= E\left[\left(\widehat{x}_{k|k} -
+x_k\right)\left(\widehat{x}_{k|k} - x_k\right)^H\right] \\
+        &amp;= E\left[\left(\widehat{x}_{k|k-1} + K(y_k -
+H\widehat{x}_{k|k-1}) - x_k\right)\left(\widehat{x}_{k|k-1} + K(y_k -
+H\widehat{x}_{k|k-1}) - x_k\right)^H\right] \\
+        &amp;= E\left[\left(\widehat{x}_{k|k-1} -
+K(\mathcal{C}\odot\widetilde{H})\widehat{x}_{k|k-1} + Ky_k -
+x_k\right)\left(\widehat{x}_{k|k-1} -
+K(\mathcal{C}\odot\widetilde{H})\widehat{x}_{k|k-1} + Ky_k -
+x_k\right)^H\right] \\
+        &amp;= E\left[\left((\widehat{x}_{k|k-1}-x_k)
+-K(\mathcal{C}\odot\widetilde{H})(\widehat{x}_{k|k-1}-x_k) + K(y_k -
+(\mathcal{C}\odot\widetilde{H})x_k)\right)\left((\widehat{x}_{k|k-1}-x_k)
+-K(\mathcal{C}\odot\widetilde{H})(\widehat{x}_{k|k-1}-x_k) + K(y_k -
+(\mathcal{C}\odot\widetilde{H})x_k)\right)^H\right]
+    \end{aligned}$$</span></p>
+<p>On peut faire apparaître les erreurs de mesure <span
+class="math inline"><em>ε</em><sub><em>m</em><em>e</em><em>s</em></sub></span>
+et de prédiction <span
+class="math inline"><em>ε</em><sub><em>p</em><em>r</em><em>e</em><em>d</em></sub></span>
+: <span class="math display">$$\begin{aligned}
+        \varepsilon_{mes} &amp;= y_k -
+(\mathcal{C}\odot\widetilde{H})x_k \\
+        \varepsilon_{pred} &amp;= \widehat{x}_{k|k-1} - x_k
+    \end{aligned}$$</span></p>
+<p>Ces erreurs sont décorrelées, donc les termes correspondant seront
+nuls : <span
+class="math display"><em>E</em>[<em>ε</em><sub><em>m</em><em>e</em><em>s</em></sub><em>ε</em><sub><em>p</em><em>r</em><em>e</em><em>d</em></sub><sup><em>H</em></sup>] = 0</span></p>
+<p>En rappelant de plus : <span class="math display">$$\begin{aligned}
+        P_{k|k-1} &amp;=
+E\left[\varepsilon_{pred}\varepsilon_{pred}^H\right] \\
+        R &amp;=  E\left[\varepsilon_{mes}\varepsilon_{mes}^H\right]
+    \end{aligned}$$</span></p>
+<p>Erreurs aux indices k, on peut développer la formule de <span
+class="math inline"><em>P</em><sub><em>k</em>|<em>k</em></sub></span></p>
+<p><span class="math display">$$\begin{aligned}
+        P_{k|k} &amp;= P_{k|k-1} + K\left(\mathcal{C}\odot
+\widetilde{H}\right)P_{k|k-1}\left(\mathcal{C}\odot\widetilde{H}\right)^H
+- P_{k|k-1}\left(K\mathcal{C}\odot\widetilde{H}\right)^H -
+K\left(\mathcal{C}\odot\widetilde{H}\right)P_{k|k-1} + KRK^H
+    \end{aligned}$$</span></p>
+<p>Cette forme est bien minimisée par <span
+class="math display"><em>K</em><sub><em>k</em></sub><sup><em>c</em></sup> = <em>P</em><sub><em>k</em>|<em>k</em> − 1</sub>(𝒞⊙<em>H̃</em>)<sup><em>H</em></sup>((𝒞⊙<em>H̃</em>)<em>P</em><sub><em>k</em>|<em>k</em> − 1</sub>(𝒞⊙<em>H̃</em>)<sup><em>H</em></sup>+<em>R</em>)<sup>−1</sup></span>
+Forme similaire au gain <span class="math inline"><em>K</em></span>
+calculé sans correction : <span
+class="math display"><em>K</em><sub><em>k</em></sub> = <em>P</em><sub><em>k</em>|<em>k</em> − 1</sub><em>H̃</em><sup><em>H</em></sup>(<em>H̃</em><em>P</em><sub><em>k</em>|<em>k</em> − 1</sub><em>H̃</em><sup><em>H</em></sup>+<em>R</em>)<sup>−1</sup></span></p>
+<p>Par la suite, on omettra les dépendances en <span
+class="math inline"><em>k</em></span> en supposant <span
+class="math inline"><em>P</em> = <em>P</em><sub><em>k</em>|<em>k</em> − 1</sub></span>
+et <span
+class="math inline"><em>K</em> = <em>K</em><sub><em>k</em></sub></span>.</p>
+<p>On pose l’erreur sur le gain : <span
+class="math display"><em>ε</em><sub><em>K</em></sub> = <em>K</em><sup><em>c</em></sup> − <em>K</em></span></p>
+<p>Ainsi que l’erreur d’estimation induite par l’erreur de masque :
+<span
+class="math display"><em>ε</em><sub><em>x̂</em></sub> = <em>x̂</em><sub><em>k</em>|<em>k</em></sub> − <em>x̂</em><sub><em>k</em>|<em>k</em></sub><sup><em>c</em></sup></span></p>
+<p>On omettra de la même façon la dépendance en <span
+class="math inline"><em>k</em></span>. En développant : <span
+class="math display">$$\begin{aligned}
+        \varepsilon_{\widehat{x}} &amp;= \left[\widehat{x}_{k|k-1} +
+K(y_k-\widetilde{H}\widehat{x}_{k|k-1})\right] -
+\left[\widehat{x}_{k|k-1} + K^c\left(y_k -
+\left(\mathcal{C}\odot\widetilde{H}\right)\widehat{x}_{k|k-1}\right)\right]
+\\
+        &amp;= \left(K-K^c\right)y_k - \left(K\widetilde{H}-
+K^c(\mathcal{C}\odot\widetilde{H})\right)\widehat{x}_{k|k-1}
+    \end{aligned}$$</span></p>
