@@ -192,7 +192,7 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	
 	On considère la matrice $\widetilde{H}$ construite avec une erreur de mesure sur la position des antennes, c'est à dire 
 	$$
-		\forall j \in \llbracket1;J^2\rrbracket,\, \widetilde{\Delta} z_j = \Delta z_j + \boldsymbol{\varepsilon}_j
+		\forall j \in \llbracket1;J^2\rrbracket,\:\: \widetilde{\Delta} z_j = \Delta z_j + \boldsymbol{\varepsilon}_j
 	$$
 	On suppose l'erreur $\boldsymbol{\varepsilon}$ suivant une loi normale.\\
 	Les termes de la matrice $\widetilde{H}$ deviennent :
@@ -262,8 +262,24 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	On omettra de la même façon la dépendance en $k$. En développant :
 	\begin{align*}
 		\varepsilon_{\widehat{x}} &= \left[\widehat{x}_{k|k-1} + K(y_k-\Ht\widehat{x}_{k|k-1})\right] - \left[\widehat{x}_{k|k-1} + K^c\left(y_k - \left(\Hc\right)\widehat{x}_{k|k-1}\right)\right] \\
-		&= \left(K-K^c\right)y_k - \left(K\Ht - K^c(\Hc)\right)\widehat{x}_{k|k-1}
+		&= \left(K-K^c\right)y_k - \left(K\Ht - K^c(\Hc)\right)\widehat{x}_{k|k-1} \\
+		&= \varepsilon_K\left[y_k - \left(\Hc\right)\widehat{x}_{k|k-1}\right] + K\left(\mathbb{1}-\C\right)\odot\Ht\widehat{x}_{k|k-1}
 	\end{align*}
+
+	Où $\mathbb{1}$ désigne l'élément neutre du produit de Hadamard, la matrice dont tous les termes valent 1.\\	
+	Donc :
+	\begin{equation}
+		\varepsilon_{\widehat{x}} = \varepsilon_K\varepsilon_{mes} + K\left(\mathbb{1} - \mathcal{C}\right)\odot\Ht\widehat{x}_{k|k-1}
+	\end{equation}
+
+	Sous l'hypothèse de l'introduction d'erreur uniquement sur $H$, la matrice $\C\odot\Ht$ est la matrice corrigée et on obtient :
+	$$
+		y_k = \Hc x_k \implies \varepsilon_{mes} = 0
+	$$
+	D'où :
+	\begin{equation}
+		\varepsilon_{\widehat{x}} = K \left(\mathbb{1} - \C\right)\odot\Ht\widehat{x}_{k|k-1}
+	\end{equation}
 \end{document}
 
 
