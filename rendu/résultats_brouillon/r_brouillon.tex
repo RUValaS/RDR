@@ -54,6 +54,9 @@
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\Ht}{\widetilde{H}}
 \newcommand{\Hc}{\C\odot\Ht}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\Hb}{\B\odot\Ht}
+\newcommand{\hinv}[1]{#1^{\circ-1}}
 
 \title{%
 	\UE\, - \type\ifthenelse{\nb > 0}{\nb}{} \\
@@ -70,6 +73,20 @@
 	
 	\newpage
 	\tableofcontents
+	
+	\newpage
+	\section{Notations}
+	\subsection{Produit de Hadamard}
+	
+	On introduit la notation $\odot$ associée au produit de Hadamard, qui effectue la multiplication élément à élément de deux matrices de même taille :
+	$$
+	\forall (A,B)\in\left(\mathbb{C}^{m\times n}\right)^2, \quad A\odot B\in\mathbb{C}^{m\times n} \quad\text{et}\quad \forall (i,j)\in\llbracket1;m\rrbracket\times\llbracket1;n\rrbracket,\, (A\odot B)_{i,j} = A_{i,j}\times B_{i,j}
+	$$
+	
+	On introduit également l'inverse de Hadamard, qui inverse élément par élément une matrice
+	$$
+		\forall A \in \left(\mathbb{C}\backslash\{0\}\right)^{m\times n},\quad \hinv{A}\in\left(\mathbb{C}\backslash\{0\}\right)^{m\times n} \quad\text{et}\quad \forall (i,j)\in\llbracket1;m\rrbracket\times\llbracket1;n\rrbracket,\, \left(\hinv{A}\right)_{i,j} = \left(A_{i,j}\right)^{-1}
+	$$ 
 	
 	\newpage
 	\section{Influence individuelle de l'erreur sur les matrices}
@@ -185,11 +202,6 @@ H_err = matF(J,Pix,z_err,lambda,I);
 
 	\subsubsection{Calculs théoriques}
 	
-	On introduit la notation $\odot$ associée au produit de Hadamard, qui effectue la multiplication élément à élément de deux matrices de même taille :
-	$$
-		\forall (A,B)\in\left(\mathbb{C}^{m\times n}\right)^2, \quad A\odot B\in\mathbb{C}^{m\times n} \quad\text{et}\quad \forall (i,j)\in\llbracket1;m\rrbracket\times\llbracket1;n\rrbracket,\, (A\odot B)_{i,j} = A_{i,j}\times B_{i,j}
-	$$
-	
 	On considère la matrice $\widetilde{H}$ construite avec une erreur de mesure sur la position des antennes, c'est à dire 
 	$$
 		\forall j \in \llbracket1;J^2\rrbracket,\:\: \widetilde{\Delta} z_j = \Delta z_j + \boldsymbol{\varepsilon}_j
@@ -280,6 +292,47 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	\begin{equation}
 		\varepsilon_{\widehat{x}} = K \left(\mathbb{1} - \C\right)\odot\Ht\widehat{x}_{k|k-1}
 	\end{equation}
+
+	On peut de même évaluer le différentiel sur les covariances :
+	\begin{equation}
+		\Delta P_{k|k} = P_{k|k} - P_{k|k}^c = \left(K^c\left(\Hc\right) - K\Ht\right)P_{k|k-1}
+	\end{equation}
+
+	De plus, si on suppose une erreur de gain sur les antennes, on peut poser les termes :
+	$$
+		\Ht_{j,q} = (1+\varepsilon_q)H_{j,q}
+	$$
+	
+	Où $\varepsilon_q$ suit une loi normale, et désigne une erreur sur le gain de l'antenne $q$.\\
+	On peut de même établir une matrice de correction $\B$ telle que :
+	\begin{equation}
+		H = \Hb
+	\end{equation}
+
+	Les erreurs et gain auront alors la même forme
+	\begin{subequations}
+		\begin{equation}
+			K_k^b = P\left(\Hb\right)^H\left(\left(\Hb\right)P\left(\Hb\right)^H + R\right)^{-1}
+		\end{equation}
+		\begin{equation}
+			\varepsilon_{\widehat{x}} = K\left(\mathbb{1} - \B\right)\odot\Ht\widehat{x}_{k|k-1}
+		\end{equation}
+		\begin{equation}
+			\Delta P_{k|k} = \left(K^b\left(\Hb\right) - K\Ht\right)P_{k|k-1}
+		\end{equation}
+	\end{subequations}
+	
+	\subsubsection{Essais expérimentaux}
+	
+	On effectue des essais en introduisant une erreur sur la matrice exacte. Plutôt que d'avoir une matrice erronée $\Ht$ connue on aura $H$ exacte connue et :
+	$$
+		\Ht = \mathcal{E}\odot H
+	$$
+	où $\mathcal{E} = \hinv{\C}$ ou $\mathcal{E} = \hinv{\B}$ en fonction de l'erreur que l'on souhaite introduire.
+	
+	\paragraph{Erreur de position}
+	On suppose tout d'abord que l'on ne connaît pas exactement la position des antennes du réseau. On introduit sur $H$ une matrice de petites rotations définie par la matrice $\mathcal{R} = \hinv{\B}$ plus tôt. \\
+	Pour cela, on génère $J^2$ vecteurs $\{\boldsymbol{\varepsilon}_j\}$ et on génère $\mathcal{R}$. 
 \end{document}
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  9 JUN 2022 15:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  13 JUN 2022 17:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -746,51 +746,51 @@ runsystem(del r_brouillon.aex)...executed.
 (./r_brouillon.aux)
 \openout1 = `r_brouillon.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 65.
 LaTeX Font Info:    Trying to load font information for FML+futm on input line 
-62.
+65.
  (c:/texlive/2021/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 65.
 LaTeX Font Info:    Trying to load font information for FMS+futm on input line 
-62.
+65.
 
 (c:/texlive/2021/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 65.
 LaTeX Font Info:    Trying to load font information for FMX+futm on input line 
-62.
+65.
 
 (c:/texlive/2021/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 62.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 62.
-LaTeX Info: Redefining \degres on input line 62.
-LaTeX Info: Redefining \up on input line 62.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 65.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 65.
+LaTeX Info: Redefining \degres on input line 65.
+LaTeX Info: Redefining \up on input line 65.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -826,7 +826,7 @@ LaTeX Info: Redefining \up on input line 62.
 * \@reversemargintrue
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 62.
+Package hyperref Info: Link coloring ON on input line 65.
 (c:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -838,9 +838,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count342
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 65.
+LaTeX Info: Redefining \pageref on input line 65.
+LaTeX Info: Redefining \nameref on input line 65.
 
 (./r_brouillon.out) (./r_brouillon.out)
 \@outlinefile=\write5
@@ -872,52 +872,52 @@ e
 \c@lstlisting=\count349
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 62.
+(lastpage)             ! on input line 65.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<logo.PNG, id=28, 253.44687pt x 96.86188pt>
+<logo.PNG, id=40, 253.44687pt x 96.86188pt>
 File: logo.PNG Graphic file (type png)
 <use logo.PNG>
-Package pdftex.def Info: logo.PNG  used on input line 66.
+Package pdftex.def Info: logo.PNG  used on input line 69.
 (pdftex.def)             Requested size: 328.82707pt x 125.67357pt.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 70.
+(Font)              scaled to size 11.03998pt on input line 73.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 70.
+(Font)              scaled to size 8.27998pt on input line 73.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 70.
+(Font)              scaled to size 6.43999pt on input line 73.
 LaTeX Font Info:    Trying to load font information for FML+futmi on input line
- 70.
+ 73.
 
 (c:/texlive/2021/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 70.
+(Font)              scaled to size 11.03998pt on input line 73.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 70.
+(Font)              scaled to size 8.27998pt on input line 73.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 70.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
+(Font)              scaled to size 6.43999pt on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
 
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
 
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+esvect on input line 
-70.
+73.
 
 (c:/texlive/2021/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-0.
+3.
 
 (c:/texlive/2021/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
 
@@ -943,33 +943,33 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.74 	\newpage
+l.77 	\newpage
                [1]
 Package marginnote Info: Using workaround for absolute page number on input lin
-e 74.
-<Perfs/Illustration.JPG, id=52, 1230.84843pt x 607.51968pt>
+e 77.
+ [2]
+<Perfs/Illustration.JPG, id=77, 1230.84843pt x 607.51968pt>
 File: Perfs/Illustration.JPG Graphic file (type jpg)
 <use Perfs/Illustration.JPG>
-Package pdftex.def Info: Perfs/Illustration.JPG  used on input line 81.
+Package pdftex.def Info: Perfs/Illustration.JPG  used on input line 98.
 (pdftex.def)             Requested size: 422.77664pt x 208.66751pt.
 LaTeX Font Info:    Trying to load font information for TS1+futs on input line 
-85.
+102.
  (c:/texlive/2021/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
-<Perfs/conv02.png, id=53, 421.575pt x 316.18124pt>
+<Perfs/conv02.png, id=78, 421.575pt x 316.18124pt>
 File: Perfs/conv02.png Graphic file (type png)
 <use Perfs/conv02.png>
-Package pdftex.def Info: Perfs/conv02.png  used on input line 89.
+Package pdftex.def Info: Perfs/conv02.png  used on input line 106.
 (pdftex.def)             Requested size: 422.77664pt x 317.08746pt.
-
-[2 <./Perfs/illustration.JPG>]
+ [3 <./Perfs/illustration.JPG>]
 \openout3 = `r_brouillon.pyg'.
 
  (./_minted-r_brouillon/default.pygstyle)
 (./_minted-r_brouillon/2A5933266D804235950ADE2C13F35B4259D59A7339A10BE6CC6D0200
 E3BCA6C7.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 103--1
+Underfull \hbox (badness 10000) in paragraph at lines 120--1
 
  []
 
@@ -977,19 +977,19 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 .
 (c:/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)) [3 <./Perfs/conv02.png (PNG copy)>]
+)) [4 <./Perfs/conv02.png (PNG copy)>]
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 115.
+(Font)              using `U/stmry/m/n' instead on input line 132.
 
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 115.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7.6> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 115.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <6> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 115.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 132.
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
@@ -998,51 +998,111 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
 (./_minted-r_brouillon/4BC3E19E781C2D4142DB0D92F36533FB59D59A7339A10BE6CC6D0200
 E3BCA6C7.pygtex)
-<Perfs/He-3_1.png, id=68, 421.575pt x 316.18124pt>
+<Perfs/He-3_1.png, id=92, 421.575pt x 316.18124pt>
 File: Perfs/He-3_1.png Graphic file (type png)
 <use Perfs/He-3_1.png>
-Package pdftex.def Info: Perfs/He-3_1.png  used on input line 159.
+Package pdftex.def Info: Perfs/He-3_1.png  used on input line 176.
 (pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <9> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 160.
-<Perfs/H5e-3.png, id=69, 421.575pt x 316.18124pt>
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 177.
+<Perfs/H5e-3.png, id=93, 421.575pt x 316.18124pt>
 File: Perfs/H5e-3.png Graphic file (type png)
 <use Perfs/H5e-3.png>
-Package pdftex.def Info: Perfs/H5e-3.png  used on input line 165.
+Package pdftex.def Info: Perfs/H5e-3.png  used on input line 182.
 (pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
-<Perfs/He-2.png, id=70, 421.575pt x 316.18124pt>
+<Perfs/He-2.png, id=94, 421.575pt x 316.18124pt>
 File: Perfs/He-2.png Graphic file (type png)
 <use Perfs/He-2.png>
-Package pdftex.def Info: Perfs/He-2.png  used on input line 171.
+Package pdftex.def Info: Perfs/He-2.png  used on input line 188.
 (pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
- [4 <./Perfs/He-3_1.png (PNG copy)> <./Perfs/H5e-3.png (PNG copy)> <./Perfs/He-
+ [5 <./Perfs/He-3_1.png (PNG copy)> <./Perfs/H5e-3.png (PNG copy)> <./Perfs/He-
 2.png (PNG copy)>]
-<Perfs/perf_errF.jpg, id=80, 552.56438pt x 325.215pt>
+<Perfs/perf_errF.jpg, id=102, 552.56438pt x 325.215pt>
 File: Perfs/perf_errF.jpg Graphic file (type jpg)
 <use Perfs/perf_errF.jpg>
-Package pdftex.def Info: Perfs/perf_errF.jpg  used on input line 182.
+Package pdftex.def Info: Perfs/perf_errF.jpg  used on input line 199.
 (pdftex.def)             Requested size: 328.82707pt x 193.53261pt.
- [5 <./Perfs/perf_errF.JPG>]
-Overfull \hbox (55.22917pt too wide) detected at line 216
+ [6 <./Perfs/perf_errF.JPG>]
+Overfull \hbox (55.22917pt too wide) detected at line 228
 []
  []
 
-
+[7]pdfTeX warning (ext4): destination with the same identifier (name{equation.0
+.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.314 		\begin{equation}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.0.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.314 		\begin{equation}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.0.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.314 		\begin{equation}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.0.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.314 		\begin{equation}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.0.2.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.317 		\begin{equation}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.0.2.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.317 		\begin{equation}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.0.2.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.317 		\begin{equation}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.0.2.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.317 		\begin{equation}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.0.2.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.320 		\begin{equation}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.0.2.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.320 		\begin{equation}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.0.2.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.320 		\begin{equation}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.0.2.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.320 		\begin{equation}
+                         
 AED: lastpage setting LastPage
-[6] (./r_brouillon.aux)
+[8] (./r_brouillon.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `r_brouillon.out' has not changed.
-(rerunfilecheck)             Checksum: 89D54F5978E432E40D6EC33AC1C8B779;1389.
+(rerunfilecheck)             Checksum: 54B617A82FC2927C2BF6A71CB525205B;1818.
 runsystem(del r_brouillon.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 20863 strings out of 478278
- 344352 string characters out of 5850546
- 714013 words of memory out of 5000000
- 38660 multiletter control sequences out of 15000+600000
+ 20877 strings out of 478278
+ 344524 string characters out of 5850546
+ 715034 words of memory out of 5000000
+ 38665 multiletter control sequences out of 15000+600000
  579740 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,12n,77p,457b,578s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1058,10 +1118,10 @@ exmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts
 /type1/adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/adobe/ut
 opia/putri8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt10
 00.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on r_brouillon.pdf (7 pages, 299709 bytes).
+Output written on r_brouillon.pdf (9 pages, 307192 bytes).
 PDF statistics:
- 164 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 84 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 194 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 
