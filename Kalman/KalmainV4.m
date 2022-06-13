@@ -14,7 +14,7 @@ Nreal = 1000;
 
 % génération image initiale
 % ajout bruit image
-poids = 0.01;
+poids = 0.1;
 X_0 = true_image ;
 tX(:,1) = X_0;
 
@@ -24,14 +24,9 @@ P_0 = X_0*X_0';
 
 %ajout erreur sur A (!!!APRES!!! dataGen => sinon c'est pas une erreur)
 % H_err = abs(H .*( poids*exp(1j*randn(size(H))) ) );
-% z_err = z+ randn(size(z))*poids;
-% H_err = matF(J,Pix,z_err,lambda,I);
+z_err = z+ randn(size(z))*poids;
+H_err = matF(J,Pix,z_err,lambda,I);
 
-H_err = zeros(size(H));
-eps = randn(size(z))*poids;
-for q=1:Pix
-    H_err(: ,q) = exp(-1i*2*pi*eps(:,q)*I(q,:));
-end % .* aussi non ?
 
 %%%%%%%%%%%% Kalman
 X=-1;
@@ -39,15 +34,15 @@ if mode=='CPU'
     X = Kalman_CPU_V2(A,H_err,X_0,P_0,nY,nR,nQ,Pix,N);
 end
 if mode=='GPU'
-    X = Kalman_GPU_V4(A,H,X_0,P_0,nY,nR,nQ,Pix,N);
+    X = Kalman_GPU_V5(A,H_err,X_0,P_0,nY,nR,nQ,Pix,N);
 end
 
 Psr = zeros(N,1);
 for k=1:N
-    %     Psr(k) = psnr(abs(X(:,k)),tX(:,k));
-    Psr(k) = ssim(abs(X(:,k)/max(abs(X(:,k)))),tX(:,k));
+        Psr(k) = psnr(abs(X(:,k)),tX(:,k));
+%     Psr(k) = ssim(abs(X(:,k)/max(abs(X(:,k)))),tX(:,k));
 end
-% figure();plot(Psr);title('PSNR = f(it)')
+figure();plot(Psr);title('PSNR = f(it)')
 mean(Psr(6:end))
 
 %{

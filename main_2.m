@@ -10,11 +10,11 @@ c= 3e8;
 f = 1e9;
 lambda = c/f;
 dist = 10; % J_b antennes espacées de dist 
-N = 7;
+N = 12;
 SNR = 10;
 iMEM = 1; % nombre itérations MEM 
 RATIO = 10e14; % ratio erreur Kalman
-mode = 'CPU';
+mode = 'GPU';
 % A_ev matrice d'évolution définie plus loin (need Pix ligne 69)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -39,4 +39,4 @@ A_ev = eye(Pix);
 
 %%% Kalman direct en fait mdr
 [X,tX] = KalmainV4(vadapted,J,z,I,N,f,c,lambda,Mx,My,iMEM,SNR,A_ev,RATIO,mode);
-dispKalman_t(X,tX,N,Mx,My);
+% dispKalman_t(X,tX,N,Mx,My);
