@@ -14,7 +14,7 @@ Nreal = 1000;
 
 % génération image initiale
 % ajout bruit image
-poids = 0.01;
+poids = 0.1;
 X_0 = true_image ;
 tX(:,1) = X_0;
 
@@ -26,6 +26,8 @@ P_0 = X_0*X_0';
 % H_err = abs(H .*( poids*exp(1j*randn(size(H))) ) );
 z_err = z+ randn(size(z))*poids;
 H_err = matF(J,Pix,z_err,lambda,I);
+
+C = H ./ H_err;
 
 
 %%%%%%%%%%%% Kalman

@@ -53,12 +53,13 @@
 \newcommand{\skipq}[1]{\addtocounter{question}{#1}\rsubq}
 \newcommand{\subq}{\noindent\alph{subq})\stepcounter{subq}} %a modifier pour mettre dans le margin
 
-\newcommand{\C}{\mathcal{C}}
-\newcommand{\Ht}{\widetilde{H}}
-\newcommand{\Hc}{\C\odot\Ht}
-\newcommand{\B}{\mathcal{B}}
-\newcommand{\Hb}{\B\odot\Ht}
-\newcommand{\hinv}[1]{#1^{\circ-1}}
+\newcommand{\C}{\mathcal{C}} % mat correction
+\newcommand{\Ht}{\widetilde{H}} % H err
+\newcommand{\Hc}{\C\odot\Ht} % C o H
+\newcommand{\B}{\mathcal{B}} % mat correction gain
+\newcommand{\Hb}{\B\odot\Ht} % B o H
+\newcommand{\hinv}[1]{#1^{\circ-1}} % inverse de hadamard
+\newcommand{\fnorm}[1]{|\vert#1|\vert_{F}} % norme de Frobenius
 
 \title{%
 	\UE\, - \type\ifthenelse{\nb > 0}{\nb}{} \\
@@ -89,6 +90,23 @@
 	$$
 		\forall A \in \left(\mathbb{C}\backslash\{0\}\right)^{m\times n},\quad \hinv{A}\in\left(\mathbb{C}\backslash\{0\}\right)^{m\times n} \quad\text{et}\quad \forall (i,j)\in\llbracket1;m\rrbracket\times\llbracket1;n\rrbracket,\, \left(\hinv{A}\right)_{i,j} = \left(A_{i,j}\right)^{-1}
 	$$ 
+	
+	Ainsi que la notation $\oslash$ désignant la division de Hadamard :
+		$$
+	\forall (A,B)\in\mathbb{C}^{m\times n}\times\left(\mathbb{C}\backslash0\right)^{m\times n}, \quad A\oslash B\in\mathbb{C}^{m\times n} \quad\text{et}\quad \forall (i,j)\in\llbracket1;m\rrbracket\times\llbracket1;n\rrbracket,\, (A\oslash B)_{i,j} = \frac{A_{i,j}}{B_{i,j}}
+	$$
+	
+	\subsection{Norme de Frobenius}
+	
+	On dénote $\fnorm{\bullet}$ la norme de Frobenius :
+	$$
+		A\in\mathcal{M}_{m,n}(\mathbb{K}) \quad \fnorm{A} := \sqrt{\tr{AA^H}} = \sqrt{\;\;\;\sum_{\mathclap{
+					\substack{
+						1\le i\le m \\1\le j\le n}
+					}
+				}\abs{A_{ij}}^2}
+	$$
+	
 	
 	\newpage
 	\section{Influence individuelle de l'erreur sur les matrices}
@@ -265,7 +283,7 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	
 	On pose l'erreur sur le gain :
 	\begin{equation}
-		\varepsilon_K = K^c - K
+		\varepsilon_K = K - K^c 
 	\end{equation}
 
 	Ainsi que l'erreur d'estimation induite par l'erreur de masque :
@@ -277,19 +295,23 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	\begin{align*}
 		\varepsilon_{\widehat{x}} &= \left[\widehat{x}_{k|k-1} + K(y_k-\Ht\widehat{x}_{k|k-1})\right] - \left[\widehat{x}_{k|k-1} + K^c\left(y_k - \left(\Hc\right)\widehat{x}_{k|k-1}\right)\right] \\
 		&= \left(K-K^c\right)y_k - \left(K\Ht - K^c(\Hc)\right)\widehat{x}_{k|k-1} \\
-		&= \varepsilon_K\left[y_k - \left(\Hc\right)\widehat{x}_{k|k-1}\right] + K\left(\mathbb{1}-\C\right)\odot\Ht\widehat{x}_{k|k-1}
+		&= \varepsilon_K\left[y_k - \left(\Hc\right)\widehat{x}_{k|k-1}\right] + K\left(\mathbb{1}-\C\right)\odot\Ht\widehat{x}_{k|k-1} \\
+		&= \varepsilon_K(y_k - (\Hc)\left(\varepsilon_{pred} + x_k\right)) + K\left(\mathbb{1}-\C\right)\odot\Ht\widehat{x}_{k|k-1} \\
+		&= \varepsilon_K\left[\left(y_k - (\Hc)x_k\right) - (\Hc)\varepsilon_{pred}\right] + K\left(\mathbb{1}-\C\right)\odot\Ht\widehat{x}_{k|k-1} \\
+		&= \varepsilon_K\left(\varepsilon_{mes} - (\Hc)\varepsilon_{pred}\right) + K\left(\mathbb{1}-\C\right)\odot\Ht\widehat{x}_{k|k-1}
 	\end{align*}
 
 	Où $\mathbb{1}$ désigne l'élément neutre du produit de Hadamard, la matrice dont tous les termes valent 1.\\	
-	Donc :
-	\begin{equation}
-		\varepsilon_{\widehat{x}} = \varepsilon_K\varepsilon_{mes} + K\left(\mathbb{1} - \mathcal{C}\right)\odot\Ht\widehat{x}_{k|k-1}
-	\end{equation}
 
 	Sous l'hypothèse de l'introduction d'erreur uniquement sur $H$, la matrice $\C\odot\Ht$ est la matrice corrigée et on obtient :
 	$$
-		y_k = \Hc x_k \implies \varepsilon_{mes} = 0
+		y_k = (\Hc) x_k \implies \varepsilon_{mes} = 0
 	$$
+	On ne suppose également pas d'erreur sur la matrice d'évolution $A$ :
+	$$
+		\varepsilon_{pred} = 0
+	$$
+	
 	D'où :
 	\begin{equation}
 		\varepsilon_{\widehat{x}} = K \left(\mathbb{1} - \C\right)\odot\Ht\widehat{x}_{k|k-1}
@@ -302,17 +324,17 @@ H_err = matF(J,Pix,z_err,lambda,I);
 
 	De plus, si on suppose une erreur de gain sur les antennes, on peut poser les termes :
 	$$
-		\Ht_{j,q} = (1+\varepsilon_q)H_{j,q}
+		\Ht_{j,q} = (1+\varepsilon_{j,q})H_{j,q}
 	$$
 	
-	Où $\varepsilon_q$ suit une loi normale, et désigne une erreur sur le gain de l'antenne $q$.\\
+	Où $\varepsilon_q$ suit une loi normale, et désigne une erreur sur le gain de l'antenne $j$ dans la direction $q$.\\
 	On peut de même établir une matrice de correction $\B$ telle que :
 	\begin{equation}
 		H = \Hb
 	\end{equation}
 
 	Les erreurs et gain auront alors la même forme
-	\begin{subequations}
+	\begin{subequations} 
 		\begin{equation}
 			K_k^b = P\left(\Hb\right)^H\left(\left(\Hb\right)P\left(\Hb\right)^H + R\right)^{-1}
 		\end{equation}
@@ -333,8 +355,11 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	où $\mathcal{E} = \hinv{\C}$ ou $\mathcal{E} = \hinv{\B}$ en fonction de l'erreur que l'on souhaite introduire.
 	
 	\paragraph{Erreur de position}
-	On suppose tout d'abord que l'on ne connaît pas exactement la position des antennes du réseau. On introduit sur $H$ une matrice de petites rotations définie par la matrice $\mathcal{R} = \hinv{\B}$ plus tôt. \\
-	Pour cela, on génère $J^2$ vecteurs $\{\boldsymbol{\varepsilon}_j\}$ et on génère $\mathcal{R}$. 
+	On suppose tout d'abord que l'on ne connaît pas exactement la position des antennes du réseau. On introduit sur $H$ une matrice de petites rotations définie par la matrice $\mathcal{R} = \hinv{\C}$ plus tôt. \\
+	Pour cela, on génère des erreurs directement sur les positions des antennes, puis on peut obtenir $\C$ avec la connaissance de $H$ et $\Ht$ :
+	\begin{equation}
+		\C = H \oslash \Ht
+	\end{equation}
 \end{document}
 
 
