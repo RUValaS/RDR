@@ -14,7 +14,7 @@ N = 12;
 SNR = 10;
 iMEM = 1; % nombre itérations MEM 
 RATIO = 10e14; % ratio erreur Kalman
-mode = 'GPU';
+mode = 'CPU';
 % A_ev matrice d'évolution définie plus loin (need Pix ligne 69)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -39,4 +39,4 @@ A_ev = eye(Pix);
 
 %%% Kalman direct en fait mdr
 [X,tX] = KalmainV4(vadapted,J,z,I,N,f,c,lambda,Mx,My,iMEM,SNR,A_ev,RATIO,mode);
-% dispKalman_t(X,tX,N,Mx,My);
+dispKalman_t(X,tX,N,Mx,My);
