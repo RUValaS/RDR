@@ -14,7 +14,7 @@ Nreal = 1000;
 
 % génération image initiale
 % ajout bruit image
-poids = 0.1;
+poids = 0;
 X_0 = true_image ;
 tX(:,1) = X_0;
 
