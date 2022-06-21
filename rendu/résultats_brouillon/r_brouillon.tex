@@ -110,6 +110,10 @@
 				}\abs{A_{ij}}^2}
 	$$
 	
+	Qui induit sur $\mathcal{M}_{m,n}(\mathbb{K})$ la distance $d$ :
+	$$
+		\forall(A,B)\in\left(\mathcal{M}_{m,n}(\mathbb{K})\right)^2\quad d(A,B) = \frac{\fnorm{A-B}}{mn}
+	$$
 	
 	\newpage
 	\section{Influence individuelle de l'erreur sur les matrices}
@@ -141,12 +145,39 @@
 	\subsection{Erreur sur le modèle d'évolution}
 	
 	On suppose une erreur sur le modèle d'évolution \emph{dans le filtre de Kalman}, afin de simuler un modèle théorique imprécis. On construit les données simulées avec un modèle sans erreur.\\
-	\begin{minted}{matlab}
-poids = 0.2;
-A = A + poids*randn(size(A));
-	\end{minted}
 	
-	On introduit une erreur gaussienne
+	\subsubsection{Calculs théoriques}
+	
+	On suppose qu'on a à disposition un modèle d'évolution déformé 
+	\begin{equation}
+		A_d = A\ast\varepsilon
+	\end{equation}
+	
+	où $\ast$ désigne l'opération de convolution. \\
+	On obtient le nouveau modèle :
+	\begin{equation}
+		\widehat{x}_{k|k-1} = \left(A\ast\varepsilon\right)\widehat{x}_{k-1|k-1}
+	\end{equation}
+
+	La covariance de l'erreur de prédiction devient :
+	\begin{align*}
+		P_{k|k-1} &= E\left[\left(A_d\widehat{x}_{k-1|k-1} - x_k\right)\left(A_d\widehat{x}_{k-1|k-1} - x_k\right)^H\right]\\
+		&= E\left\{
+			\left[
+				A_d(\widehat{x}_{k-1|k-1} - x_{k-1}) + (A_dx_{k-1} - x_k)
+			\right]\left[
+			A_d(\widehat{x}_{k-1|k-1} - x_{k-1}) + (A_dx_{k-1} - x_k)
+			\right]^H
+		\right\} \\
+		&= A_dP_{k-1|k-1}Ad^T + Q_d + 0
+	\end{align*}
+	
+	Le dernier terme s'explicant par la décorrélation des erreurs sur le modèle d'évolution et d'erreur de prédiction. On obtient finalement le modèle :
+	\begin{equation}
+		P_{k|k-1} = \left(A\ast\varepsilon\right)P_{k-1|k-1}\left(A\ast\varepsilon\right)^T + Q_d
+	\end{equation}
+
+
 	
 	\subsection{Erreur sur le masque UV}
 	
@@ -363,6 +394,8 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	\begin{equation}
 		\C = H \oslash \Ht
 	\end{equation}
+
+	Cette division est possible car tous les termes sont de norme 1 ou proche de 1 dans le cas de petites variations.
 \end{document}
 
 

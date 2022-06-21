@@ -14,7 +14,7 @@ Nreal = 1000;
 
 % génération image initiale
 % ajout bruit image
-poids = 0;
+poids = 0.3;
 X_0 = true_image ;
 tX(:,1) = X_0;
 
@@ -42,10 +42,10 @@ end
 Psr = zeros(N,1);
 for k=1:N
 %         Psr(k) = psnr(abs(X(:,k)),tX(:,k));
-    Psr(k) = psnr(abs(X(:,k)/max(abs(X(:,k)))),tX(:,k));
+    Psr(k) = fro(abs(X(:,k)/max(abs(X(:,k))))-tX(:,k));
 end
 figure();plot(Psr);title('PSNR = f(it)')
-mean(Psr(6:end))
+mean(Psr(4:end))
 
 %{
 z_err = z+ randn(size(z))*0.01;

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  15 JUN 2022 13:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  21 JUN 2022 14:16
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -875,7 +875,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             ! on input line 68.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<logo.PNG, id=44, 253.44687pt x 96.86188pt>
+<logo.PNG, id=48, 253.44687pt x 96.86188pt>
 File: logo.PNG Graphic file (type png)
 <use logo.PNG>
 Package pdftex.def Info: logo.PNG  used on input line 72.
@@ -948,152 +948,149 @@ l.80 	\newpage
 Package marginnote Info: Using workaround for absolute page number on input lin
 e 80.
  [2]
-<Perfs/Illustration.JPG, id=83, 1230.84843pt x 607.51968pt>
+<Perfs/Illustration.JPG, id=88, 1230.84843pt x 607.51968pt>
 File: Perfs/Illustration.JPG Graphic file (type jpg)
 <use Perfs/Illustration.JPG>
-Package pdftex.def Info: Perfs/Illustration.JPG  used on input line 121.
+Package pdftex.def Info: Perfs/Illustration.JPG  used on input line 127.
 (pdftex.def)             Requested size: 422.77664pt x 208.66751pt.
 LaTeX Font Info:    Trying to load font information for TS1+futs on input line 
-125.
+131.
  (c:/texlive/2021/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
-<Perfs/conv02.png, id=84, 421.575pt x 316.18124pt>
+<Perfs/conv02.png, id=89, 421.575pt x 316.18124pt>
 File: Perfs/conv02.png Graphic file (type png)
 <use Perfs/conv02.png>
-Package pdftex.def Info: Perfs/conv02.png  used on input line 129.
+Package pdftex.def Info: Perfs/conv02.png  used on input line 135.
 (pdftex.def)             Requested size: 422.77664pt x 317.08746pt.
  [3 <./Perfs/illustration.JPG>]
-\openout3 = `r_brouillon.pyg'.
-
- (./_minted-r_brouillon/default.pygstyle)
-(./_minted-r_brouillon/2A5933266D804235950ADE2C13F35B4259D59A7339A10BE6CC6D0200
-E3BCA6C7.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 143--1
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-.
-(c:/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)) [4 <./Perfs/conv02.png (PNG copy)>]
+[4 <./Perfs/conv02.png (PNG copy)>]
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 155.
+(Font)              using `U/stmry/m/n' instead on input line 188.
 
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 155.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 188.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7.6> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 155.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 188.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <6> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 155.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 188.
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
 \openout3 = `r_brouillon.pyg'.
 
-
+(./_minted-r_brouillon/default.pygstyle)
 (./_minted-r_brouillon/4BC3E19E781C2D4142DB0D92F36533FB59D59A7339A10BE6CC6D0200
-E3BCA6C7.pygtex)
-<Perfs/He-3_1.png, id=98, 421.575pt x 316.18124pt>
+E3BCA6C7.pygtex
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+.
+ (c:/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+))
+<Perfs/He-3_1.png, id=104, 421.575pt x 316.18124pt>
 File: Perfs/He-3_1.png Graphic file (type png)
 <use Perfs/He-3_1.png>
-Package pdftex.def Info: Perfs/He-3_1.png  used on input line 199.
+Package pdftex.def Info: Perfs/He-3_1.png  used on input line 232.
 (pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <9> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 200.
-<Perfs/H5e-3.png, id=99, 421.575pt x 316.18124pt>
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 233.
+<Perfs/H5e-3.png, id=105, 421.575pt x 316.18124pt>
 File: Perfs/H5e-3.png Graphic file (type png)
 <use Perfs/H5e-3.png>
-Package pdftex.def Info: Perfs/H5e-3.png  used on input line 205.
+Package pdftex.def Info: Perfs/H5e-3.png  used on input line 238.
 (pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
-<Perfs/He-2.png, id=100, 421.575pt x 316.18124pt>
+<Perfs/He-2.png, id=106, 421.575pt x 316.18124pt>
 File: Perfs/He-2.png Graphic file (type png)
 <use Perfs/He-2.png>
-Package pdftex.def Info: Perfs/He-2.png  used on input line 211.
+Package pdftex.def Info: Perfs/He-2.png  used on input line 244.
 (pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
- [5 <./Perfs/He-3_1.png (PNG copy)> <./Perfs/H5e-3.png (PNG copy)> <./Perfs/He-
-2.png (PNG copy)>]
-<Perfs/perf_errF.jpg, id=108, 552.56438pt x 325.215pt>
+ [5]
+<Perfs/perf_errF.jpg, id=115, 552.56438pt x 325.215pt>
 File: Perfs/perf_errF.jpg Graphic file (type jpg)
 <use Perfs/perf_errF.jpg>
-Package pdftex.def Info: Perfs/perf_errF.jpg  used on input line 222.
+Package pdftex.def Info: Perfs/perf_errF.jpg  used on input line 255.
 (pdftex.def)             Requested size: 328.82707pt x 193.53261pt.
- [6 <./Perfs/perf_errF.JPG>]
-Overfull \hbox (55.22917pt too wide) detected at line 251
+
+[6 <./Perfs/He-3_1.png (PNG copy)> <./Perfs/H5e-3.png (PNG copy)> <./Perfs/He-2
+.png (PNG copy)> <./Perfs/perf_errF.JPG>] [7]
+Overfull \hbox (55.22917pt too wide) detected at line 284
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--308
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
 
  []
 
-[7]pdfTeX warning (ext4): destination with the same identifier (name{equation.0
+[8]pdfTeX warning (ext4): destination with the same identifier (name{equation.0
 .2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.341 		\begin{equation}
+l.374 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.341 		\begin{equation}
+l.374 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.341 		\begin{equation}
+l.374 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.341 		\begin{equation}
+l.374 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.344 		\begin{equation}
+l.377 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.344 		\begin{equation}
+l.377 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.344 		\begin{equation}
+l.377 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.344 		\begin{equation}
+l.377 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.347 		\begin{equation}
+l.380 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.347 		\begin{equation}
+l.380 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.347 		\begin{equation}
+l.380 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.347 		\begin{equation}
+l.380 		\begin{equation}
                         
-Overfull \hbox (0.24529pt too wide) in paragraph at lines 361--363
+Overfull \hbox (0.24529pt too wide) in paragraph at lines 394--396
 \T1/futs/m/n/10 Pour cela, on gé-nère des er-reurs di-rec-te-ment sur les po-si
 -tions des an-tennes, puis on peut ob-te-nir $\FMS/futm/m/n/10 C$ \T1/futs/m/n/
 10 avec la connais-
@@ -1101,20 +1098,20 @@ Overfull \hbox (0.24529pt too wide) in paragraph at lines 361--363
 
 
 AED: lastpage setting LastPage
-[8] (./r_brouillon.aux)
+[9] (./r_brouillon.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `r_brouillon.out' has not changed.
-(rerunfilecheck)             Checksum: 1055A4209E38E3B02455895F73927A12;1976.
+(rerunfilecheck)             Checksum: 9CE981CCDDFFD0D0AF155D33692811BA;2144.
 runsystem(del r_brouillon.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
  20880 strings out of 478278
- 344563 string characters out of 5850546
+ 344131 string characters out of 5850546
  716046 words of memory out of 5000000
- 38667 multiletter control sequences out of 15000+600000
+ 38665 multiletter control sequences out of 15000+600000
  579740 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,12n,77p,457b,578s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1130,10 +1127,10 @@ exmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts
 /type1/adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/adobe/ut
 opia/putri8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt10
 00.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on r_brouillon.pdf (9 pages, 310852 bytes).
+Output written on r_brouillon.pdf (10 pages, 313356 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
