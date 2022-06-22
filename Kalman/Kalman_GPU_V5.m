@@ -17,7 +17,7 @@ X(:,1) = X_0;
 P(:,:,1) = P_0;
 % figure();
 for k=2:n
-    fprintf('itération : %u \n',k);
+%     fprintf('itération : %u \n',k);
     %%% PREDICTION
     Xp = A*X(:,k-1) + transpose(mean(nQ(:,:,k-1)));
     Pp = A*P(:,:,k-1)*(A.') + nQ(:,:,k);
