@@ -1,4 +1,4 @@
-function [X,e_x] = Kalman_CPU_V3(A,H,X_0,P_0,nY,nR,nQ,Pix,n,C)
+function [X,Ks] = Kalman_CPU_V3(A,H,X_0,P_0,nY,nR,nQ,Pix,n,C)
 %KALMAN_CPU Estime via un filtre de Kalman la sortie X-out depuis X_in
 %   variables:
 %   - H : observation (J^2 x Pix) -> matrice de transformation FFT non
@@ -11,9 +11,9 @@ function [X,e_x] = Kalman_CPU_V3(A,H,X_0,P_0,nY,nR,nQ,Pix,n,C)
 
 X = zeros(Pix,n);
 P = zeros(Pix,Pix,n);
-% Ks = zeros(Pix,size(H,1),n);
+Ks = zeros(Pix,size(H,1),n);
 
-e_x = zeros(n,1);
+e_x = 0;
 
 %%% INITIALISATION
 X(:,1) = X_0;
@@ -32,8 +32,8 @@ for k=2:n
     P(:,:,k) = Pp - K*H*Pp;
 %     subplot(n-1,1,k-1);
 %     imshow(abs(K));colorbar;axis image;colormap("parula");title(mean(K, 'all'))
-%     Ks(:,:,k) = K; % loggin K
-    e_x(k) = fro(K*( (ones(size(C)) - C) .* H )*Xp);
+    Ks(:,:,k) = K; % loggin K
+    e_x = e_x + fro(K*(ones(size(C)) - C)*H*Xp);
 end
-
+fprintf("")
 end

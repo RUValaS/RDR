@@ -1,0 +1,110 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1181.1px" height="1181.1px" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+<desc>Veusz output document</desc>
+<defs>
+<clipPath id="c0">
+<path d="m0,0l1181.1,0l0,1181.1l-1181.1,0l0,-1181.1"/>
+</clipPath>
+<clipPath id="c1">
+<path d="m133.85,15.74l1031.49,0l0,1031.49l-1031.49,0l0,-1031.49"/>
+</clipPath>
+</defs>
+<g stroke-linejoin="bevel" stroke-linecap="square" stroke="#000000" fill-rule="evenodd">
+<g clip-path="url(#c0)">
+<g fill="#ffffff" stroke="none" stroke-width="0.1">
+<path d="m0,0l1181.1,0l0,1181.1l-1181.1,0l0,-1181.1"/>
+</g>
+<g fill="#ffffff" stroke-width="1.38">
+<path d="m133.85,15.74l1031.49,0l0,1031.49l-1031.49,0l0,-1031.49"/>
+</g>
+</g>
+<g clip-path="url(#c1)">
+<g fill="none" stroke="#e41a1c" stroke-linecap="butt" stroke-width="1.38">
+<path d="M1050.52,51.81l0,-4.35M921.94,110.99l0,-21.9M827.18,202.15l0,-33.51M623.39,450.04l0,-50.07M494.81,628.58l0,-64.76M400.06,771.2l0,-50.46M196.26,1047.24l0,-40.38"/>
+</g>
+<g fill="#e41a1c" stroke-linejoin="miter" stroke-width="1.38">
+<g transform="translate(1050.52,49.62)">
+<path d="m8.33,0c0,4.6,-3.73,8.33,-8.33,8.33c-4.6,0,-8.33,-3.73,-8.33,-8.33c0,-4.6,3.73,-8.33,8.33,-8.33c4.6,0,8.33,3.73,8.33,8.33" id="p0"/>
+</g>
+<use xlink:href="#p0" x="921.94" y="99.61"/>
+<use xlink:href="#p0" x="827.18" y="184.37"/>
+<use xlink:href="#p0" x="623.39" y="422.74"/>
+<use xlink:href="#p0" x="494.81" y="592.43"/>
+<use xlink:href="#p0" x="400.06" y="743.67"/>
+<use xlink:href="#p0" x="196.26" y="1025.57"/>
+</g>
+</g>
+<g clip-path="url(#c0)">
+<g fill="none" stroke-linecap="butt" stroke-width="1.38">
+<path d="M133.85,1047.24l0,-1031.49"/>
+<path d="M133.85,1037.65l8.33,0M133.85,1016.42l8.33,0M133.85,998.02l8.33,0M133.85,981.8l8.33,0M133.85,871.81l8.33,0M133.85,815.95l8.33,0M133.85,776.32l8.33,0M133.85,745.59l8.33,0M133.85,720.47l8.33,0M133.85,699.24l8.33,0M133.85,680.84l8.33,0M133.85,664.62l8.33,0M133.85,554.62l8.33,0M133.85,498.77l8.33,0M133.85,459.14l8.33,0M133.85,428.41l8.33,0M133.85,403.29l8.33,0M133.85,382.06l8.33,0M133.85,363.66l8.33,0M133.85,347.44l8.33,0M133.85,237.44l8.33,0M133.85,181.59l8.33,0M133.85,141.96l8.33,0M133.85,111.22l8.33,0M133.85,86.11l8.33,0M133.85,64.88l8.33,0M133.85,46.48l8.33,0M133.85,30.26l8.33,0"/>
+<path d="M133.85,967.29l16.66,0M133.85,650.11l16.66,0M133.85,332.92l16.66,0M133.85,15.74l16.66,0"/>
+</g>
+<g fill="none" stroke-width="0.1">
+<g transform="matrix(0 -1 1 0 36.1 631.29)">
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Lucida Sans" font-size="38.88888888888889">
+<text x="0" y="0" textLength="147.5">Erreur ||</text>
+<text x="147.5" y="0" textLength="16.3">ɛ</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Lucida Sans" font-size="23.333333333333336">
+<text x="163.8" y="4.9" textLength="15.2">K</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Lucida Sans" font-size="38.88888888888889">
+<text x="179" y="0" textLength="20.6">||</text>
+</g>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="59.95" y="980.59" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="98.95" y="963.35" textLength="24.8">−9</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="59.95" y="663.41" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="98.95" y="646.17" textLength="24.8">−8</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="59.95" y="346.22" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="98.95" y="328.98" textLength="24.8">−7</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="59.95" y="35.22" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="98.95" y="17.98" textLength="24.8">−6</text>
+</g>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="1.38">
+<path d="M133.85,1047.24l1031.49,0"/>
+<path d="M133.85,1047.24l0,-8.33M167.67,1047.24l0,-8.33M196.27,1047.24l0,-8.33M221.04,1047.24l0,-8.33M242.89,1047.24l0,-8.33M391.01,1047.24l0,-8.33M466.22,1047.24l0,-8.33M519.59,1047.24l0,-8.33M560.98,1047.24l0,-8.33M594.8,1047.24l0,-8.33M623.39,1047.24l0,-8.33M648.16,1047.24l0,-8.33M670.01,1047.24l0,-8.33M818.13,1047.24l0,-8.33M893.35,1047.24l0,-8.33M946.71,1047.24l0,-8.33M988.1,1047.24l0,-8.33M1021.92,1047.24l0,-8.33M1050.52,1047.24l0,-8.33M1075.29,1047.24l0,-8.33M1097.14,1047.24l0,-8.33"/>
+<path d="M262.43,1047.24l0,-16.66M689.56,1047.24l0,-16.66M1116.68,1047.24l0,-16.66"/>
+</g>
+<g fill="none" stroke-width="0.1">
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Lucida Sans" font-size="38.88888888888889">
+<text x="419.2" y="1147.94" textLength="460.8">Erreur sur la position (%)</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="238.08" y="1092.04" textLength="48.7">0,1</text>
+<text x="679.81" y="1092.04" textLength="19.5">1</text>
+<text x="1097.18" y="1092.04" textLength="39">10</text>
+</g>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="1.38">
+<path d="M1165.35,1047.24l0,-1031.49"/>
+<path d="M1165.35,1037.65l-8.33,0M1165.35,1016.42l-8.33,0M1165.35,998.02l-8.33,0M1165.35,981.8l-8.33,0M1165.35,871.81l-8.33,0M1165.35,815.95l-8.33,0M1165.35,776.32l-8.33,0M1165.35,745.59l-8.33,0M1165.35,720.47l-8.33,0M1165.35,699.24l-8.33,0M1165.35,680.84l-8.33,0M1165.35,664.62l-8.33,0M1165.35,554.62l-8.33,0M1165.35,498.77l-8.33,0M1165.35,459.14l-8.33,0M1165.35,428.41l-8.33,0M1165.35,403.29l-8.33,0M1165.35,382.06l-8.33,0M1165.35,363.66l-8.33,0M1165.35,347.44l-8.33,0M1165.35,237.44l-8.33,0M1165.35,181.59l-8.33,0M1165.35,141.96l-8.33,0M1165.35,111.22l-8.33,0M1165.35,86.11l-8.33,0M1165.35,64.88l-8.33,0M1165.35,46.48l-8.33,0M1165.35,30.26l-8.33,0"/>
+<path d="M1165.35,967.29l-16.66,0M1165.35,650.11l-16.66,0M1165.35,332.92l-16.66,0M1165.35,15.74l-16.66,0"/>
+<path d="M133.85,15.74l1031.49,0"/>
+<path d="M133.85,15.74l0,8.33M167.67,15.74l0,8.33M196.27,15.74l0,8.33M221.04,15.74l0,8.33M242.89,15.74l0,8.33M391.01,15.74l0,8.33M466.22,15.74l0,8.33M519.59,15.74l0,8.33M560.98,15.74l0,8.33M594.8,15.74l0,8.33M623.39,15.74l0,8.33M648.16,15.74l0,8.33M670.01,15.74l0,8.33M818.13,15.74l0,8.33M893.35,15.74l0,8.33M946.71,15.74l0,8.33M988.1,15.74l0,8.33M1021.92,15.74l0,8.33M1050.52,15.74l0,8.33M1075.29,15.74l0,8.33M1097.14,15.74l0,8.33"/>
+<path d="M262.43,15.74l0,16.66M689.56,15.74l0,16.66M1116.68,15.74l0,16.66"/>
+</g>
+</g>
+</g>
+</svg>

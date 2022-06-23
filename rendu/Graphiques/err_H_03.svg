@@ -1,0 +1,148 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1181.1px" height="1181.1px" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+<desc>Veusz output document</desc>
+<defs>
+<clipPath id="c0">
+<path d="m0,0l1181.1,0l0,1181.1l-1181.1,0l0,-1181.1"/>
+</clipPath>
+<clipPath id="c1">
+<path d="m133.85,15.74l1031.49,0l0,1031.49l-1031.49,0l0,-1031.49"/>
+</clipPath>
+</defs>
+<g stroke-linejoin="bevel" stroke-linecap="square" stroke="#000000" fill-rule="evenodd">
+<g clip-path="url(#c0)">
+<g fill="#ffffff" stroke="none" stroke-width="0.1">
+<path d="m0,0l1181.1,0l0,1181.1l-1181.1,0l0,-1181.1"/>
+</g>
+<g fill="#ffffff" stroke-width="1.38">
+<path d="m133.85,15.74l1031.49,0l0,1031.49l-1031.49,0l0,-1031.49"/>
+</g>
+</g>
+<g clip-path="url(#c1)">
+<g fill="none" stroke="#e41a1c" stroke-linecap="butt" stroke-width="1.38">
+<path d="M1148.65,49.34l0,-33.6M1131.48,141.1l0,-55.38M1081.49,243.91l0,-38.35M996.72,339.93l0,-54.09M758.35,557.78l0,-127.14M588.66,709.32l0,-132.44M437.42,817.63l0,-167.61M155.52,978.94l0,-161.51"/>
+<path d="M1147.71,30.65l1.88,0M1129.28,108.34l4.35,0M1070.1,222.28l21.9,0M978.95,308.04l33.51,0M731.06,469.73l50.07,0M552.51,616.75l64.76,0M409.89,694.01l50.46,0M133.85,860.83l40.38,0"/>
+</g>
+<g fill="#e41a1c" stroke-linejoin="miter" stroke-width="1.38">
+<g transform="translate(1148.65,30.65)">
+<path d="m0,10.44l10.44,-10.44l-10.44,-10.44l-10.44,10.44l10.44,10.44" id="p0"/>
+</g>
+<use xlink:href="#p0" x="1131.48" y="108.34"/>
+<use xlink:href="#p0" x="1081.49" y="222.28"/>
+<use xlink:href="#p0" x="996.72" y="308.04"/>
+<use xlink:href="#p0" x="758.35" y="469.73"/>
+<use xlink:href="#p0" x="588.66" y="616.75"/>
+<use xlink:href="#p0" x="437.42" y="694.01"/>
+<use xlink:href="#p0" x="155.52" y="860.83"/>
+</g>
+</g>
+<g clip-path="url(#c0)">
+<g fill="none" stroke-linecap="butt" stroke-width="1.38">
+<path d="M133.85,1047.24l0,-1031.49"/>
+<path d="M133.85,995.92l8.33,0M133.85,965.9l8.33,0M133.85,944.6l8.33,0M133.85,928.07l8.33,0M133.85,914.57l8.33,0M133.85,903.16l8.33,0M133.85,893.27l8.33,0M133.85,884.55l8.33,0M133.85,825.43l8.33,0M133.85,795.41l8.33,0M133.85,774.11l8.33,0M133.85,757.59l8.33,0M133.85,744.09l8.33,0M133.85,732.67l8.33,0M133.85,722.79l8.33,0M133.85,714.07l8.33,0M133.85,654.94l8.33,0M133.85,624.92l8.33,0M133.85,603.62l8.33,0M133.85,587.1l8.33,0M133.85,573.6l8.33,0M133.85,562.19l8.33,0M133.85,552.3l8.33,0M133.85,543.58l8.33,0M133.85,484.46l8.33,0M133.85,454.44l8.33,0M133.85,433.14l8.33,0M133.85,416.61l8.33,0M133.85,403.11l8.33,0M133.85,391.7l8.33,0M133.85,381.81l8.33,0M133.85,373.09l8.33,0M133.85,313.97l8.33,0M133.85,283.95l8.33,0M133.85,262.65l8.33,0M133.85,246.13l8.33,0M133.85,232.63l8.33,0M133.85,221.21l8.33,0M133.85,211.33l8.33,0M133.85,202.61l8.33,0M133.85,143.48l8.33,0M133.85,113.46l8.33,0M133.85,92.16l8.33,0M133.85,75.64l8.33,0M133.85,62.14l8.33,0M133.85,50.73l8.33,0M133.85,40.84l8.33,0M133.85,32.12l8.33,0"/>
+<path d="M133.85,1047.24l16.66,0M133.85,876.75l16.66,0M133.85,706.27l16.66,0M133.85,535.78l16.66,0M133.85,365.29l16.66,0M133.85,194.81l16.66,0M133.85,24.32l16.66,0"/>
+</g>
+<g fill="none" stroke-width="0.1">
+<g transform="matrix(0 -1 1 0 36.1 803.09)">
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Lucida Sans" font-size="38.88888888888889">
+<text x="0" y="0" textLength="491.7">Erreur de reconstruction ||</text>
+<text x="491.7" y="0" textLength="16.3">ɛ</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Lucida Sans" font-size="23.333333333333336">
+<text x="508" y="4.9" textLength="14.6">X</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Lucida Sans" font-size="38.88888888888889">
+<text x="522.6" y="0" textLength="20.6">||</text>
+</g>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="59.95" y="1060.54" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="98.95" y="1043.3" textLength="24.8">−7</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="59.95" y="890.05" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="98.95" y="872.81" textLength="24.8">−6</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="59.95" y="719.57" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="98.95" y="702.33" textLength="24.8">−5</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="59.95" y="549.08" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="98.95" y="531.84" textLength="24.8">−4</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="59.95" y="378.59" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="98.95" y="361.35" textLength="24.8">−3</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="55.55" y="208.11" textLength="68.2">0,01</text>
+<text x="75.05" y="37.62" textLength="48.7">0,1</text>
+</g>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="1.38">
+<path d="M133.85,1047.24l1031.49,0"/>
+<path d="M143.44,1047.24l0,-8.33M164.67,1047.24l0,-8.33M183.07,1047.24l0,-8.33M199.29,1047.24l0,-8.33M309.29,1047.24l0,-8.33M365.14,1047.24l0,-8.33M404.77,1047.24l0,-8.33M435.51,1047.24l0,-8.33M460.62,1047.24l0,-8.33M481.86,1047.24l0,-8.33M500.25,1047.24l0,-8.33M516.47,1047.24l0,-8.33M626.47,1047.24l0,-8.33M682.32,1047.24l0,-8.33M721.95,1047.24l0,-8.33M752.69,1047.24l0,-8.33M777.8,1047.24l0,-8.33M799.04,1047.24l0,-8.33M817.43,1047.24l0,-8.33M833.65,1047.24l0,-8.33M943.65,1047.24l0,-8.33M999.5,1047.24l0,-8.33M1039.13,1047.24l0,-8.33M1069.87,1047.24l0,-8.33M1094.98,1047.24l0,-8.33M1116.22,1047.24l0,-8.33M1134.61,1047.24l0,-8.33M1150.84,1047.24l0,-8.33"/>
+<path d="M213.81,1047.24l0,-16.66M530.99,1047.24l0,-16.66M848.17,1047.24l0,-16.66M1165.35,1047.24l0,-16.66"/>
+</g>
+<g fill="none" stroke-width="0.1">
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Lucida Sans" font-size="38.88888888888889">
+<text x="549.8" y="1147.94" textLength="147.5">Erreur ||</text>
+<text x="697.3" y="1147.94" textLength="16.3">ɛ</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Lucida Sans" font-size="23.333333333333336">
+<text x="713.6" y="1152.84" textLength="15.2">K</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Lucida Sans" font-size="38.88888888888889">
+<text x="728.8" y="1147.94" textLength="20.6">||</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="181.91" y="1092.04" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="220.91" y="1074.8" textLength="24.8">−9</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="499.09" y="1092.04" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="538.09" y="1074.8" textLength="24.8">−8</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="816.27" y="1092.04" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="855.27" y="1074.8" textLength="24.8">−7</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="38.88888888888889">
+<text x="1117.3" y="1092.04" textLength="39">10</text>
+</g>
+<g stroke="none" fill="#000000" fill-opacity="1" font-family="Times New Roman" font-size="23.333333333333336">
+<text x="1156.3" y="1074.8" textLength="24.8">−6</text>
+</g>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="1.38">
+<path d="M1165.35,1047.24l0,-1031.49"/>
+<path d="M1165.35,995.92l-8.33,0M1165.35,965.9l-8.33,0M1165.35,944.6l-8.33,0M1165.35,928.07l-8.33,0M1165.35,914.57l-8.33,0M1165.35,903.16l-8.33,0M1165.35,893.27l-8.33,0M1165.35,884.55l-8.33,0M1165.35,825.43l-8.33,0M1165.35,795.41l-8.33,0M1165.35,774.11l-8.33,0M1165.35,757.59l-8.33,0M1165.35,744.09l-8.33,0M1165.35,732.67l-8.33,0M1165.35,722.79l-8.33,0M1165.35,714.07l-8.33,0M1165.35,654.94l-8.33,0M1165.35,624.92l-8.33,0M1165.35,603.62l-8.33,0M1165.35,587.1l-8.33,0M1165.35,573.6l-8.33,0M1165.35,562.19l-8.33,0M1165.35,552.3l-8.33,0M1165.35,543.58l-8.33,0M1165.35,484.46l-8.33,0M1165.35,454.44l-8.33,0M1165.35,433.14l-8.33,0M1165.35,416.61l-8.33,0M1165.35,403.11l-8.33,0M1165.35,391.7l-8.33,0M1165.35,381.81l-8.33,0M1165.35,373.09l-8.33,0M1165.35,313.97l-8.33,0M1165.35,283.95l-8.33,0M1165.35,262.65l-8.33,0M1165.35,246.13l-8.33,0M1165.35,232.63l-8.33,0M1165.35,221.21l-8.33,0M1165.35,211.33l-8.33,0M1165.35,202.61l-8.33,0M1165.35,143.48l-8.33,0M1165.35,113.46l-8.33,0M1165.35,92.16l-8.33,0M1165.35,75.64l-8.33,0M1165.35,62.14l-8.33,0M1165.35,50.73l-8.33,0M1165.35,40.84l-8.33,0M1165.35,32.12l-8.33,0"/>
+<path d="M1165.35,1047.24l-16.66,0M1165.35,876.75l-16.66,0M1165.35,706.27l-16.66,0M1165.35,535.78l-16.66,0M1165.35,365.29l-16.66,0M1165.35,194.81l-16.66,0M1165.35,24.32l-16.66,0"/>
+<path d="M133.85,15.74l1031.49,0"/>
+<path d="M143.44,15.74l0,8.33M164.67,15.74l0,8.33M183.07,15.74l0,8.33M199.29,15.74l0,8.33M309.29,15.74l0,8.33M365.14,15.74l0,8.33M404.77,15.74l0,8.33M435.51,15.74l0,8.33M460.62,15.74l0,8.33M481.86,15.74l0,8.33M500.25,15.74l0,8.33M516.47,15.74l0,8.33M626.47,15.74l0,8.33M682.32,15.74l0,8.33M721.95,15.74l0,8.33M752.69,15.74l0,8.33M777.8,15.74l0,8.33M799.04,15.74l0,8.33M817.43,15.74l0,8.33M833.65,15.74l0,8.33M943.65,15.74l0,8.33M999.5,15.74l0,8.33M1039.13,15.74l0,8.33M1069.87,15.74l0,8.33M1094.98,15.74l0,8.33M1116.22,15.74l0,8.33M1134.61,15.74l0,8.33M1150.84,15.74l0,8.33"/>
+<path d="M213.81,15.74l0,16.66M530.99,15.74l0,16.66M848.17,15.74l0,16.66M1165.35,15.74l0,16.66"/>
+</g>
+</g>
+</g>
+</svg>

@@ -52,8 +52,7 @@ end
 
 figure();plot(e_x);title("Ev e_x")
 hold on
-plot(Psr);
-hold off
+plot()
 
 %{
 z_err = z+ randn(size(z))*0.01;
