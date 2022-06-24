@@ -10,7 +10,7 @@ c= 3e8;
 f = 1e9;
 lambda = c/f;
 dist = 10*lambda/2.1; % J_b antennes espacées de dist 
-N = 6; % itérations Kalman
+N = 7; % itérations Kalman
 SNR = 10;
 iMEM = 1; % nombre itérations MEM 
 RATIO = 10e14; % ratio erreur Kalman
@@ -48,4 +48,4 @@ Fw = 1.5;
 
 %%% Kalman
 [X,tX] = KalmainV4(vadapted,J,z,I,N,f,c,lambda,Mx,My,iMEM,SNR,A_ev,RATIO,mode);
-dispKalman_t(X,tX,N,Mx,My);
+% dispKalman_t(X,tX,N,Mx,My);

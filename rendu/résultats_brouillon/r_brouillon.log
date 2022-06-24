@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  24 JUN 2022 11:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  24 JUN 2022 15:36
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -941,16 +941,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-(|'inkscape' -V )
-
-Package svg Warning: No version of Inkscape was detected by invoking
-(svg)                `inkscape -V'
-(svg)                so the Inkscape export will fail quite sure as the
-(svg)                command is probably unknown to your OS. You could set
-(svg)                `inkscapeversion=<version>' manually but this is very
-(svg)                unlikely to work on input line 69.
-
 Package hyperref Info: Link coloring ON on input line 69.
+
 (c:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1197,123 +1189,59 @@ Overfull \hbox (0.24529pt too wide) in paragraph at lines 393--395
 10 avec la connais-
  []
 
-Package svg Info: Calling Inkscape on input line 407.
-runsystem(inkscape "Perfs/e_K.svg" -D --export-latex --export-filename="e_K_svg
--tex.pdf")...executed.
+Package svg Info: Last page of `./svg-inkscape/e_K_svg-tex.pdf' is 1 on input l
+ine 407.
+(./svg-inkscape/e_K_svg-tex.pdf_tex
+<./svg-inkscape/e_K_svg-tex.pdf, id=143, page=1, 889.14685pt x 889.14685pt>
+File: ./svg-inkscape/e_K_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/e_K_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/e_K_svg-tex.pdf , page1 used on input l
+ine 56.
+(pdftex.def)             Requested size: 211.3883pt x 211.37808pt.
+)
+Package svg Info: Last page of `./svg-inkscape/e_x_svg-tex.pdf' is 1 on input l
+ine 411.
+ (./svg-inkscape/e_x_svg-tex.pdf_tex
+<./svg-inkscape/e_x_svg-tex.pdf, id=145, page=1, 889.14685pt x 889.14685pt>
+File: ./svg-inkscape/e_x_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/e_x_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/e_x_svg-tex.pdf , page1 used on input l
+ine 56.
+(pdftex.def)             Requested size: 211.3883pt x 211.37808pt.
+)
+[9]
+Package svg Info: Calling Inkscape on input line 420.
+runsystem(inkscape "Perfs/x_fK.svg" -D --export-latex --export-filename="x_fK_s
+vg-tex.pdf")...executed.
 
-runsystem(inkscape "Perfs/e_K.svg" -D --export-latex \relax --without-gui --exp
-ort-pdf="e_K_svg-tex.pdf")...executed.
+runsystem(if not exist "./svg-inkscape/" mkdir "./svg-inkscape/")...executed.
 
+runsystem(move "x_fK_svg-tex.pdf" "./svg-inkscape/x_fK_svg-tex.pdf")...executed
+.
 
-! Package svg Error: Inkscape version not detected.
+runsystem(move "x_fK_svg-tex.pdf_tex" "./svg-inkscape/x_fK_svg-tex.pdf_tex")...
+executed.
 
-See the svg package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.407 ...udesvg[width=.9\linewidth]{Perfs/e_K.svg}
-                                                  
-It was tried to invoke `inkscape'
-for file "Perfs/e_K.svg"
-but no result was produced. Check the log file
-and set `inkscapeversion=<version>' manually.
-
-runsystem(inkscape "Perfs/e_K.svg" -D --export-latex --export-filename="e_K_svg
--tex.pdf")...executed.
-
-
-Package svg Warning: The export with Inkscape failed for file
-(svg)                `Perfs/e_K.svg'
-(svg)                Troubleshooting: Please check in the log file how
-(svg)                the invocation of Inkscape took place and try to
-(svg)                execute it yourself in the terminal on input line 407.
-
-
-! Package svg Error: File `e_K_svg-tex.pdf' is missing.
-
-See the svg package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.407 ...udesvg[width=.9\linewidth]{Perfs/e_K.svg}
-                                                  
-Did you run the export with Inkscape? There's no file
-`./svg-inkscape/e_K_svg-tex.pdf'
-although `Perfs/e_K.svg' was found.
-
-
-! Package svg Error: File `e_K_svg-tex.pdf_tex' is missing.
-
-See the svg package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.407 ...udesvg[width=.9\linewidth]{Perfs/e_K.svg}
-                                                  
-Did you run the export with Inkscape? There's no file
-`./svg-inkscape/e_K_svg-tex.pdf_tex'
-although `Perfs/e_K.svg' was found.
-
-Package svg Info: Calling Inkscape on input line 412.
-runsystem(inkscape "Perfs/e_x.svg" -D --export-latex --export-filename="e_x_svg
--tex.pdf")...executed.
-
-runsystem(inkscape "Perfs/e_x.svg" -D --export-latex \relax --without-gui --exp
-ort-pdf="e_x_svg-tex.pdf")...executed.
-
-
-! Package svg Error: Inkscape version not detected.
-
-See the svg package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.412 ...udesvg[width=.9\linewidth]{Perfs/e_x.svg}
-                                                  
-It was tried to invoke `inkscape'
-for file "Perfs/e_x.svg"
-but no result was produced. Check the log file
-and set `inkscapeversion=<version>' manually.
-
-runsystem(inkscape "Perfs/e_x.svg" -D --export-latex --export-filename="e_x_svg
--tex.pdf")...executed.
-
-
-Package svg Warning: The export with Inkscape failed for file
-(svg)                `Perfs/e_x.svg'
-(svg)                Troubleshooting: Please check in the log file how
-(svg)                the invocation of Inkscape took place and try to
-(svg)                execute it yourself in the terminal on input line 412.
-
-
-! Package svg Error: File `e_x_svg-tex.pdf' is missing.
-
-See the svg package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.412 ...udesvg[width=.9\linewidth]{Perfs/e_x.svg}
-                                                  
-Did you run the export with Inkscape? There's no file
-`./svg-inkscape/e_x_svg-tex.pdf'
-although `Perfs/e_x.svg' was found.
-
-
-! Package svg Error: File `e_x_svg-tex.pdf_tex' is missing.
-
-See the svg package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.412 ...udesvg[width=.9\linewidth]{Perfs/e_x.svg}
-                                                  
-Did you run the export with Inkscape? There's no file
-`./svg-inkscape/e_x_svg-tex.pdf_tex'
-although `Perfs/e_x.svg' was found.
-
-
+Package svg Info: Last page of `./svg-inkscape/x_fK_svg-tex.pdf' is 1 on input 
+line 420.
+ (./svg-inkscape/x_fK_svg-tex.pdf_tex
+<./svg-inkscape/x_fK_svg-tex.pdf, id=159, page=1, 889.14685pt x 889.14685pt>
+File: ./svg-inkscape/x_fK_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/x_fK_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/x_fK_svg-tex.pdf , page1 used on input 
+line 56.
+(pdftex.def)             Requested size: 328.82707pt x 328.82994pt.
+) 
 AED: lastpage setting LastPage
-[9] (./r_brouillon.aux)
+[10 <./svg-inkscape/e_K_svg-tex.pdf> <./svg-inkscape/e_x_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/e_x_svg-tex.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+> <./svg-inkscape/x_fK_svg-tex.pdf
+
+pdfTeX warning: pdflatex.exe (file ./svg-inkscape/x_fK_svg-tex.pdf): PDF inclus
+ion: multiple pdfs with page group included in a single page
+>] (./r_brouillon.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1323,13 +1251,13 @@ runsystem(del r_brouillon.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 22918 strings out of 478278
- 391178 string characters out of 5850546
- 781695 words of memory out of 5000000
- 40616 multiletter control sequences out of 15000+600000
+ 22945 strings out of 478278
+ 392149 string characters out of 5850546
+ 781699 words of memory out of 5000000
+ 40636 multiletter control sequences out of 15000+600000
  579740 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,12n,92p,457b,578s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,12n,92p,457b,694s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
 ive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fon
 ts/type1/public/fourier/fourier-bb.pfb><c:/texlive/2021/texmf-dist/fonts/type1/
@@ -1342,10 +1270,10 @@ exmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts
 /type1/adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/adobe/ut
 opia/putri8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt10
 00.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on r_brouillon.pdf (10 pages, 313915 bytes).
+Output written on r_brouillon.pdf (11 pages, 377091 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 264 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

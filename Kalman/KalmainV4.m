@@ -47,7 +47,7 @@ for k=1:N
 %     Psr(k) = fro(K_err(:,:,k)-K(:,:,k));
 end
 % figure();plot(Psr);title('PSNR = f(it)')
-% fprintf('||e_K|| = %e \n',mean(Psr(4:end)));
+fprintf('||e_X|| = %e ---- ||e_X||th = %e \n',mean(Psr(4:end)),mean(e_x(4:end)));
 
 
 figure();plot(e_x);title("Ev e_x")

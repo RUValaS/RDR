@@ -1,5 +1,5 @@
 # Veusz saved document (version 3.4)
-# Saved at 2022-06-23T15:31:18.509880
+# Saved at 2022-06-24T14:30:11.067286
 
 SetCompatLevel(1)
 AddImportPath('C:\\Users\\Gabriel\\Documents\\GitHub\\RDR\\rendu\\Graphiques')
@@ -112,9 +112,11 @@ To('..')
 Add('xy', name='xy1', autoadd=False)
 To('xy1')
 Set('marker', 'diamond')
+Set('markerSize', '1.5pt')
 Set('xData', 'moy_K')
 Set('yData', 'moy_e')
 Set('Color/points', [])
+Set('errorStyle', 'barends')
 Set('PlotLine/hide', True)
 Set('MarkerFill/style', 'solid')
 Set('ErrorBarLine/hide', False)
