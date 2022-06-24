@@ -5,6 +5,7 @@
 \usepackage[french]{babel}
 \usepackage[margin=1in]{geometry}
 \usepackage[T1]{fontenc}
+\usepackage{svg}
 
 \usepackage[colorlinks=true,linkcolor=teal]{hyperref}
 \usepackage{amssymb,amsmath,minted,float,graphicx,textcomp,systeme,listings,physics,mathtools,ifthen,esvect,hyperref,fancyhdr,lastpage,marginnote,chngcntr,fancyvrb,subcaption}
@@ -396,6 +397,24 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	\end{equation}
 
 	Cette division est possible car tous les termes sont de norme 1 ou proche de 1 dans le cas de petites variations.
+	
+	On effectue 6 réalisations de Kalman sur 8 instants temporels en introduisant une erreur sur la position des antennes. On effectue cette opération pour plusieurs erreurs et on peut observer l'erreur $\fnorm{\varepsilon_K}$ et $\fnorm{\varepsilon_{\widehat{x}}}$ :
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includesvg[width=.9\linewidth]{Perfs/e_K.svg}
+			\caption{}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includesvg[width=.9\linewidth]{Perfs/e_x.svg}
+			\caption{}
+		\end{subfigure}
+		\caption{}
+	\end{figure}
+	
 \end{document}
 
 

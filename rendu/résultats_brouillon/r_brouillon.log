@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  21 JUN 2022 14:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  24 JUN 2022 11:41
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -215,11 +215,26 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (c:/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
-(c:/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+(c:/texlive/2021/texmf-dist/tex/latex/svg/svg.sty
+Package: svg 2020/11/26 v2.02k (include SVG pictures)
 
-(c:/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+(c:/texlive/2021/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2021/11/13 v3.35 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(c:/texlive/2021/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2021/11/13 v3.35 KOMA-Script package (file load hooks)
+
+(c:/texlive/2021/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2021/11/13 v3.35 KOMA-Script package (using LaTeX hooks)
+
+
+(c:/texlive/2021/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2021/11/13 v3.35 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 368.
 )
 (c:/texlive/2021/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
@@ -228,10 +243,146 @@ Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 (c:/texlive/2021/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
+(c:/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
+(c:/texlive/2021/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+(c:/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(c:/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(c:/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen156
+\Gin@req@width=\dimen157
+)
+(c:/texlive/2021/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+(c:/texlive/2021/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(c:/texlive/2021/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+
+(c:/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+(c:/texlive/2021/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+))
+\c@svg@param@lastpage=\count271
+\svg@box=\box50
+\c@svg@param@currpage=\count272
+)
+(c:/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(c:/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(c:/texlive/2021/texmf-dist/tex/latex/transparent/transparent.sty
+Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
+
+
+(c:/texlive/2021/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+))
+(c:/texlive/2021/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(c:/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks21
+\pgfutil@tempdima=\dimen158
+\pgfutil@tempdimb=\dimen159
+
+(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)
+) (c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box51
+)
+(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(c:/texlive/2021/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+(c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+
+(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks22
+\pgfkeys@temptoks=\toks23
+
+(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks24
+))
+\pgf@x=\dimen160
+\pgf@y=\dimen161
+\pgf@xa=\dimen162
+\pgf@ya=\dimen163
+\pgf@xb=\dimen164
+\pgf@yb=\dimen165
+\pgf@xc=\dimen166
+\pgf@yc=\dimen167
+\pgf@xd=\dimen168
+\pgf@yd=\dimen169
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count273
+\c@pgf@countb=\count274
+\c@pgf@countc=\count275
+\c@pgf@countd=\count276
+\t@pgf@toka=\toks25
+\t@pgf@tokb=\toks26
+\t@pgf@tokc=\toks27
+\pgf@sys@id@count=\count277
+ (c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count278
+\pgfsyssoftpath@bigbuffer@items=\count279
+)
+(c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (c:/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+
 (c:/texlive/2021/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
@@ -247,15 +398,12 @@ Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 (c:/texlive/2021/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(c:/texlive/2021/texmf-dist/tex/latex/auxhook/auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
 (c:/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen156
-\Hy@linkcounter=\count271
-\Hy@pagecounter=\count272
+\@linkdim=\dimen170
+\Hy@linkcounter=\count280
+\Hy@pagecounter=\count281
 
 (c:/texlive/2021/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
@@ -265,10 +413,7 @@ Now handling font encoding PD1 ...
 (c:/texlive/2021/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(c:/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-\Hy@SavedSpaceFactor=\count273
+\Hy@SavedSpaceFactor=\count282
 
 (c:/texlive/2021/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
@@ -283,14 +428,14 @@ Package hyperref Info: Plain pages OFF on input line 4152.
 Package hyperref Info: Backreferencing OFF on input line 4157.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4390.
-\c@Hy@tempcnt=\count274
+\c@Hy@tempcnt=\count283
 
 (c:/texlive/2021/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4749.
-\XeTeXLinkMargin=\dimen157
+\XeTeXLinkMargin=\dimen171
 
 (c:/texlive/2021/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -299,9 +444,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count275
-\Field@Width=\dimen158
-\Fld@charsize=\dimen159
+\Fld@menulength=\count284
+\Field@Width=\dimen172
+\Fld@charsize=\dimen173
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -316,9 +461,9 @@ LaTeX Info: Redefining \pageref on input line 6101.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count276
-\c@Item=\count277
-\c@Hfootnote=\count278
+\Hy@abspage=\count285
+\c@Item=\count286
+\c@Hfootnote=\count287
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -330,8 +475,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count279
-\c@bookmark@seq@number=\count280
+\Fld@listcount=\count288
+\c@bookmark@seq@number=\count289
 
 (c:/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -349,7 +494,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks21
+\@emptytoks=\toks28
 \symAMSa=\mathgroup6
 \symAMSb=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
@@ -393,51 +538,51 @@ Package: amstext 2021/08/26 v2.01 AMS text
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks22
-\ex@=\dimen160
+\@emptytoks=\toks29
+\ex@=\dimen174
 ))
 (c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen161
+\pmbraise@=\dimen175
 )
 (c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2021/08/26 v2.02 operator names
 )
-\inf@bad=\count281
+\inf@bad=\count290
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count282
-\leftroot@=\count283
+\uproot@=\count291
+\leftroot@=\count292
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count284
-\DOTSCASE@=\count285
+\classnum@=\count293
+\DOTSCASE@=\count294
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box50
-\strutbox@=\box51
-\big@size=\dimen162
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+\big@size=\dimen176
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count286
-\c@MaxMatrixCols=\count287
+\macc@depth=\count295
+\c@MaxMatrixCols=\count296
 \dotsspace@=\muskip17
-\c@parentequation=\count288
-\dspbrk@lvl=\count289
-\tag@help=\toks23
-\row@=\count290
-\column@=\count291
-\maxfields@=\count292
-\andhelp@=\toks24
-\eqnshift@=\dimen163
-\alignsep@=\dimen164
-\tagshift@=\dimen165
-\tagwidth@=\dimen166
-\totwidth@=\dimen167
-\lineht@=\dimen168
-\@envbody=\toks25
+\c@parentequation=\count297
+\dspbrk@lvl=\count298
+\tag@help=\toks30
+\row@=\count299
+\column@=\count300
+\maxfields@=\count301
+\andhelp@=\toks31
+\eqnshift@=\dimen177
+\alignsep@=\dimen178
+\tagshift@=\dimen179
+\tagwidth@=\dimen180
+\totwidth@=\dimen181
+\lineht@=\dimen182
+\@envbody=\toks32
 \multlinegap=\skip51
 \multlinetaggap=\skip52
-\mathdisplay@stack=\toks26
+\mathdisplay@stack=\toks33
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
 )
@@ -452,16 +597,16 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (c:/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count293
+\etb@tempcnta=\count302
 )
 (c:/texlive/2021/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
-\FV@CodeLineNo=\count294
-\FV@InFile=\read3
-\FV@TabBox=\box52
-\c@FancyVerbLine=\count295
-\FV@StepNumber=\count296
-\FV@OutFile=\write3
+\FV@CodeLineNo=\count303
+\FV@InFile=\read4
+\FV@TabBox=\box54
+\c@FancyVerbLine=\count304
+\FV@StepNumber=\count305
+\FV@OutFile=\write4
 )
 (c:/texlive/2021/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
@@ -469,153 +614,120 @@ tim
 )
 (c:/texlive/2021/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count297
-\output=\toks27
-\linenoprevgraf=\count298
-\linenumbersep=\dimen169
-\linenumberwidth=\dimen170
-\c@linenumber=\count299
-\c@pagewiselinenumber=\count300
-\c@LN@truepage=\count301
-\c@internallinenumber=\count302
-\c@internallinenumbers=\count303
-\quotelinenumbersep=\dimen171
-\bframerule=\dimen172
-\bframesep=\dimen173
-\bframebox=\box53
+\linenopenalty=\count306
+\output=\toks34
+\linenoprevgraf=\count307
+\linenumbersep=\dimen183
+\linenumberwidth=\dimen184
+\c@linenumber=\count308
+\c@pagewiselinenumber=\count309
+\c@LN@truepage=\count310
+\c@internallinenumber=\count311
+\c@internallinenumbers=\count312
+\quotelinenumbersep=\dimen185
+\bframerule=\dimen186
+\bframesep=\dimen187
+\bframebox=\box55
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count304
-\c@FV@TrueTabCounter=\count305
-\FV@TabBox@Group=\box54
+\c@FV@TrueTabGroupLevel=\count313
+\c@FV@TrueTabCounter=\count314
+\FV@TabBox@Group=\box56
 \FV@TmpLength=\skip53
-\c@FV@HighlightLinesStart=\count306
-\c@FV@HighlightLinesStop=\count307
-\FV@LoopCount=\count308
-\FV@NCharsBox=\box55
-\FV@BreakIndent=\dimen174
-\FV@BreakIndentNChars=\count309
-\FV@BreakSymbolSepLeft=\dimen175
-\FV@BreakSymbolSepLeftNChars=\count310
-\FV@BreakSymbolSepRight=\dimen176
-\FV@BreakSymbolSepRightNChars=\count311
-\FV@BreakSymbolIndentLeft=\dimen177
-\FV@BreakSymbolIndentLeftNChars=\count312
-\FV@BreakSymbolIndentRight=\dimen178
-\FV@BreakSymbolIndentRightNChars=\count313
-\c@FancyVerbLineBreakLast=\count314
-\FV@LineBox=\box56
-\FV@LineIndentBox=\box57
-\FV@LineWidth=\dimen179
+\c@FV@HighlightLinesStart=\count315
+\c@FV@HighlightLinesStop=\count316
+\FV@LoopCount=\count317
+\FV@NCharsBox=\box57
+\FV@BreakIndent=\dimen188
+\FV@BreakIndentNChars=\count318
+\FV@BreakSymbolSepLeft=\dimen189
+\FV@BreakSymbolSepLeftNChars=\count319
+\FV@BreakSymbolSepRight=\dimen190
+\FV@BreakSymbolSepRightNChars=\count320
+\FV@BreakSymbolIndentLeft=\dimen191
+\FV@BreakSymbolIndentLeftNChars=\count321
+\FV@BreakSymbolIndentRight=\dimen192
+\FV@BreakSymbolIndentRightNChars=\count322
+\c@FancyVerbLineBreakLast=\count323
+\FV@LineBox=\box58
+\FV@LineIndentBox=\box59
+\FV@LineWidth=\dimen193
 )
 (c:/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count315
-\calc@Bcount=\count316
-\calc@Adimen=\dimen180
-\calc@Bdimen=\dimen181
+\calc@Acount=\count324
+\calc@Bcount=\count325
+\calc@Adimen=\dimen194
+\calc@Bdimen=\dimen195
 \calc@Askip=\skip54
 \calc@Bskip=\skip55
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count317
+\calc@Ccount=\count326
 \calc@Cskip=\skip56
 )
-(c:/texlive/2021/texmf-dist/tex/latex/tools/shellesc.sty
-Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
-Package shellesc Info: Unrestricted shell escape enabled on input line 75.
-)
-(c:/texlive/2021/texmf-dist/tex/latex/ifplatform/ifplatform.sty
-Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
-
-(c:/texlive/2021/texmf-dist/tex/generic/catchfile/catchfile.sty
-Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
-)
-(c:/texlive/2021/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-))
 (c:/texlive/2021/texmf-dist/tex/generic/xstring/xstring.sty
 (c:/texlive/2021/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count318
-\decimalpart=\count319
+\integerpart=\count327
+\decimalpart=\count328
 )
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 )
 (c:/texlive/2021/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip57
-\fb@frw=\dimen182
-\fb@frh=\dimen183
-\FrameRule=\dimen184
-\FrameSep=\dimen185
+\fb@frw=\dimen196
+\fb@frh=\dimen197
+\FrameRule=\dimen198
+\FrameSep=\dimen199
 )
 (c:/texlive/2021/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count320
-\float@exts=\toks28
-\float@box=\box58
-\@float@everytoks=\toks29
-\@floatcapt=\box59
+\c@float@type=\count329
+\float@exts=\toks35
+\float@box=\box60
+\@float@everytoks=\toks36
+\@floatcapt=\box61
 )
-\minted@appexistsfile=\read4
-\minted@bgbox=\box60
-\minted@code=\write4
-\c@minted@FancyVerbLineTemp=\count321
-\c@minted@pygmentizecounter=\count322
-\@float@every@listing=\toks30
-\c@listing=\count323
+\minted@appexistsfile=\read5
+\minted@bgbox=\box62
+\minted@code=\write5
+\c@minted@FancyVerbLineTemp=\count330
+\c@minted@pygmentizecounter=\count331
+\@float@every@listing=\toks37
+\c@listing=\count332
 )
 runsystem(if not exist _minted-r_brouillon mkdir _minted-r_brouillon)...execute
 d.
 
 
-(c:/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
-
-(c:/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
-
-(c:/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-)
-(c:/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 107.
-
-(c:/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen186
-\Gin@req@width=\dimen187
-)
 (c:/texlive/2021/texmf-dist/tex/generic/systeme/systeme.sty
 (c:/texlive/2021/texmf-dist/tex/generic/systeme/systeme.tex
-\SYS_systemecode=\toks31
-\SYS_systempreamble=\toks32
-\SYSeqnum=\count324
+\SYS_systemecode=\toks38
+\SYS_systempreamble=\toks39
+\SYSeqnum=\count333
 )
 Package: systeme 2020/05/03 v0.34 Mise en forme de systemes d'equations (CT)
 )
 (c:/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count325
-\lst@gtempboxa=\box61
-\lst@token=\toks33
-\lst@length=\count326
-\lst@currlwidth=\dimen188
-\lst@column=\count327
-\lst@pos=\count328
-\lst@lostspace=\dimen189
-\lst@width=\dimen190
-\lst@newlines=\count329
-\lst@lineno=\count330
-\lst@maxwidth=\dimen191
+\lst@mode=\count334
+\lst@gtempboxa=\box63
+\lst@token=\toks40
+\lst@length=\count335
+\lst@currlwidth=\dimen256
+\lst@column=\count336
+\lst@pos=\count337
+\lst@lostspace=\dimen257
+\lst@width=\dimen258
+\lst@newlines=\count338
+\lst@lineno=\count339
+\lst@maxwidth=\dimen259
 
 (c:/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count331
-\lst@skipnumbers=\count332
-\lst@framebox=\box62
+\c@lstnumber=\count340
+\lst@skipnumbers=\count341
+\lst@framebox=\box64
 )
 (c:/texlive/2021/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
@@ -631,8 +743,8 @@ Package: expl3 2022-02-21 L3 programming layer (loader)
 
 (c:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count333
-\l__pdf_internal_box=\box63
+\l__color_backend_stack_int=\count342
+\l__pdf_internal_box=\box65
 ))
 Package: xparse 2022-01-12 L3 Experimental document command parser
 ))
@@ -642,17 +754,17 @@ Package: mathtools 2022/02/07 v1.28a mathematical typesetting tools
 (c:/texlive/2021/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count334
-\l_MT_multwidth_dim=\dimen192
+\g_MT_multlinerow_int=\count343
+\l_MT_multwidth_dim=\dimen260
 \origjot=\skip58
-\l_MT_shortvdotswithinadjustabove_dim=\dimen193
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen194
-\l_MT_above_intertext_sep=\dimen195
-\l_MT_below_intertext_sep=\dimen196
-\l_MT_above_shortintertext_sep=\dimen197
-\l_MT_below_shortintertext_sep=\dimen198
-\xmathstrut@box=\box64
-\xmathstrut@dim=\dimen199
+\l_MT_shortvdotswithinadjustabove_dim=\dimen261
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen262
+\l_MT_above_intertext_sep=\dimen263
+\l_MT_below_intertext_sep=\dimen264
+\l_MT_above_shortintertext_sep=\dimen265
+\l_MT_below_shortintertext_sep=\dimen266
+\xmathstrut@box=\box66
+\xmathstrut@dim=\dimen267
 )
 (c:/texlive/2021/texmf-dist/tex/latex/esvect/esvect.sty
 Package: esvect 
@@ -676,7 +788,7 @@ Package: lastpage 2021/09/03 v1.2n Refers to last page's name (HMM; JPG)
 )
 (c:/texlive/2021/texmf-dist/tex/latex/marginnote/marginnote.sty
 Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
-\c@mn@abspage=\count335
+\c@mn@abspage=\count344
 )
 (c:/texlive/2021/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
@@ -691,25 +803,25 @@ Package: caption 2022/02/20 v3.6 Customizing captions (AR)
 
 (c:/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2022/01/07 v2.3 caption3 kernel (AR)
-\caption@tempdima=\dimen256
-\captionmargin=\dimen257
-\caption@leftmargin=\dimen258
-\caption@rightmargin=\dimen259
-\caption@width=\dimen260
-\caption@indent=\dimen261
-\caption@parindent=\dimen262
-\caption@hangindent=\dimen263
+\caption@tempdima=\dimen268
+\captionmargin=\dimen269
+\caption@leftmargin=\dimen270
+\caption@rightmargin=\dimen271
+\caption@width=\dimen272
+\caption@indent=\dimen273
+\caption@parindent=\dimen274
+\caption@hangindent=\dimen275
 Package caption Info: Standard document class detected.
 Package caption Info: french babel package is loaded.
 )
-\c@caption@flags=\count336
-\c@continuedfloat=\count337
+\c@caption@flags=\count345
+\c@continuedfloat=\count346
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
-\c@subfigure=\count338
-\c@subtable=\count339
+\c@subfigure=\count347
+\c@subtable=\count348
 )
 (c:/texlive/2021/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
@@ -717,80 +829,61 @@ Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
 )
-\c@question=\count340
-\c@subq=\count341
-
-(c:/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
-
-(c:/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 227.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
-Package xcolor Info: Model `RGB' extended on input line 1368.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
-)
+\c@question=\count349
+\c@subq=\count350
 runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > r_
 brouillon.aex <nul: /p x=^%~$PATH:i>> r_brouillon.aex)...executed.
 
 runsystem(del r_brouillon.aex)...executed.
 
-
-(./r_brouillon.aux)
+ (./r_brouillon.aux)
 \openout1 = `r_brouillon.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 69.
 LaTeX Font Info:    Trying to load font information for FML+futm on input line 
-68.
+69.
  (c:/texlive/2021/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 69.
 LaTeX Font Info:    Trying to load font information for FMS+futm on input line 
-68.
+69.
 
 (c:/texlive/2021/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 69.
 LaTeX Font Info:    Trying to load font information for FMX+futm on input line 
-68.
+69.
 
 (c:/texlive/2021/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 68.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 68.
-LaTeX Info: Redefining \degres on input line 68.
-LaTeX Info: Redefining \up on input line 68.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 69.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 69.
+LaTeX Info: Redefining \degres on input line 69.
+LaTeX Info: Redefining \up on input line 69.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -826,40 +919,19 @@ LaTeX Info: Redefining \up on input line 68.
 * \@reversemargintrue
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 68.
-(c:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-
-(c:/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(c:/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-)
-\c@section@level=\count342
-)
-LaTeX Info: Redefining \ref on input line 68.
-LaTeX Info: Redefining \pageref on input line 68.
-LaTeX Info: Redefining \nameref on input line 68.
-
-(./r_brouillon.out) (./r_brouillon.out)
-\@outlinefile=\write5
-\openout5 = `r_brouillon.out'.
-
-
 (c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count343
-\scratchdimen=\dimen264
-\scratchbox=\box65
-\nofMPsegments=\count344
-\nofMParguments=\count345
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count346
-\MPscratchDim=\dimen265
-\MPnumerator=\count347
-\makeMPintoPDFobject=\count348
-\everyMPtoPDFconversion=\toks35
+\scratchcounter=\count351
+\scratchdimen=\dimen276
+\scratchbox=\box67
+\nofMPsegments=\count352
+\nofMParguments=\count353
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count354
+\MPscratchDim=\dimen277
+\MPnumerator=\count355
+\makeMPintoPDFobject=\count356
+\everyMPtoPDFconversion=\toks42
 ) (c:/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -869,55 +941,84 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count349
+(|'inkscape' -V )
+
+Package svg Warning: No version of Inkscape was detected by invoking
+(svg)                `inkscape -V'
+(svg)                so the Inkscape export will fail quite sure as the
+(svg)                command is probably unknown to your OS. You could set
+(svg)                `inkscapeversion=<version>' manually but this is very
+(svg)                unlikely to work on input line 69.
+
+Package hyperref Info: Link coloring ON on input line 69.
+(c:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(c:/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(c:/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count357
+)
+LaTeX Info: Redefining \ref on input line 69.
+LaTeX Info: Redefining \pageref on input line 69.
+LaTeX Info: Redefining \nameref on input line 69.
+
+(./r_brouillon.out) (./r_brouillon.out)
+\@outlinefile=\write6
+\openout6 = `r_brouillon.out'.
+
+\c@lstlisting=\count358
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 68.
+(lastpage)             ! on input line 69.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<logo.PNG, id=48, 253.44687pt x 96.86188pt>
+<logo.PNG, id=51, 253.44687pt x 96.86188pt>
 File: logo.PNG Graphic file (type png)
 <use logo.PNG>
-Package pdftex.def Info: logo.PNG  used on input line 72.
+Package pdftex.def Info: logo.PNG  used on input line 73.
 (pdftex.def)             Requested size: 328.82707pt x 125.67357pt.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 76.
+(Font)              scaled to size 11.03998pt on input line 77.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 76.
+(Font)              scaled to size 8.27998pt on input line 77.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 76.
+(Font)              scaled to size 6.43999pt on input line 77.
 LaTeX Font Info:    Trying to load font information for FML+futmi on input line
- 76.
+ 77.
 
 (c:/texlive/2021/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 76.
+(Font)              scaled to size 11.03998pt on input line 77.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 76.
+(Font)              scaled to size 8.27998pt on input line 77.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 76.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 76.
+(Font)              scaled to size 6.43999pt on input line 77.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
 
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 76.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
 
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+esvect on input line 
-76.
+77.
 
 (c:/texlive/2021/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-6.
+7.
 
 (c:/texlive/2021/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
 
@@ -936,55 +1037,55 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 5.51999pt on input line 3.
 )
-\tf@toc=\write6
-\openout6 = `r_brouillon.toc'.
+\tf@toc=\write7
+\openout7 = `r_brouillon.toc'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.80 	\newpage
+l.81 	\newpage
                [1]
 Package marginnote Info: Using workaround for absolute page number on input lin
-e 80.
+e 81.
  [2]
-<Perfs/Illustration.JPG, id=88, 1230.84843pt x 607.51968pt>
+<Perfs/Illustration.JPG, id=91, 1230.84843pt x 607.51968pt>
 File: Perfs/Illustration.JPG Graphic file (type jpg)
 <use Perfs/Illustration.JPG>
-Package pdftex.def Info: Perfs/Illustration.JPG  used on input line 127.
+Package pdftex.def Info: Perfs/Illustration.JPG  used on input line 126.
 (pdftex.def)             Requested size: 422.77664pt x 208.66751pt.
 LaTeX Font Info:    Trying to load font information for TS1+futs on input line 
-131.
+130.
  (c:/texlive/2021/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
-<Perfs/conv02.png, id=89, 421.575pt x 316.18124pt>
+<Perfs/conv02.png, id=92, 421.575pt x 316.18124pt>
 File: Perfs/conv02.png Graphic file (type png)
 <use Perfs/conv02.png>
-Package pdftex.def Info: Perfs/conv02.png  used on input line 135.
+Package pdftex.def Info: Perfs/conv02.png  used on input line 134.
 (pdftex.def)             Requested size: 422.77664pt x 317.08746pt.
  [3 <./Perfs/illustration.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 [4 <./Perfs/conv02.png (PNG copy)>]
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 188.
+(Font)              using `U/stmry/m/n' instead on input line 187.
 
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 188.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 187.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7.6> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 188.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 187.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <6> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 188.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 187.
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
 
-\openout3 = `r_brouillon.pyg'.
+\openout4 = `r_brouillon.pyg'.
 
 (./_minted-r_brouillon/default.pygstyle)
 (./_minted-r_brouillon/4BC3E19E781C2D4142DB0D92F36533FB59D59A7339A10BE6CC6D0200
@@ -994,38 +1095,38 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
  (c:/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ))
-<Perfs/He-3_1.png, id=104, 421.575pt x 316.18124pt>
+<Perfs/He-3_1.png, id=107, 421.575pt x 316.18124pt>
 File: Perfs/He-3_1.png Graphic file (type png)
 <use Perfs/He-3_1.png>
-Package pdftex.def Info: Perfs/He-3_1.png  used on input line 232.
+Package pdftex.def Info: Perfs/He-3_1.png  used on input line 231.
 (pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <9> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 233.
-<Perfs/H5e-3.png, id=105, 421.575pt x 316.18124pt>
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 232.
+<Perfs/H5e-3.png, id=108, 421.575pt x 316.18124pt>
 File: Perfs/H5e-3.png Graphic file (type png)
 <use Perfs/H5e-3.png>
-Package pdftex.def Info: Perfs/H5e-3.png  used on input line 238.
+Package pdftex.def Info: Perfs/H5e-3.png  used on input line 237.
 (pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
-<Perfs/He-2.png, id=106, 421.575pt x 316.18124pt>
+<Perfs/He-2.png, id=109, 421.575pt x 316.18124pt>
 File: Perfs/He-2.png Graphic file (type png)
 <use Perfs/He-2.png>
-Package pdftex.def Info: Perfs/He-2.png  used on input line 244.
+Package pdftex.def Info: Perfs/He-2.png  used on input line 243.
 (pdftex.def)             Requested size: 211.3883pt x 158.54373pt.
  [5]
-<Perfs/perf_errF.jpg, id=115, 552.56438pt x 325.215pt>
+<Perfs/perf_errF.jpg, id=118, 552.56438pt x 325.215pt>
 File: Perfs/perf_errF.jpg Graphic file (type jpg)
 <use Perfs/perf_errF.jpg>
-Package pdftex.def Info: Perfs/perf_errF.jpg  used on input line 255.
+Package pdftex.def Info: Perfs/perf_errF.jpg  used on input line 254.
 (pdftex.def)             Requested size: 328.82707pt x 193.53261pt.
 
 [6 <./Perfs/He-3_1.png (PNG copy)> <./Perfs/H5e-3.png (PNG copy)> <./Perfs/He-2
 .png (PNG copy)> <./Perfs/perf_errF.JPG>] [7]
-Overfull \hbox (55.22917pt too wide) detected at line 284
+Overfull \hbox (55.22917pt too wide) detected at line 283
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
 
  []
 
@@ -1033,68 +1134,182 @@ Underfull \hbox (badness 10000) in paragraph at lines 340--341
 .2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.374 		\begin{equation}
+l.373 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.374 		\begin{equation}
+l.373 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.374 		\begin{equation}
+l.373 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.374 		\begin{equation}
+l.373 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.377 		\begin{equation}
+l.376 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.377 		\begin{equation}
+l.376 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.377 		\begin{equation}
+l.376 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.377 		\begin{equation}
+l.376 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.380 		\begin{equation}
+l.379 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.380 		\begin{equation}
+l.379 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.380 		\begin{equation}
+l.379 		\begin{equation}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{equation.0.2.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.380 		\begin{equation}
+l.379 		\begin{equation}
                         
-Overfull \hbox (0.24529pt too wide) in paragraph at lines 394--396
+Overfull \hbox (0.24529pt too wide) in paragraph at lines 393--395
 \T1/futs/m/n/10 Pour cela, on gé-nère des er-reurs di-rec-te-ment sur les po-si
 -tions des an-tennes, puis on peut ob-te-nir $\FMS/futm/m/n/10 C$ \T1/futs/m/n/
 10 avec la connais-
  []
+
+Package svg Info: Calling Inkscape on input line 407.
+runsystem(inkscape "Perfs/e_K.svg" -D --export-latex --export-filename="e_K_svg
+-tex.pdf")...executed.
+
+runsystem(inkscape "Perfs/e_K.svg" -D --export-latex \relax --without-gui --exp
+ort-pdf="e_K_svg-tex.pdf")...executed.
+
+
+! Package svg Error: Inkscape version not detected.
+
+See the svg package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.407 ...udesvg[width=.9\linewidth]{Perfs/e_K.svg}
+                                                  
+It was tried to invoke `inkscape'
+for file "Perfs/e_K.svg"
+but no result was produced. Check the log file
+and set `inkscapeversion=<version>' manually.
+
+runsystem(inkscape "Perfs/e_K.svg" -D --export-latex --export-filename="e_K_svg
+-tex.pdf")...executed.
+
+
+Package svg Warning: The export with Inkscape failed for file
+(svg)                `Perfs/e_K.svg'
+(svg)                Troubleshooting: Please check in the log file how
+(svg)                the invocation of Inkscape took place and try to
+(svg)                execute it yourself in the terminal on input line 407.
+
+
+! Package svg Error: File `e_K_svg-tex.pdf' is missing.
+
+See the svg package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.407 ...udesvg[width=.9\linewidth]{Perfs/e_K.svg}
+                                                  
+Did you run the export with Inkscape? There's no file
+`./svg-inkscape/e_K_svg-tex.pdf'
+although `Perfs/e_K.svg' was found.
+
+
+! Package svg Error: File `e_K_svg-tex.pdf_tex' is missing.
+
+See the svg package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.407 ...udesvg[width=.9\linewidth]{Perfs/e_K.svg}
+                                                  
+Did you run the export with Inkscape? There's no file
+`./svg-inkscape/e_K_svg-tex.pdf_tex'
+although `Perfs/e_K.svg' was found.
+
+Package svg Info: Calling Inkscape on input line 412.
+runsystem(inkscape "Perfs/e_x.svg" -D --export-latex --export-filename="e_x_svg
+-tex.pdf")...executed.
+
+runsystem(inkscape "Perfs/e_x.svg" -D --export-latex \relax --without-gui --exp
+ort-pdf="e_x_svg-tex.pdf")...executed.
+
+
+! Package svg Error: Inkscape version not detected.
+
+See the svg package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.412 ...udesvg[width=.9\linewidth]{Perfs/e_x.svg}
+                                                  
+It was tried to invoke `inkscape'
+for file "Perfs/e_x.svg"
+but no result was produced. Check the log file
+and set `inkscapeversion=<version>' manually.
+
+runsystem(inkscape "Perfs/e_x.svg" -D --export-latex --export-filename="e_x_svg
+-tex.pdf")...executed.
+
+
+Package svg Warning: The export with Inkscape failed for file
+(svg)                `Perfs/e_x.svg'
+(svg)                Troubleshooting: Please check in the log file how
+(svg)                the invocation of Inkscape took place and try to
+(svg)                execute it yourself in the terminal on input line 412.
+
+
+! Package svg Error: File `e_x_svg-tex.pdf' is missing.
+
+See the svg package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.412 ...udesvg[width=.9\linewidth]{Perfs/e_x.svg}
+                                                  
+Did you run the export with Inkscape? There's no file
+`./svg-inkscape/e_x_svg-tex.pdf'
+although `Perfs/e_x.svg' was found.
+
+
+! Package svg Error: File `e_x_svg-tex.pdf_tex' is missing.
+
+See the svg package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.412 ...udesvg[width=.9\linewidth]{Perfs/e_x.svg}
+                                                  
+Did you run the export with Inkscape? There's no file
+`./svg-inkscape/e_x_svg-tex.pdf_tex'
+although `Perfs/e_x.svg' was found.
 
 
 AED: lastpage setting LastPage
@@ -1108,13 +1323,13 @@ runsystem(del r_brouillon.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 20880 strings out of 478278
- 344131 string characters out of 5850546
- 716046 words of memory out of 5000000
- 38665 multiletter control sequences out of 15000+600000
+ 22918 strings out of 478278
+ 391178 string characters out of 5850546
+ 781695 words of memory out of 5000000
+ 40616 multiletter control sequences out of 15000+600000
  579740 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,12n,77p,457b,578s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,12n,92p,457b,578s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
 ive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fon
 ts/type1/public/fourier/fourier-bb.pfb><c:/texlive/2021/texmf-dist/fonts/type1/
@@ -1127,10 +1342,10 @@ exmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts
 /type1/adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/adobe/ut
 opia/putri8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt10
 00.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on r_brouillon.pdf (10 pages, 313356 bytes).
+Output written on r_brouillon.pdf (10 pages, 313915 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
- 124 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 219 PDF objects out of 1000 (max. 8388607)
+ 173 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 
