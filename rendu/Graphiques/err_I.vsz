@@ -1,0 +1,18 @@
+# Veusz saved document (version 3.4)
+# Saved at 2022-06-27T21:37:39.324919
+
+SetCompatLevel(1)
+AddImportPath('D:\\Users\\Gabriel\\Documents\\GitHub\\RDR\\rendu\\Graphiques')
+Set('colorTheme', 'default-latest')
+Set('StyleSheet/axis-function/autoRange', 'next-tick')
+Add('page', name='page1', autoadd=False)
+To('page1')
+Add('graph', name='graph1', autoadd=False)
+To('graph1')
+Add('axis', name='x', autoadd=False)
+Add('axis', name='y', autoadd=False)
+To('y')
+Set('direction', 'vertical')
+To('..')
+To('..')
+To('..')

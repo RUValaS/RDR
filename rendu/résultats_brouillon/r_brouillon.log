@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.10)  27 JUN 2022 23:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.10)  28 JUN 2022 01:27
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1259,9 +1259,36 @@ pdf
 
 pdfTeX warning: pdflatex.exe (file ./svg-inkscape/approx_svg-tex.pdf): PDF incl
 usion: multiple pdfs with page group included in a single page
->] 
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 460--462
+
+ []
+
+Package svg Info: Last page of `./svg-inkscape/err_I_1_svg-tex.pdf' is 1 on inp
+ut line 471.
+(./svg-inkscape/err_I_1_svg-tex.pdf_tex
+<./svg-inkscape/err_I_1_svg-tex.pdf, id=237, page=1, 393.93925pt x 393.82634pt>
+
+File: ./svg-inkscape/err_I_1_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/err_I_1_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/err_I_1_svg-tex.pdf , page1 used on inp
+ut line 56.
+(pdftex.def)             Requested size: 281.85587pt x 281.76997pt.
+)
+Package svg Info: Last page of `./svg-inkscape/err_I_all_svg-tex.pdf' is 1 on i
+nput line 480.
+
+(./svg-inkscape/err_I_all_svg-tex.pdf_tex
+<./svg-inkscape/err_I_all_svg-tex.pdf, id=239, page=1, 418.54868pt x 414.71689p
+t>
+File: ./svg-inkscape/err_I_all_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/err_I_all_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/err_I_all_svg-tex.pdf , page1 used on i
+nput line 56.
+(pdftex.def)             Requested size: 281.85587pt x 279.28268pt.
+) [12 <./svg-inkscape/err_I_1_svg-tex.pdf>] 
 AED: lastpage setting LastPage
-[12] (./r_brouillon.aux)
+[13 <./svg-inkscape/err_I_all_svg-tex.pdf>] (./r_brouillon.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1271,10 +1298,10 @@ runsystem(del r_brouillon.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 22978 strings out of 478276
- 393271 string characters out of 5850489
+ 23011 strings out of 478276
+ 394370 string characters out of 5850489
  781828 words of memory out of 5000000
- 40658 multiletter control sequences out of 15000+600000
+ 40678 multiletter control sequences out of 15000+600000
  579740 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,12n,92p,457b,694s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1290,10 +1317,10 @@ exmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><d:/texlive/2021/texmf-dist/fonts
 /type1/adobe/utopia/putr8a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/adobe/ut
 opia/putri8a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt10
 00.pfb><d:/texlive/2021/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on r_brouillon.pdf (13 pages, 449423 bytes).
+Output written on r_brouillon.pdf (14 pages, 500818 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 235 compressed objects within 3 object streams
- 49 named destinations out of 1000 (max. 500000)
- 194 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 351 PDF objects out of 1000 (max. 8388607)
+ 263 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 

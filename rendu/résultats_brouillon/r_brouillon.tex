@@ -458,12 +458,28 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	\end{equation}
 	
 	où $Q$ désigne le nombre de directions observées, on obtient un calcul extrêmement similaire à l'erreur sur les positions d'antennes. On peut donc effectuer de même des essais afin de vérifier les performances en présence d'une erreur. \\
-	On effectue les essais sur 35 directions (quadrillage $7\times5$) et 49 antennes (réseau carré $7\times7$). On quantifiera d'abord l'erreur en présence d'une direction faussée, puis de 5 et enfin toutes. \\
+	On effectue les essais sur 24 directions (quadrillage $4\times6$) et 36 antennes (réseau carré $6\times6$). On quantifiera d'abord l'erreur en présence d'une direction faussée, puis de 5 et enfin toutes. \\
 	
 	\paragraph{Erreur sur une unique direction :} 
 	On utilisera dans cette partie la distance $d_2$, afin d'évaluer l'impact de la direction sur laquelle est faite l'erreur sur l'erreur de reconstruction totale, grâce à l'additivité de la distance sur les termes de la matrice évaluée.
 	% a reformuler
 	
+	On obtient :
+	
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=.6\linewidth]{Perfs/err_I_1.svg}
+		\caption{Erreurs de reconstruction totale et sur la direction faussée}
+	\end{figure}
+
+	\paragraph{Erreur sur toutes les directions}
+	On utilise la distance $d_1$. On introduit une erreur sur toutes les directions.
+	
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=.6\linewidth]{Perfs/err_I_all.svg}
+		\caption{Erreurs de reconstruction}
+	\end{figure}
 	
 	
 \end{document}
