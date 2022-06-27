@@ -3,14 +3,14 @@ close all
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PARAMETRES
-Mx = 5; %My auto (ratio)
+Mx = 4; %My auto (ratio)
 J_b = 6; % On suppose le réseau d'antennes carré de côté
 % max 11 GPU atm
 c= 3e8;
 f = 1e9;
 lambda = c/f;
 dist = 10*lambda/2.1; % J_b antennes espacées de dist 
-N = 7; % itérations Kalman
+N = 4; % itérations Kalman
 SNR = 10;
 iMEM = 1; % nombre itérations MEM 
 RATIO = 10e14; % ratio erreur Kalman
@@ -19,7 +19,7 @@ mode = 'CPU';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% choix / gen image
-img = imread('nasa.jpg');
+img = imread('bh_pic.jpg');
 adapted = adaptImg(img, Mx); 
 vadapted = vectorize(adapted);
 
@@ -48,4 +48,4 @@ Fw = 1.5;
 
 %%% Kalman
 [X,tX] = KalmainV4(vadapted,J,z,I,N,f,c,lambda,Mx,My,iMEM,SNR,A_ev,RATIO,mode);
-% dispKalman_t(X,tX,N,Mx,My);
+dispKalman_t(X,tX,N,Mx,My);

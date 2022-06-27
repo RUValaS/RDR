@@ -24,8 +24,10 @@ P_0 = X_0*X_0';
 
 %ajout erreur sur A (!!!APRES!!! dataGen => sinon c'est pas une erreur)
 % H_err = abs(H .*( poids*exp(1j*randn(size(H))) ) );
-z_err = z+ randn(size(z))*poids;
-H_err = matF(J,Pix,z_err,lambda,I);
+% z_err = z+ randn(size(z))*poids;
+I_err = I;
+I_err(4,:) = I_err(4,:) + randn(size(I_err(4,:)))*poids;
+H_err = matF(J,Pix,z,lambda,I_err);
 
 C = H ./ H_err;
 
@@ -33,27 +35,33 @@ C = H ./ H_err;
 %%%%%%%%%%%% Kalman
 X_err=-1;
 if mode=='CPU'
-    [X_err,e_x] = Kalman_CPU_V3(A,H_err,X_0,P_0,nY,nR,nQ,Pix,N,C);
-%     [~,K] = Kalman_CPU_V3(A,H,X_0,P_0,nY,nR,nQ,Pix,N);
+    [X_err,K_err] = Kalman_CPU_V3(A,H_err,X_0,P_0,nY,nR,nQ,Pix,N,C);
+    [~,K] = Kalman_CPU_V3(A,H,X_0,P_0,nY,nR,nQ,Pix,N);
 end
 if mode=='GPU'
     X_err = Kalman_GPU_V5(A,H_err,X_0,P_0,nY,nR,nQ,Pix,N);
 end
 
-Psr = zeros(N,1);
+errX = zeros(N,1);
+errK = zeros(N,1);
+errP = zeros(N,1);
 for k=1:N
 %         Psr(k) = psnr(abs(X(:,k)),tX(:,k));
-    Psr(k) = fro(abs(X_err(:,k)/max(abs(X_err(:,k))))-tX(:,k));
-%     Psr(k) = fro(K_err(:,:,k)-K(:,:,k));
+    errX(k) = d_2(abs(X_err(:,k)/max(abs(X_err(:,k))))-tX(:,k));
+    errK(k) = fro(K_err(:,:,k)-K(:,:,k));
+    errP(k) = d_2(abs(X_err(4,k)/max(abs(X_err(:,k))))-tX(4,k));
 end
-% figure();plot(Psr);title('PSNR = f(it)')
-fprintf('||e_X|| = %e ---- ||e_X||th = %e \n',mean(Psr(4:end)),mean(e_x(4:end)));
+figure();plot(errX);title('erreur X')
+fprintf('||e_X|| = %e ---- ||errK|| = %e ---- ||errP|| = %e \n',mean(errX(4:end)),mean(errK(4:end)),mean(errP(4:end)));
 
+% fprintf('||e_X|| = %e ---- ||e_X||th = %e \n',mean(Psr(4:end)),mean(e_x(4:end)));
 
+%{
 figure();plot(e_x);title("Ev e_x")
 hold on
 plot(Psr);
 hold off
+%}
 
 %{
 z_err = z+ randn(size(z))*0.01;

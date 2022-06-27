@@ -97,7 +97,7 @@
 	\forall (A,B)\in\mathbb{C}^{m\times n}\times\left(\mathbb{C}\backslash0\right)^{m\times n}, \quad A\oslash B\in\mathbb{C}^{m\times n} \quad\text{et}\quad \forall (i,j)\in\llbracket1;m\rrbracket\times\llbracket1;n\rrbracket,\, (A\oslash B)_{i,j} = \frac{A_{i,j}}{B_{i,j}}
 	$$
 	
-	\subsection{Norme de Frobenius}
+	\subsection{Norme de Frobenius et distances}
 	
 	On dénote $\fnorm{\bullet}$ la norme de Frobenius :
 	$$
@@ -111,9 +111,22 @@
 				}\abs{A_{ij}}^2}
 	$$
 	
-	Qui induit sur $\mathcal{M}_{m,n}(\mathbb{K})$ la distance $d$ :
+	Qui induit sur $\mathcal{M}_{m,n}(\mathbb{D})$ la distance normalisée $d_1$ :
 	$$
-		\forall(A,B)\in\left(\mathcal{M}_{m,n}(\mathbb{K})\right)^2\quad d(A,B) = \frac{\fnorm{A-B}}{mn}
+		\forall(A,B)\in\left(\mathcal{M}_{m,n}(\mathbb{D})\right)^2\quad d_1(A,B) = \frac{\fnorm{A-B}}{mn}
+	$$
+	
+	Où $\mathbb{D}$ désigne le disque unité fermé.\\
+	
+	Ainsi que la distance $d_2$ :
+	$$
+		\forall(A,B)\in\left(\mathcal{M}_{m,n}(\mathbb{K})\right)^2\quad d_2(A,B) = \sum_{
+			\mathclap{
+				\substack{
+					1\le i\le m \\1\le j\le n
+				}
+			}
+		}\abs{A_{ij} - B_{i,j}}
 	$$
 	
 	\newpage
@@ -180,7 +193,7 @@
 
 
 	
-	\subsection{Erreur sur le masque UV}
+	\subsection{Erreur sur le masque UV - Position}
 	
 	On cherche à caractériser l'erreur sur la matrice du plan UV $H$. Une manière naïve de faire le calcul serait d'ajouter une erreur gaussienne comme sur la matrice $A$, mais en faisant cela on obtient un modèle très instable et peu réaliste. Effectivement, les termes de cette matrices étant :
 	$$
@@ -348,7 +361,7 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	$$
 	
 	D'où :
-	\begin{equation}
+	\begin{equation}\label{eq:approx}
 		\varepsilon_{\widehat{x}} = K \left(\mathbb{1} - \C\right)\odot\Ht\widehat{x}_{k|k-1}
 	\end{equation}
 
@@ -398,7 +411,7 @@ H_err = matF(J,Pix,z_err,lambda,I);
 
 	Cette division est possible car tous les termes sont de norme 1 ou proche de 1 dans le cas de petites variations.
 	
-	On effectue 6 réalisations de Kalman sur 8 instants temporels en introduisant une erreur sur la position des antennes. On effectue cette opération pour plusieurs erreurs et on peut observer les erreurs $\fnorm{\varepsilon_K}$ et $\fnorm{\varepsilon_{\widehat{x}}}$ :
+	On effectue 6 réalisations de Kalman sur 8 instants temporels en introduisant une erreur sur la position des antennes. On effectue cette opération pour plusieurs erreurs et on peut observer les erreurs $\varepsilon_K$ et $\varepsilon_{\widehat{x}}$ calculées par la distance $d_1$, normalisée sur le disque unité :
 	
 	\begin{figure}[H]
 		\centering
@@ -417,9 +430,40 @@ H_err = matF(J,Pix,z_err,lambda,I);
 	
 	\begin{figure}[H]
 		\centering
-		\includesvg[width=0.7\linewidth]{Perfs/x_fK}
+		\includesvg[width=0.6\linewidth]{Perfs/x_fK}
 		\caption{Erreur de reconstruction en fonction de l'erreur sur la matrice K}
 	\end{figure}
+	
+	On peut également vérifier la précision de l'approximation pour obtenir l'équation (\ref{eq:approx}) : 
+	
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=.7\linewidth]{Perfs/graph_approx.svg}
+		\caption{Essai sur une réalisation de 10 instants}
+	\end{figure}
+
+	On peut également tracer la robustesse à l'erreur de cette approximation :
+	
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=.6\linewidth]{Perfs/approx.svg}
+		\caption{Erreur de reconstruction finale en fonction de l'erreur en position}
+	\end{figure}
+
+	\subsection{Erreur sur le masque UV - direction}
+	
+	En considérant une erreur sur la position des antennes :
+	\begin{equation}
+		\forall q\in \llbracket 1;Q\rrbracket,\; \widetilde{\boldsymbol{I}_q} = \boldsymbol{I}_q + \boldsymbol{\varepsilon}_q
+	\end{equation}
+	
+	où $Q$ désigne le nombre de directions observées, on obtient un calcul extrêmement similaire à l'erreur sur les positions d'antennes. On peut donc effectuer de même des essais afin de vérifier les performances en présence d'une erreur. \\
+	On effectue les essais sur 35 directions (quadrillage $7\times5$) et 49 antennes (réseau carré $7\times7$). On quantifiera d'abord l'erreur en présence d'une direction faussée, puis de 5 et enfin toutes. \\
+	
+	\paragraph{Erreur sur une unique direction :} 
+	On utilisera dans cette partie la distance $d_2$, afin d'évaluer l'impact de la direction sur laquelle est faite l'erreur sur l'erreur de reconstruction totale, grâce à l'additivité de la distance sur les termes de la matrice évaluée.
+	% a reformuler
+	
 	
 	
 \end{document}
