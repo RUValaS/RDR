@@ -1,4 +1,4 @@
-function [X,out_2] = Kalman_CPU_V3(A,H,X_0,P_0,nY,nR,nQ,Pix,n,C)
+function [X,out_2] = Kalman_CPU_V3(A,H,X_0,P_0,nY,nR,nQ,Pix,n)
 %KALMAN_CPU Estime via un filtre de Kalman la sortie X-out depuis X_in
 %   variables:
 %   - H : observation (J^2 x Pix) -> matrice de transformation FFT non

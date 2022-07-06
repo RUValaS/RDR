@@ -65,13 +65,12 @@ de_x_e = zeros(W,1);
 for err = 1:npos
     for realisation = 1:W
         % 1. Gen données aléatoires
-        poids = erreurs(err);
         
-        z_err = z+ randn(size(z))*poids;
+        % z_err = z+ randn(size(z))*poids;
         I_err = I;
         % I_err(4,:) = I_err(4,:) + randn(size(I_err(4,:)))*poids;
-%         I_err = I + randn(size(I))*poids;
-        H_err = matF(J,Pix,z_err,lambda,I_err);
+        I_err = I + randn(size(I))*poids;
+        H_err = matF(J,Pix,z,lambda,I_err);
 
         C = H ./ H_err;
         
@@ -80,13 +79,8 @@ for err = 1:npos
         [X_e,K_e] = Kalman_CPU_V3(A_ev,H_err,X_0,P_0,nY,nR,nQ,D,N);
 
         % 3. Calcul erreurs
-        errX = zeros(N,1);
-        errK = zeros(N,1);
-        errX_e = zeros(N,1);
         for k = 1:N
-            errX(k) = fro(abs(X(:,k)/max(abs(X(:,k)))) - tX(:,k));
-            errX_e(k) = fro(abs(X_e(:,k)/max(abs(X_e(:,k)))) - tX(:,k));
-            errK(k) = fro(K_err(:,:,k)-K(:,:,k));
+            errX = fro(abs(X_e(:,k)/max(abs(X_e(:,k)))))
         end
     end
 end

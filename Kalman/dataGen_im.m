@@ -27,8 +27,8 @@ for k=1:N
     Y_wo_noise = reshape(Y_wo_noise,J,J);
     P_e = trace(Y_wo_noise);
 %%%%%%
-%     b2 = (sqrt(P_e/2)*randn(J,Nreal) + 1i*sqrt(P_e/2)*randn(J,Nreal))/(sqrt(Nreal)*sqrt(SNR_visibilites)); 
-    b2 = zeros(J,Nreal);
+    b2 = (sqrt(P_e/2)*randn(J,Nreal) + 1i*sqrt(P_e/2)*randn(J,Nreal))/(sqrt(Nreal)*sqrt(SNR_visibilites)); 
+%     b2 = zeros(J,Nreal);
 %%%%%%
     BCov = (b2*b2')/J;
 
