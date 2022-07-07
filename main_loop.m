@@ -11,7 +11,7 @@ f = 1e9;
 lambda = c/f;
 dist = 10*lambda/2.1; % J_b antennes espacées de dist 
 N = 7; % itérations Kalman
-W = 6; % nombre de réalisations
+W = 1; % nombre de réalisations
 SNR = 10;
 iMEM = 5; % nombre itérations MEM 
 RATIO = 10e14; % ratio erreur Kalman
@@ -36,11 +36,21 @@ I = matI(Mx, My);
 A_ev = eye(D);
 A = matA(z,I,D,f,c);
 
-erreurs = [0.001 0.003 0.005 0.01 0.03 0.05 0.1 0.3];
+% erreurs = [0.001 0.003 0.005 0.01 0.03 0.05 0.1 0.3];
+erreurs = [0.001 0.3 0.05];
 npos = numel(erreurs);
 
 % calcul invariants kalman
 H = matF(J,D,z,lambda,I);
+
+[nY,nR,nQ,tX] = dataGen_im(H,J,N,D,vadapted,A_ev,Nreal,SNR,RATIO);
+% X_0 = true_image ;
+% X_0 = MEM(MVDR(A,reshape(nY(:,1),J,J),Mx,My),iMEM);
+% X_0 = normarr(X_0);
+X_0 = vadapted;
+% tX(:,1) = vadapted;
+
+P_0 = X_0*X_0' - mean(X_0,'all');
 
 % def listes vides
 wK = zeros(D,J^2,N,W);
@@ -52,11 +62,13 @@ e_x = zeros(W,1);
 e_K = zeros(W,1);
 e_x_e = zeros(W,1);
 e_th = zeros(W,1);
+e_xx = zeros(W,1);
 
 errX = zeros(N,1);
 errK = zeros(N,1);
 errX_e = zeros(N,1);
 errth = zeros(N,1);
+errXX = zeros(N,1);
 
 optot = npos*W;
 tic
@@ -65,18 +77,11 @@ for err = 1:npos
     for realisation = 1:W
         elapsedTime = toc;
         opDone = W*(err-1) + realisation;
-        opRemain = optot - opDone;
+        opRemain = optot - opDone + 1;
         tMoyOp = elapsedTime/opDone;
         ETA = tMoyOp*opRemain;
         fprintf('Erreur : %u/%u -- Réalisation : %u/%u -- Time : %.4f -- ETA : %.4f\n',err,npos,realisation,W,elapsedTime,ETA);
         % 1. Gen données aléatoires
-        [nY,nR,nQ,tX] = dataGen_im(H,J,N,D,vadapted,A_ev,Nreal,SNR,RATIO);
-        % X_0 = true_image ;
-        X_0 = MEM(MVDR(A,reshape(nY(:,1),J,J),Mx,My),iMEM);
-        X_0 = normarr(X_0);
-        tX(:,1) = X_0;
-
-        P_0 = X_0*X_0' - mean(X_0,'all');
 
         z_err = z+ randn(size(z))*poids;
         I_err = I;
@@ -94,6 +99,7 @@ for err = 1:npos
         for k = 1:N
             errX(k) = fro(abs(X(:,k)/max(abs(X(:,k)))) - tX(:,k));
             errX_e(k) = fro(abs(X_e(:,k)/max(abs(X_e(:,k)))) - tX(:,k));
+            errXX(k) = fro(abs(X(:,k)/max(abs(X(:,k)))) - abs(X_e(:,k)/max(abs(X_e(:,k)))));
             errK(k) = fro(K_e(:,:,k)-K(:,:,k));
             if k>=2
                 errth(k) = fro((K_e(:,:,k) - K(:,:,k))*nY(:,k) + (eye(D) - K_e(:,:,k)*H_err)*Xp_e(:,k) - (eye(D) - K(:,:,k)*H)*Xp(:,k));
@@ -110,13 +116,15 @@ for err = 1:npos
         e_K(realisation) = mean(errK(5:end));
         e_x_e(realisation) = mean(errX_e(5:end));
         e_th(realisation) = mean(errth(5:end));
+        e_xx(realisation) = mean(errXX(5:end));
     end % end real
 
     de_x = std(errX);
     de_K = std(errK);
     de_x_e = std(e_x_e);
+    de_xx = std(e_xx);
 
     % Sauvegarde données
     nom = strcat(strrep(sprintf('%.3f',poids),'.','_'),'.mat');
-    save(nom,"wK","wK_err","wX","wX_err","e_x","e_K","e_x_e","de_x","de_K","de_x_e","e_th");
+    save(nom,"wK","wK_err","wX","wX_err","e_x","e_K","e_x_e","de_x","de_K","de_x_e","e_th","de_xx","e_xx"); % ajouter Xp Xp_e
 end % end err

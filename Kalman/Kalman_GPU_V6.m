@@ -23,7 +23,7 @@ for k=2:n
 %     fprintf('itération : %u \n',k);
     %%% PREDICTION
     Xp = A*X(:,k-1) + transpose(mean(nQ(:,:,k-1)));
-    Pp = A*P(:,:,k-1)*(A.') + nQ(:,:,k);
+    Pp = A*P(:,:,k-1)*(A') + nQ(:,:,k);
     yp = H*Xp + mean(nR(:,k));
     %%% KALMAN GAIN
     S = gpuArray(H*Pp*(H.') + nR(:,k));
