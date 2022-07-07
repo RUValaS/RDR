@@ -10,7 +10,7 @@ c= 3e8;
 f = 1e9;
 lambda = c/f;
 dist = 10*lambda/2.1; % J_b antennes espacées de dist 
-N = 6; % itérations Kalman
+N = 7; % itérations Kalman
 W = 6; % nombre de réalisations
 SNR = 10;
 iMEM = 5; % nombre itérations MEM 
@@ -41,52 +41,82 @@ npos = numel(erreurs);
 
 % calcul invariants kalman
 H = matF(J,D,z,lambda,I);
-[nY,nR,nQ,tX] = dataGen_im(H,J,N,D,vadapted,A_ev,Nreal,SNR,RATIO);
-
-% X_0 = true_image ;
-X_0 = MEM(MVDR(A,reshape(nY(:,1),J,J),Mx,My),iMEM);
-X_0 = normarr(X_0);
-tX(:,1) = X_0;
-
-P_0 = X_0*X_0' - mean(X_0,'all');
 
 % def listes vides
-wK = zeros(W,N,J^2,D);
-wK_err = zeros(W,N,J^2,D);
-wX = zeros(W,N,D);
-wX_err = zeros(W,N,D);
+wK = zeros(D,J^2,N,W);
+whos wK
+wK_err = zeros(D,J^2,N,W);
+wX = zeros(D,N,W);
+wX_err = zeros(D,N,W);
 e_x = zeros(W,1);
 e_K = zeros(W,1);
 e_x_e = zeros(W,1);
-de_x = zeros(W,1);
-de_K = zeros(W,1);
-de_x_e = zeros(W,1);
+e_th = zeros(W,1);
 
+errX = zeros(N,1);
+errK = zeros(N,1);
+errX_e = zeros(N,1);
+errth = zeros(N,1);
+
+optot = npos*W;
+tic
 for err = 1:npos
+    poids = erreurs(err);
     for realisation = 1:W
+        elapsedTime = toc;
+        opDone = W*(err-1) + realisation;
+        opRemain = optot - opDone;
+        tMoyOp = elapsedTime/opDone;
+        ETA = tMoyOp*opRemain;
+        fprintf('Erreur : %u/%u -- Réalisation : %u/%u -- Time : %.4f -- ETA : %.4f\n',err,npos,realisation,W,elapsedTime,ETA);
         % 1. Gen données aléatoires
-        poids = erreurs(err);
-        
+        [nY,nR,nQ,tX] = dataGen_im(H,J,N,D,vadapted,A_ev,Nreal,SNR,RATIO);
+        % X_0 = true_image ;
+        X_0 = MEM(MVDR(A,reshape(nY(:,1),J,J),Mx,My),iMEM);
+        X_0 = normarr(X_0);
+        tX(:,1) = X_0;
+
+        P_0 = X_0*X_0' - mean(X_0,'all');
+
         z_err = z+ randn(size(z))*poids;
         I_err = I;
         % I_err(4,:) = I_err(4,:) + randn(size(I_err(4,:)))*poids;
 %         I_err = I + randn(size(I))*poids;
-        H_err = matF(J,Pix,z_err,lambda,I_err);
+        H_err = matF(J,D,z_err,lambda,I_err);
 
-        C = H ./ H_err;
+%         C = H ./ H_err;
         
         % 2. Tourner Kalman_XPU
-        [X,K] = Kalman_CPU_V3(A_ev,H,X_0,P_0,nY,nR,nQ,D,N);
-        [X_e,K_e] = Kalman_CPU_V3(A_ev,H_err,X_0,P_0,nY,nR,nQ,D,N);
+        [X,K,Xp] = Kalman_GPU_V6(A_ev,H,X_0,P_0,nY,nR,nQ,D,N);
+        [X_e,K_e,Xp_e] = Kalman_GPU_V6(A_ev,H_err,X_0,P_0,nY,nR,nQ,D,N);
 
         % 3. Calcul erreurs
-        errX = zeros(N,1);
-        errK = zeros(N,1);
-        errX_e = zeros(N,1);
         for k = 1:N
             errX(k) = fro(abs(X(:,k)/max(abs(X(:,k)))) - tX(:,k));
             errX_e(k) = fro(abs(X_e(:,k)/max(abs(X_e(:,k)))) - tX(:,k));
-            errK(k) = fro(K_err(:,:,k)-K(:,:,k));
-        end
-    end
-end
+            errK(k) = fro(K_e(:,:,k)-K(:,:,k));
+            if k>=2
+                errth(k) = fro((K_e(:,:,k) - K(:,:,k))*nY(:,k) + (eye(D) - K_e(:,:,k)*H_err)*Xp_e(:,k) - (eye(D) - K(:,:,k)*H)*Xp(:,k));
+            end
+        end % end calculs erreurs
+       
+        % 4. append in vect errs
+        wK(:,:,:,realisation) = K;
+        wK_err(:,:,:,realisation) = K_e;
+        wX(:,:,realisation) = X;
+        wX_err(:,:,realisation) = X_e;
+
+        e_x(realisation) = mean(errX(5:end));
+        e_K(realisation) = mean(errK(5:end));
+        e_x_e(realisation) = mean(errX_e(5:end));
+        e_th(realisation) = mean(errth(5:end));
+    end % end real
+
+    de_x = std(errX);
+    de_K = std(errK);
+    de_x_e = std(e_x_e);
+
+    % Sauvegarde données
+    nom = strcat(strrep(sprintf('%.3f',poids),'.','_'),'.mat');
+    save(nom,"wK","wK_err","wX","wX_err","e_x","e_K","e_x_e","de_x","de_K","de_x_e","e_th");
+end % end err
