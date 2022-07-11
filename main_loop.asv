@@ -12,7 +12,7 @@ lambda = c/f;
 dist = 10*lambda/2.1; % J_b antennes espacées de dist 
 N = 7; % itérations Kalman
 W = 1; % nombre de réalisations
-SNR = 100;
+SNR = 10;
 iMEM = 5; % nombre itérations MEM 
 RATIO = 10e14; % ratio erreur Kalman
 mode = 'CPU';
@@ -47,10 +47,14 @@ H = matF(J,D,z,lambda,I);
 % X_0 = true_image ;
 % X_0 = MEM(MVDR(A,reshape(nY(:,1),J,J),Mx,My),iMEM);
 % X_0 = normarr(X_0);
-X_0 = vadapted;
+% X_0 = vadapted;
 % tX(:,1) = vadapted;
 
-P_0 = X_0*X_0' - mean(X_0,'all');
+% P_0 = X_0*X_0' - mean(X_0,'all');
+
+% Nouveau calcul X_0 et P_0 exactes
+vX
+
 
 % def listes vides
 wK = zeros(D,J^2,N,W);
@@ -77,7 +81,7 @@ for err = 1:npos
     for realisation = 1:W
         elapsedTime = toc;
         opDone = W*(err-1) + realisation;
-        opRemain = optot - opDone;
+        opRemain = optot - opDone + 1;
         tMoyOp = elapsedTime/opDone;
         ETA = tMoyOp*opRemain;
         fprintf('Erreur : %u/%u -- Réalisation : %u/%u -- Time : %.4f -- ETA : %.4f\n',err,npos,realisation,W,elapsedTime,ETA);
@@ -122,9 +126,9 @@ for err = 1:npos
     de_x = std(errX);
     de_K = std(errK);
     de_x_e = std(e_x_e);
-    de
+    de_xx = std(e_xx);
 
     % Sauvegarde données
     nom = strcat(strrep(sprintf('%.3f',poids),'.','_'),'.mat');
-    save(nom,"wK","wK_err","wX","wX_err","e_x","e_K","e_x_e","de_x","de_K","de_x_e","e_th"); % ajouter Xp Xp_e
+    save(nom,"wK","wK_err","wX","wX_err","e_x","e_K","e_x_e","de_x","de_K","de_x_e","e_th","de_xx","e_xx"); % ajouter Xp Xp_e
 end % end err

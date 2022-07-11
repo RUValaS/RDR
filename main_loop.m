@@ -47,10 +47,20 @@ H = matF(J,D,z,lambda,I);
 % X_0 = true_image ;
 % X_0 = MEM(MVDR(A,reshape(nY(:,1),J,J),Mx,My),iMEM);
 % X_0 = normarr(X_0);
-X_0 = vadapted;
+% X_0 = vadapted;
 % tX(:,1) = vadapted;
 
-P_0 = X_0*X_0' - mean(X_0,'all');
+% P_0 = X_0*X_0' - mean(X_0,'all');
+
+% Nouveau calcul X_0 et P_0 exactes
+NX_0 = repmat(vadapted,1,Nreal);
+vX_0 = abs(0.1*randn(D,Nreal) + NX_0);
+errX_0 = vX_0 - NX_0;
+
+X_0 = vX_0(:,randi(Nreal));
+P_0 = (errX_0 * errX_0')/Nreal;
+
+clear NX_0 vX_0 errX_0
 
 % def listes vides
 wK = zeros(D,J^2,N,W);

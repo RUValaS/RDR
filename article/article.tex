@@ -1,0 +1,110 @@
+\documentclass[titlepage]{article}
+\usepackage[upright]{fourier}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+
+\usepackage[colorlinks=true,linkcolor=teal]{hyperref}
+\usepackage{amssymb,amsmath,minted,float,graphicx,textcomp,systeme,listings,physics,mathtools,ifthen,esvect,hyperref,fancyhdr,lastpage,marginnote,chngcntr,fancyvrb,subcaption,svg}
+
+\DeclareMathOperator{\e}{e}
+\def\mathbi#1{\textbf{\em #1}}
+
+\setlength\parindent{0pt}
+
+%%%%%%%%%%%% PARAMETRES
+\newcommand{\UE}{4XX}
+\newcommand{\type}{}%TD-TP-COURS
+\newcommand{\nb}{0}%nb 
+\newcommand{\sbt}{}%soustitre
+\author{Gabriel ROBERT-DAUTUN}
+\date{Mars 2022}
+
+% mise en page (header, compteur, fancy)
+\pagestyle{fancy}
+\lhead{\UE\, - \type\ifthenelse{\nb > 0}{\nb}{}}
+\rfoot{\thepage /\pageref{LastPage}}
+\lfoot{}
+\cfoot{}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%reset compteur section par partie
+\counterwithin*{section}{part}
+
+% permet notes + simples en marge à gauche (eg compteur de question)
+\reversemarginpar
+\newcommand{\mgn}[1]{\marginnote{#1}}
+
+%sinon warning mdr
+\setlength{\headheight}{13.07225pt}
+
+%compteur questions
+\newcounter{question}
+\setcounter{question}{1}
+\newcounter{subq}
+\setcounter{subq}{1}
+
+\newcommand{\rsubq}{\setcounter{subq}{1}}
+\newcommand{\question}{\mgn{\thequestion .}\stepcounter{question}\rsubq}
+\newcommand{\rstq}{\setcounter{question}{1}\rsubq}
+\newcommand{\skipq}[1]{\addtocounter{question}{#1}\rsubq}
+\newcommand{\subq}{\noindent\alph{subq})\stepcounter{subq}} %a modifier pour mettre dans le margin
+
+\title{%
+	Radioastronomical image reconstruction using Kalman filter under ionospheric perturbations}
+
+\begin{document}
+	
+	\begin{titlepage}
+	
+	\huge
+	\textbf{Reconstruction dynamique d'images radioastronomiques de trous noirs}
+	
+	\vspace{1.5cm}
+	\LARGE
+	\textbf{Gabriel Robert-Dautun}
+	
+	\vfill
+	\large
+	Encadré par Mme Vin
+	
+	\vspace{0.8cm}
+	
+	\includegraphics[width=0.75\textwidth]{logo.PNG}
+	
+	\Large
+	Satie
+	France\\
+	July 2022
+	
+	\end{titlepage}
+	
+	\newpage
+	\tableofcontents
+	
+	\newpage
+	
+	
+\end{document}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{}
+	\caption{}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{image1}
+		\caption{}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{image2}
+		\caption{}
+	\end{subfigure}
+	\caption{}
+\end{figure}
