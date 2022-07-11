@@ -11,11 +11,10 @@ f = 1e9;
 lambda = c/f;
 dist = 10*lambda/2.1; % J_b antennes espacées de dist 
 N = 7; % itérations Kalman
-W = 1; % nombre de réalisations
+W = 100; % nombre de réalisations
 SNR = 10;
 iMEM = 5; % nombre itérations MEM 
 RATIO = 10e14; % ratio erreur Kalman
-mode = 'CPU';
 Nreal = 1000;
 % A_ev matrice d'évolution définie plus loin (need D ligne 35)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,8 +35,8 @@ I = matI(Mx, My);
 A_ev = eye(D);
 A = matA(z,I,D,f,c);
 
-% erreurs = [0.001 0.003 0.005 0.01 0.03 0.05 0.1 0.3];
-erreurs = [0.001 0.3 0.05];
+erreurs = [0.001 0.003 0.005 0.01 0.03 0.05 0.1 0.3];
+% erreurs = [0.001 0.3 0.05];
 npos = numel(erreurs);
 
 % calcul invariants kalman
@@ -47,18 +46,18 @@ H = matF(J,D,z,lambda,I);
 % X_0 = true_image ;
 % X_0 = MEM(MVDR(A,reshape(nY(:,1),J,J),Mx,My),iMEM);
 % X_0 = normarr(X_0);
-% X_0 = vadapted;
+X_0 = vadapted;
 % tX(:,1) = vadapted;
 
-% P_0 = X_0*X_0' - mean(X_0,'all');
+P_0 = X_0*X_0' - mean(X_0,'all');
 
 % Nouveau calcul X_0 et P_0 exactes
-NX_0 = repmat(vadapted,1,Nreal);
-vX_0 = abs(0.1*randn(D,Nreal) + NX_0);
-errX_0 = vX_0 - NX_0;
-
-X_0 = vX_0(:,randi(Nreal));
-P_0 = (errX_0 * errX_0')/Nreal;
+% NX_0 = repmat(vadapted,1,Nreal);
+% vX_0 = abs(0.001*randn(D,Nreal) + NX_0);
+% errX_0 = vX_0 - NX_0;
+% 
+% X_0 = vX_0(:,randi(Nreal));
+% P_0 = (errX_0 * errX_0')/Nreal;
 
 clear NX_0 vX_0 errX_0
 
