@@ -35,7 +35,8 @@ I = matI(Mx, My);
 A_ev = eye(D);
 A = matA(z,I,D,f,c);
 
-erreurs = [0.001 0.003 0.005 0.01 0.03 0.05 0.1 0.3];
+% erreurs = [0.001 0.003 0.005 0.01 0.03 0.05 0.1 0.3];
+erreurs = [0.001 0.003 0.005 0.008 0.01 0.03];
 % erreurs = [0.001 0.3 0.05];
 npos = numel(erreurs);
 
@@ -91,11 +92,11 @@ for err = 1:npos
         ETA = tMoyOp*opRemain;
         fprintf('Erreur : %u/%u -- Réalisation : %u/%u -- Time : %.4f -- ETA : %.4f\n',err,npos,realisation,W,elapsedTime,ETA);
         % 1. Gen données aléatoires
-
-        z_err = z+ randn(size(z))*poids;
-        I_err = I;
-        % I_err(4,:) = I_err(4,:) + randn(size(I_err(4,:)))*poids;
-%         I_err = I + randn(size(I))*poids;
+        z_err = z;
+%         z_err = z+ randn(size(z))*poids;
+%         I_err = I;
+%         I_err(4,:) = I_err(4,:) + randn(size(I_err(4,:)))*poids;
+        I_err = I + randn(size(I))*poids;
         H_err = matF(J,D,z_err,lambda,I_err);
 
 %         C = H ./ H_err;
