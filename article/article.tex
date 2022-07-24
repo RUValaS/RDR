@@ -23,7 +23,7 @@
 
 % mise en page (header, compteur, fancy)
 \pagestyle{fancy}
-\lhead{\UE\, - \type\ifthenelse{\nb > 0}{\nb}{}}
+\lhead{Dynamic image reconstruction}
 \rfoot{\thepage /\pageref{LastPage}}
 \lfoot{}
 \cfoot{}
@@ -39,17 +39,8 @@
 %sinon warning mdr
 \setlength{\headheight}{13.07225pt}
 
-%compteur questions
-\newcounter{question}
-\setcounter{question}{1}
-\newcounter{subq}
-\setcounter{subq}{1}
-
-\newcommand{\rsubq}{\setcounter{subq}{1}}
-\newcommand{\question}{\mgn{\thequestion .}\stepcounter{question}\rsubq}
-\newcommand{\rstq}{\setcounter{question}{1}\rsubq}
-\newcommand{\skipq}[1]{\addtocounter{question}{#1}\rsubq}
-\newcommand{\subq}{\noindent\alph{subq})\stepcounter{subq}} %a modifier pour mettre dans le margin
+\newcommand{\hinv}[1]{#1^{\circ-1}} % inverse de hadamard
+\newcommand{\fnorm}[1]{|\vert#1|\vert_{F}} % norme de Frobenius
 
 \title{%
 	Radioastronomical image reconstruction using Kalman filter under ionospheric perturbations}
@@ -58,23 +49,23 @@
 	
 	\begin{titlepage}
 	
+	\vspace*{.3\textheight}
 	\huge
-	\textbf{Reconstruction dynamique d'images radioastronomiques de trous noirs}
+	\centering
+	\textbf{Dynamic radioastronomic image reconstruction using Kalman filter under ionospheric perturbations}
 	
-	\vspace{1.5cm}
+	\vspace{1cm}
 	\LARGE
-	\textbf{Gabriel Robert-Dautun}
+	G. Robert-Dautun
 	
 	\vfill
 	\large
-	Encadré par Mme Vin
+	Supervised by I. Vin
 	
 	\vspace{0.8cm}
 	
-	\includegraphics[width=0.75\textwidth]{logo.PNG}
-	
 	\Large
-	Satie
+	Satie\\
 	France\\
 	July 2022
 	
@@ -85,6 +76,102 @@
 	
 	\newpage
 	
+	\part{Introduction}
+	
+	\newpage
+	\part{Notations and problem}
+	\section{Notations}
+	
+		\subsection{Hadamard product}
+	
+	%On introduit la notation $\odot$ associée au produit de Hadamard, qui effectue la multiplication élément à élément de deux matrices de même taille :
+	Hadamard product, denoted $\odot$, is the element-wise product of same sized matrices :
+	
+	$$
+	\forall (A,B)\in\left(\mathbb{C}^{m\times n}\right)^2, \quad A\odot B\in\mathbb{C}^{m\times n} \quad\text{and}\quad \forall (i,j)\in\llbracket1;m\rrbracket\times\llbracket1;n\rrbracket,\, (A\odot B)_{i,j} = A_{i,j}\times B_{i,j}
+	$$
+	
+	%On introduit également l'inverse de Hadamard, qui inverse élément par élément une matrice
+	We can further introduce Hadamard inversion :
+	$$
+	\forall A \in \left(\mathbb{C}\backslash\{0\}\right)^{m\times n},\quad \hinv{A}\in\left(\mathbb{C}\backslash\{0\}\right)^{m\times n} \quad\text{and}\quad \forall (i,j)\in\llbracket1;m\rrbracket\times\llbracket1;n\rrbracket,\, \left(\hinv{A}\right)_{i,j} = \left(A_{i,j}\right)^{-1}
+	$$ 
+	
+%	Ainsi que la notation $\oslash$ désignant la division de Hadamard :
+	And notation $\oslash$ being Hadamard division :
+	$$
+	\forall (A,B)\in\mathbb{C}^{m\times n}\times\left(\mathbb{C}\backslash0\right)^{m\times n}, \quad A\oslash B\in\mathbb{C}^{m\times n} \quad\text{and}\quad \forall (i,j)\in\llbracket1;m\rrbracket\times\llbracket1;n\rrbracket,\, (A\oslash B)_{i,j} = \frac{A_{i,j}}{B_{i,j}}
+	$$
+	
+	\subsection{Norms and distances}
+	
+	%On dénote $\fnorm{\bullet}$ la norme de Frobenius :
+	In order to compute distances between matrices, we note $\fnorm{\bullet}$ Frobenius norm :
+	$$
+	A\in\mathcal{M}_{m,n}(\mathbb{K}) \quad \fnorm{A} := \sqrt{\tr{AA^H}} = \sqrt{
+		\;\;\;\sum_{
+			\mathclap{
+				\substack{
+					1\le i\le m \\1\le j\le n
+				}
+			}
+		}\abs{A_{ij}}^2}
+	$$
+	
+	%Qui induit sur $\mathcal{M}_{m,n}(\mathbb{D})$ la distance normalisée $d_1$ :
+	Inducing the distance $d_1$ :
+	$$
+	\forall(A,B)\in\left(\mathcal{M}_{m,n}(\mathbb{K})\right)^2\quad d_1(A,B) = \frac{\fnorm{A-B}}{mn}
+	$$
+	
+	%Ainsi que la distance $d_2$ :
+	In order to measure influence of a specific element, the ??? distance $d_2$ is the following :
+	$$
+	\forall(A,B)\in\left(\mathcal{M}_{m,n}(\mathbb{K})\right)^2\quad d_2(A,B) = \sum_{
+		\mathclap{
+			\substack{
+				1\le i\le m \\1\le j\le n
+			}
+		}
+	}\abs{A_{ij} - B_{i,j}}
+	$$
+	
+	
+	\section{Evolution model and Kalman filtering}
+	
+	We consider a set $\{x_k\}$ of $n$ vector as theoretical images taken at a regular time interval. Those images are measured by an antenna mesh which UV plane will be written $H$. Measurements vectors will be designated by $n$ measures $\{y_k\}$.\\
+	We will consider the following model to describe time related evolutions and measure equation :
+	$$
+		\begin{cases}
+			x_k = Ax_{k-1} + w_{k-1}\\
+			y_k = Hx_k + v_k
+		\end{cases}
+	$$
+	
+	Where :
+	\begin{itemize}
+		\item $A$ is the linear evolutionary model between time $k-1$ and $k$, supposing evolution is time invariant
+		\item $\{w_k\}$ are the additive evolutionary errors
+		\item $\{v_k\}$ are the measurements noises
+	\end{itemize}
+	
+		
+	In order to build images dynamically with better precision, a Kalman filter has been implemented.\\
+	
+	This filter requires assumptions about
+	
+	
+	\newpage
+	\part{Reliability of Kalman Filter under perturbations}
+	\section{Perturbations sources}
+	\section{Effects}
+	\subsection{Position}
+	\subsection{Direction}
+	
+	\newpage
+	\part{Experimental correction}
+	\section{implementation}
+	\section{Measures}
 	
 \end{document}
 
