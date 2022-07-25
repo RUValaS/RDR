@@ -8,6 +8,9 @@
 \usepackage[colorlinks=true,linkcolor=teal]{hyperref}
 \usepackage{amssymb,amsmath,minted,float,graphicx,textcomp,systeme,listings,physics,mathtools,ifthen,esvect,hyperref,fancyhdr,lastpage,marginnote,chngcntr,fancyvrb,subcaption,svg}
 
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{article.bib}
+
 \DeclareMathOperator{\e}{e}
 \def\mathbi#1{\textbf{\em #1}}
 
@@ -41,6 +44,25 @@
 
 \newcommand{\hinv}[1]{#1^{\circ-1}} % inverse de hadamard
 \newcommand{\fnorm}[1]{|\vert#1|\vert_{F}} % norme de Frobenius
+\newcommand{\moy}[1]{\boldsymbol{\mathsf{m}}_{#1}}
+
+\renewcommand{\expval}[1]{\text{E}\left[#1\right]}
+\newcommand{\w}{\boldsymbol{w}}
+\renewcommand{\v}{\boldsymbol{v}}
+\newcommand{\Q}{\boldsymbol{\mathsf{Q}}}
+\newcommand{\R}{\boldsymbol{\mathsf{R}}}
+
+\newcommand{\x}{\boldsymbol{x}}
+\newcommand{\y}{\boldsymbol{y}}
+
+\newcommand{\xp}{\widehat{\x}_{k|k-1}}
+\newcommand{\xa}{\widehat{\x}_{k-1|k-1}}
+\newcommand{\xe}{\widehat{\x}_{k|k}}
+\newcommand{\yp}{\widehat{\y}_{k|k-1}}
+
+\newcommand{\Pp}{\boldsymbol{\mathsf{P}}_{k|k-1}}
+\newcommand{\Pa}{\boldsymbol{\mathsf{P}}_{k-1|k-1}}
+\newcommand{\Pe}{\boldsymbol{\mathsf{P}}_{k|k}}
 
 \title{%
 	Radioastronomical image reconstruction using Kalman filter under ionospheric perturbations}
@@ -78,6 +100,9 @@
 	
 	\part{Introduction}
 	
+		A Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more accurate result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
+		One objective of this paper is to evaluate if measure conditions and results are compatible with the filtering.
+	
 	
 	
 	\newpage
@@ -85,6 +110,10 @@
 	\section{Notations}
 	
 	\subsection{General notations}
+	
+	$\expval{\bullet}$ denotes the expected value of a random variable/vector/matrix.
+	
+	\paragraph{}Bold symbols represent vectors, normal ones represent scalars
 	
 	
 	
@@ -149,16 +178,16 @@
 	We will consider the following model to describe time evolution and observation equation :
 	$$
 		\begin{cases}
-			x_k = Ax_{k-1} + w_{k}\\
-			y_k = Hx_k + v_k
+			\x_k = A\x_{k-1} + \w_{k-1}\\
+			\y_k = H\x_k + \v_k
 		\end{cases}
 	$$
 	
 	Where :
 	\begin{itemize}
-		\item $A$ is the linear state-transition model between time $k-1$ and $k$, supposing evolution is time invariant
-		\item $\{w_k\}$ is the state noise sequence
-		\item $\{v_k\}$ is the measurements noise sequence
+		\item $A$ is the linear state-transition model between time $k-1$ and $k$, assuming evolution is time invariant
+		\item $\{\w_k\}$ is the state noise sequence
+		\item $\{\v_k\}$ is the measurements noise sequence
 	\end{itemize}
 	
 		
@@ -166,17 +195,36 @@
 	
 	This filter requires more inputs to estimate the state of the system :
 	\begin{itemize}
-		\item $\{Q_k\}$, the covariance of the process noise sequence
-		\item $\{R_k\}$, the covariance of the observation noise sequence
+		\item $\{\Q_k\}$, the covariance of the process noise sequence
+		\item $\{\R_k\}$, the covariance of the observation noise sequence
 	\end{itemize}
 
 	Which can be rewritten as
 	$$
 		\begin{cases}
-			Q_k = \expval{w_{k-1}w_{k-1}^H} - \expval{w_{k-1}}\expval{w_{k-1}}^H \\
-			R_k = \expval{v_{k}v_{k}^H} - \expval{v_k}\expval{v_k}^H \\
+			\Q_k = \expval{\w_{k-1}\w_{k-1}^H} - \expval{\w_{k-1}}\expval{\w_{k-1}}^H \\
+			\R_k = \expval{\v_{k}\v_{k}^H} - \expval{\v_k}\expval{\v_k}^H 
 		\end{cases}
 	$$
+	
+	Those inputs are not \emph{a priori} known, but it has been shown that using the \emph{autocovariance least-squares} (ALS) method provides a good estimate of those matrices. [CITATION NEEDED] \\
+	We will assume that these inputs are known perfectly except when specified otherwise.\\
+	
+	Kalman filtering works in 2 steps :
+	\paragraph{Prediction} : This step predicts the state of the system at next time-step through de transition-state model, and the predicted measurement :
+	$$
+	\begin{cases}
+		\xp = A\xa + \moy{\w_k}\\
+		\yp = H\xp + \moy{\v_k}
+	\end{cases}
+	$$
+	And the covariance matrix :
+	$$
+		\Pp = H\Pa H^H + \Q_k
+	$$
+	This result can be computed using least-square estimation of the prediction error covariance\cite{intro_KF}
+	
+	\paragraph{Update} : Using prior knowledge about noise and observation model, the main goal is to build an image from both prediction and measurement using maximum likelihood estimation to mix them. 
 	
 	
 	\newpage
@@ -191,6 +239,9 @@
 	\section{implementation}
 	\section{Measures}
 	
+	
+	\newpage
+	\printbibliography
 \end{document}
 
 \begin{figure}[H]
