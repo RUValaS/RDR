@@ -78,9 +78,15 @@
 	
 	\part{Introduction}
 	
+	
+	
 	\newpage
 	\part{Notations and problem}
 	\section{Notations}
+	
+	\subsection{General notations}
+	
+	
 	
 		\subsection{Hadamard product}
 	
@@ -139,26 +145,38 @@
 	
 	\section{Evolution model and Kalman filtering}
 	
-	We consider a set $\{x_k\}$ of $n$ vector as theoretical images taken at a regular time interval. Those images are measured by an antenna mesh which UV plane will be written $H$. Measurements vectors will be designated by $n$ measures $\{y_k\}$.\\
-	We will consider the following model to describe time related evolutions and measure equation :
+	We consider a set $\{x_k\}$ of $n$ vector as theoretical images taken at a regular time interval. Those images are measured by an antenna mesh which UV plane will be written $H$, more generally written as observation model. Measurements vectors will be designated by $n$ measures $\{y_k\}$.\\
+	We will consider the following model to describe time evolution and observation equation :
 	$$
 		\begin{cases}
-			x_k = Ax_{k-1} + w_{k-1}\\
+			x_k = Ax_{k-1} + w_{k}\\
 			y_k = Hx_k + v_k
 		\end{cases}
 	$$
 	
 	Where :
 	\begin{itemize}
-		\item $A$ is the linear evolutionary model between time $k-1$ and $k$, supposing evolution is time invariant
-		\item $\{w_k\}$ are the additive evolutionary errors
-		\item $\{v_k\}$ are the measurements noises
+		\item $A$ is the linear state-transition model between time $k-1$ and $k$, supposing evolution is time invariant
+		\item $\{w_k\}$ is the state noise sequence
+		\item $\{v_k\}$ is the measurements noise sequence
 	\end{itemize}
 	
 		
 	In order to build images dynamically with better precision, a Kalman filter has been implemented.\\
 	
-	This filter requires assumptions about
+	This filter requires more inputs to estimate the state of the system :
+	\begin{itemize}
+		\item $\{Q_k\}$, the covariance of the process noise sequence
+		\item $\{R_k\}$, the covariance of the observation noise sequence
+	\end{itemize}
+
+	Which can be rewritten as
+	$$
+		\begin{cases}
+			Q_k = \expval{w_{k-1}w_{k-1}^H} - \expval{w_{k-1}}\expval{w_{k-1}}^H \\
+			R_k = \expval{v_{k}v_{k}^H} - \expval{v_k}\expval{v_k}^H \\
+		\end{cases}
+	$$
 	
 	
 	\newpage
