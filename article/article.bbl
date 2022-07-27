@@ -19,6 +19,34 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{bible}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=77981e2d0375f3f4f383acde5f204d44}{%
+           family={A.-J.\bibnamedelimi vand\bibnamedelimb der\bibnamedelima Veen},
+           familyi={A\bibinithyphendelim J\bibinitperiod\bibinitdelim v\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={A.\bibnamedelimi M.\bibnamedelimi Sardarabadi},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           suffix={S.\bibnamedelimi J.\bibnamedelimi Wijnholds},
+           suffixi={S\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{77981e2d0375f3f4f383acde5f204d44}
+      \strng{fullhash}{77981e2d0375f3f4f383acde5f204d44}
+      \strng{bibnamehash}{77981e2d0375f3f4f383acde5f204d44}
+      \strng{authorbibnamehash}{77981e2d0375f3f4f383acde5f204d44}
+      \strng{authornamehash}{77981e2d0375f3f4f383acde5f204d44}
+      \strng{authorfullhash}{77981e2d0375f3f4f383acde5f204d44}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Handbook of Signal Processing Systems}
+      \field{title}{Signal Processing for Radio Astronomy}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb https://doi.org/10.1007/978-3-319-91734-4_9
+      \endverb
+    \endentry
     \entry{intro_KF}{misc}{}
       \name{author}{1}{}{%
         {{hash=9e1e4fddd158a00fdd1c67ae6a5d0cf6}{%
@@ -40,6 +68,34 @@
       \field{month}{11}
       \field{title}{Introduction to Kalman Filtering and Extend Kalman Filtering}
       \field{year}{2018}
+    \endentry
+    \entry{iono}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1afb1d8acd76ede29979f4a6997afcfb}{%
+           family={TAT},
+           familyi={T\bibinitperiod},
+           given={Spoelstra},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{1afb1d8acd76ede29979f4a6997afcfb}
+      \strng{fullhash}{1afb1d8acd76ede29979f4a6997afcfb}
+      \strng{bibnamehash}{1afb1d8acd76ede29979f4a6997afcfb}
+      \strng{authorbibnamehash}{1afb1d8acd76ede29979f4a6997afcfb}
+      \strng{authornamehash}{1afb1d8acd76ede29979f4a6997afcfb}
+      \strng{authorfullhash}{1afb1d8acd76ede29979f4a6997afcfb}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ann. Geophys.}
+      \field{month}{11}
+      \field{number}{4}
+      \field{title}{The ionosphere and radio interferometry}
+      \field{volume}{40}
+      \field{year}{1997}
+      \verb{doi}
+      \verb https://doi.org/10.4401/ag-3885
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

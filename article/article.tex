@@ -45,12 +45,16 @@
 \newcommand{\hinv}[1]{#1^{\circ-1}} % inverse de hadamard
 \newcommand{\fnorm}[1]{|\vert#1|\vert_{F}} % norme de Frobenius
 \newcommand{\moy}[1]{\boldsymbol{\mathsf{m}}_{#1}}
+\newcommand{\autocorr}[1]{\expval{(#1)(#1)^H}}
+\newcommand{\ccorr}[2]{\expval{(#1)(#2)^H}}
 
 \renewcommand{\expval}[1]{\text{E}\left[#1\right]}
 \newcommand{\w}{\boldsymbol{w}}
 \renewcommand{\v}{\boldsymbol{v}}
 \newcommand{\Q}{\boldsymbol{\mathsf{Q}}}
 \newcommand{\R}{\boldsymbol{\mathsf{R}}}
+\renewcommand{\H}{\boldsymbol{\mathsf{H}}}
+\newcommand{\A}{\boldsymbol{\mathsf{A}}}
 
 \newcommand{\x}{\boldsymbol{x}}
 \newcommand{\y}{\boldsymbol{y}}
@@ -63,6 +67,7 @@
 \newcommand{\Pp}{\boldsymbol{\mathsf{P}}_{k|k-1}}
 \newcommand{\Pa}{\boldsymbol{\mathsf{P}}_{k-1|k-1}}
 \newcommand{\Pe}{\boldsymbol{\mathsf{P}}_{k|k}}
+\renewcommand{\P}{\boldsymbol{\mathsf{P}}}
 
 \title{%
 	Radioastronomical image reconstruction using Kalman filter under ionospheric perturbations}
@@ -220,16 +225,51 @@
 	$$
 	And the covariance matrix :
 	$$
-		\Pp = H\Pa H^H + \Q_k
+		\Pp = \autocorr{\xp - \x_k} = H\Pa H^H + \Q_k
 	$$
 	This result can be computed using least-square estimation of the prediction error covariance\cite{intro_KF}
 	
-	\paragraph{Update} : Using prior knowledge about noise and observation model, the main goal is to build an image from both prediction and measurement using maximum likelihood estimation to mix them. 
+	\paragraph{Update} : Using prior knowledge about noise and observation model, the main goal is to build an image from both prediction and measurement using maximum likelihood estimation in order to enhance the resulting image. This can be written as looking for $K_k$, known as \emph{Kalman gain}, such as :
+	\begin{equation}
+		\xe = \xp + K_k\left(\y_k - \yp\right)
+	\end{equation}
+	
+	minimises the quadratic error :
+	\begin{equation}
+		K_k = \arg\min_K \Pe = \arg\min_K \autocorr{\xe - \x_k}
+	\end{equation}
+	
+	The resulting expression for $K_k$ is \cite{intro_KF} :
+	\begin{equation}
+		K_k = \Pp H^H\left(H\Pp H^H + \R_k\right)^{-1}
+	\end{equation}
+
+	Thus the update phase can be written :
+	\begin{equation}
+		\begin{cases}
+			\xe = \xp + K_k\left(\y_k - \yp\right) \\
+			\Pe = \left(\mathbb{I} - K_kH\right)\Pp
+		\end{cases}
+	\end{equation}
 	
 	
 	\newpage
 	\part{Reliability of Kalman Filter under perturbations}
 	\section{Perturbations sources}
+	
+	In radio astronomy, many factors can and will affect measures. Those can be :
+	\paragraph{Initialisation error} : Kalman filtering requires initializing the first image and the first correlation matrix. Those cannot be exact and will present errors. \\
+	Concerning the initial image, multiple precise and efficient methods exist \cite{bible}, and from this initial image the initial correlation matrix can ben initialised\cite{intro_KF} with precision as 
+	$$
+		\P_0 = \autocorr{\x_0} - \moy{\x_0}\moy{\x_0}^H
+	$$
+	
+	\paragraph{Error covariance matrices} : as mentioned above, these matrices set can be estimated with good accuracy using ALS algorithms [CITATION NEEDED]. It is to be noted that errors on these matrices will not induce new errors in the estimated images, as they are only used to compute the Kalman gain. This implies that inaccurate error matrices can only spread already existing errors on estimated images.
+	
+	\paragraph{Antennas informations} : Multiple equations in Kalman filtering relies on the observation model $\H$, which is computed as the UV plane FFT covered by the antenna mesh. The limited knowledge of this mesh can create errors in $\H$, particularly when antennas positions and directions cannot be perfectly measured.
+	
+	\paragraph{Ionospheric perturbations} : Radio astronomical observations can be affected by the passage of the observed electromagnetic waves through the ionosphere \cite{iono}. This can affect the observation model $\H$ as it modifies the perceived direction of the electromagnetic wave measured, and calibration or correction must be made to compensate these perturbations.
+	
 	\section{Effects}
 	\subsection{Position}
 	\subsection{Direction}
