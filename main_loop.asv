@@ -37,9 +37,8 @@ A_ev = eye(D);
 A = matA(z,I,D,f,c);
 
 % erreurs = [0.001 0.003 0.005 0.01 0.03 0.05 0.1 0.3];
-% erreurs = [0.001 0.003 0.005 0.008 0.01 0.03];
+erreurs = [0.001 0.003 0.005 0.008 0.01 0.03];
 % erreurs = [0.001 0.3 0.05];
-erreurs = [0.01];
 npos = numel(erreurs);
 
 % calcul invariants kalman
@@ -48,7 +47,7 @@ H = matF(J,D,z,lambda,I);
 [nY,nR,nQ,tX] = dataGen_im(H,J,N,D,vadapted,A_ev,Nreal,SNR,RATIO);
 % X_0 = true_image ;
 X_mvdr = MEM(MVDR(A,reshape(nY(:,1),J,J),Mx,My),iMEM);
-X_mvdr = normarr(abs(X_mvdr));
+X_mvdr = normarr(X_mvdr);
 X_0 = vadapted;
 % tX(:,1) = vadapted;
 
@@ -107,8 +106,6 @@ for err = 1:npos
         y = H_err*X_0;
         Iv = I(:);
 
-        prb = @(x)prb_f(x,y,Iv,dz,J,D,lambda);
-
 
         % 2. init
         x0 = [zeros(1,2*D) reshape(X_mvdr,1,[])];
@@ -121,7 +118,7 @@ for err = 1:npos
 
         % 4. nouveau X_0, calcul Hcorr
         X_0 = x(2*D+1:3*D);
-        Icorr = reshape(x(1:2*D),D,2) + I;
+        Icorr = reshape(x(1:2*D),D,2);
         Hcorr = matF(J,D,z_err,lambda,Icorr);
 
 %         C = H ./ H_err;
@@ -161,17 +158,17 @@ for err = 1:npos
 
     % Sauvegarde données
     nom = strcat(strrep(sprintf('%.3f',poids),'.','_'),'.mat');
-%     save(nom,"wK","wK_err","wX","wX_err","e_x","e_K","e_x_e","de_x","de_K","de_x_e","e_th","de_xx","e_xx"); % ajouter Xp Xp_e
+    save(nom,"wK","wK_err","wX","wX_err","e_x","e_K","e_x_e","de_x","de_K","de_x_e","e_th","de_xx","e_xx"); % ajouter Xp Xp_e
 end % end err
 
-function s = prb_f(x,y,Iv,dz,J,D,lambda)
+function s = prb(x,y,Iv,dz)
 %         prb = @(x)([real(y); imag(y)] - [cos(-2*(pi/lambda)*(dz(:,1)*(Iv(1:D) - x(1:D)) + dz(:,2)*(Iv(D+1:D*2) - x(D+1:2*D))));
 %             sin(-2*(pi/lambda)*(dz(:,1)*(Iv(1:D) - x(1:D)) + dz(:,2)*(Iv(D+1:D*2) - x(D+1:2*D))))] * x(2*D+1:3*D));
 Hmodif = zeros(J^2,D);
 for q=1:D
-    Hmodif(: ,q) = exp(-1i*2*pi/lambda*(dz(:,1)*(Iv(q) - x(q))+dz(:,2)*(Iv(D+q) - x(D+q))));
+    Hmodif(: ,q) = exp(-1i*2*pi/lambda*(dz(:,1)*(Iv(q) - x(:,D))+dz(:,2)*Iv(q,2)));
 end % .* aussi non ?
-ymodif = Hmodif*x(2*D+1:3*D)';
-s = [real(y);imag(y)] - [real(ymodif);imag(ymodif)];
+
+s = [real(y);imag(y)] - [real(Hmodif);imag(Hmodif)]*x(2*D+1:3*D);
     
 end
