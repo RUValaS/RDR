@@ -15,7 +15,7 @@
 \contentsline {paragraph}{Error covariance matrices}{5}{section*.6}%
 \contentsline {paragraph}{Antennas informations}{5}{section*.7}%
 \contentsline {paragraph}{Ionospheric perturbations}{5}{section*.8}%
-\contentsline {section}{\numberline {2}Effects}{5}{section.3.2}%
+\contentsline {section}{\numberline {2}Effects of perturbations}{5}{section.3.2}%
 \contentsline {subsection}{\numberline {2.1}Position}{5}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {2.2}Direction}{5}{subsection.3.2.2}%
 \contentsline {part}{IV\hspace {1em}Experimental correction}{6}{part.4}%
