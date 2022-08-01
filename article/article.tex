@@ -55,9 +55,13 @@
 \newcommand{\R}{\boldsymbol{\mathsf{R}}}
 \renewcommand{\H}{\boldsymbol{\mathsf{H}}}
 \newcommand{\A}{\boldsymbol{\mathsf{A}}}
+\newcommand{\I}{\boldsymbol{\mathsf{I}}}
 
 \newcommand{\x}{\boldsymbol{x}}
 \newcommand{\y}{\boldsymbol{y}}
+\newcommand{\z}{\boldsymbol{z}}
+
+\newcommand{\dz}{\Delta\boldsymbol{z}}
 
 \newcommand{\xp}{\widehat{\x}_{k|k-1}}
 \newcommand{\xa}{\widehat{\x}_{k-1|k-1}}
@@ -68,6 +72,9 @@
 \newcommand{\Pa}{\boldsymbol{\mathsf{P}}_{k-1|k-1}}
 \newcommand{\Pe}{\boldsymbol{\mathsf{P}}_{k|k}}
 \renewcommand{\P}{\boldsymbol{\mathsf{P}}}
+
+\newcommand{\vbeps}{\boldsymbol{\varepsilon}}
+\newcommand{\C}{\mathcal{C}}
 
 \title{%
 	Radioastronomical image reconstruction using Kalman filter under ionospheric perturbations}
@@ -105,6 +112,8 @@
 	
 	\part{Introduction}
 	
+	When observing distant objects, instruments resolution matters the most. When using optical telescopes, the determining factor for resolution is the size of the primary mirror. When observing really distant objects, the required size to have a decent resolution becomes unrealistically big. To address this problem, radio interferometry replaces a single optical instrument with multiple antennas collecting electromagnetic waves. When gathering these measures together, we can obtain a better angular resolution than any real single optical instrument could get.
+	
 		A Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more accurate result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
 		One objective of this paper is to evaluate if measure conditions and results are compatible with the filtering.
 	
@@ -116,10 +125,13 @@
 	
 	\subsection{General notations}
 	
-	$\expval{\bullet}$ denotes the expected value of a random variable/vector/matrix.
+	$\expval{\bullet}$ denotes the expected value of a random variable/vector/matrix.\\
 	
-	\paragraph{}Bold symbols represent vectors, normal ones represent scalars
+	Bold symbols represent vectors, normal ones represent scalars except when stated otherwise.\\
 	
+	Operator $\moy{\bullet}$ represents the mean value/vector/matrix of the given $\bullet$ set.\\
+	
+	When a 2-D matrix element is indexed with a single coordinate, it designates the reshaped matrix in a 1-D vector.
 	
 	
 		\subsection{Hadamard product}
@@ -176,15 +188,36 @@
 	}\abs{A_{ij} - B_{i,j}}
 	$$
 	
+	\section{Measure and parameters}
+	
+	In order to measure precisely the effects, the following parameters will be used :
+	\begin{itemize}
+		\item The antennas distribution is a 8.57m square 6$\times$6 grid. The number of antennas is thus $J = 36$
+		\item The observed directions grid is a 10$\times$10 square. The number of directions is thus $D=100$
+		\item A normally distributed observation noise will be introduced with Signal to Noise Ratio (SNR) of 10. 
+		\item The first image used for Kalman will be computed using Minimum Variance Distortionless Response (MVDR) method \cite{bible}, deconvoluted with Maximum Entropy Method (MEM) \cite{MEM}
+		\item Measured wavelength is $\lambda =0.3$m
+	\end{itemize}
+
+	The following matrices and sets will be used to describe this setup :
+	\begin{itemize}
+		\item $\z$ represents the positions of each antenna in the 2-D grid
+		\item $\dz_{ij}$ is the baseline : $\dz_{ij} = \z_i - \z_j$. 
+		\item $\I$ is the directions matrix, represented as normalised direction cosines.
+	\end{itemize}
 	
 	\section{Evolution model and Kalman filtering}
 	
-	We consider a set $\{x_k\}$ of $n$ vector as theoretical images taken at a regular time interval. Those images are measured by an antenna mesh which UV plane will be written $H$, more generally written as observation model. Measurements vectors will be designated by $n$ measures $\{y_k\}$.\\
+	We consider a set $\{\x_k\}$ of $n$ vector as theoretical images taken at a regular time interval. Those images are measured by an antenna mesh $\{\z_k\}$ which UV plane will be written $H$, more generally written as observation model. Measurements vectors will be designated by $n$ measures $\{\y_k\}$.\\
+	$\H$ can be computed by the following :
+	\begin{equation}
+		\H_{j,q} = \exp(-i\frac{2\pi}{\lambda}\dz_{j}\dotproduct\I_q)
+	\end{equation}
 	We will consider the following model to describe time evolution and observation equation :
 	$$
 		\begin{cases}
-			\x_k = A\x_{k-1} + \w_{k-1}\\
-			\y_k = H\x_k + \v_k
+			\x_k = \A\x_{k-1} + \w_{k-1}\\
+			\y_k = \H\x_k + \v_k
 		\end{cases}
 	$$
 	
@@ -260,9 +293,9 @@
 	In radio astronomy, many factors can and will affect measures. Those can be :
 	\paragraph{Initialisation error} : Kalman filtering requires initializing the first image and the first correlation matrix. Those cannot be exact and will present errors. \\
 	Concerning the initial image, multiple precise and efficient methods exist \cite{bible}, and from this initial image the initial correlation matrix can ben initialised\cite{intro_KF} with precision as 
-	$$
+	\begin{equation}\label{p0}
 		\P_0 = \autocorr{\x_0} - \moy{\x_0}\moy{\x_0}^H
-	$$
+	\end{equation}
 	
 	\paragraph{Error covariance matrices} : as mentioned above, these matrices set can be estimated with good accuracy using ALS algorithms [CITATION NEEDED]. It is to be noted that errors on these matrices will not induce new errors in the estimated images, as they are only used to compute the Kalman gain. This implies that inaccurate error matrices can only spread already existing errors on estimated images.
 	
@@ -274,14 +307,50 @@
 	
 	These perturbations create errors on the matrices used in reconstruction and prediction with Kalman filtering. The goal of this part is to evaluate how much these error affect prediction and reconstruction, to determine if Kalman filtering can be realistically used in radio-astronomic context. \\
 	
-	\subsection{Methodology}
+	\subsection{Methodology and Parameters}
 
-	In order to measure precisely the effects, the following methodology will be used :
+	In order to simulate data, an image is introduced as the "reference image", this image will only be used in order to compute simulated observations. The selected picture must respect the following conditions :
 	\begin{itemize}
-		\item 
+		\item mostly black background, to give realistic results for space imagery
+		\item no convolution effect, as all directions are considered sources of different intensities, only real sources must appear
 	\end{itemize}
+	The following picture is the one used :
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\linewidth]{src/bh_square}
+		\caption{Selected image for simulation}
+		\label{fig:bhsquare}
+	\end{figure}
+	
+	Different images gave similar results if they followed the conditions cited above.\\
+
+	First the basic parameters and matrices are computed : antenna grid, directions cosines, baseline vectors.\\ Next, perfect base matrices are computed : errorless observation matrix $\H$, reference observations using the errorless $\H$, error covariance matrices. The latter are computed perfectly using known simulated noise, and errors from ALS estimation are neglected. A set of perfect images are also computed to measure reconstruction absolute error.\\
+	Initial image $\x_0$ and covariance $\P_0$ are computed as stated in equation (\ref{p0}).
 	
 	\subsection{Position}
+	
+	The first error studied is the position error. A normally distributed error $\vbeps$ is introduced in the antennas positions matrix, giving :
+	
+	$$
+		\z_k^* = \z_k + \vbeps_k
+	$$
+	
+	The new inaccurate baseline is :
+	$$
+		\dz_{ij}^* = \z_i + \vbeps_i - \z_j - \vbeps_j = \dz_{ij} + \vbeps_{ij}
+	$$
+	
+	The new inaccurate observations matrix's expression is the following :
+	\begin{equation}
+		\H_{j,q}^* = \exp(-i\frac{2\pi}{\lambda}\dz_{j}^*\dotproduct\I_q) = \exp(-i\frac{2\pi}{\lambda}\left(\dz_{j} + \vbeps_j\right)\dotproduct\I_q) = \exp(-i\frac{2\pi}{\lambda}\dz_{j}\dotproduct\I_q)\exp(-i\frac{2\pi}{\lambda}\vbeps_j\dotproduct\I_q)
+	\end{equation}
+
+	The distortion matrix $\C$ can thus be defined such as :
+	\begin{equation}
+		\H^* = \H\odot\C 
+	\end{equation}
+	
 	\subsection{Direction}
 	
 	\newpage

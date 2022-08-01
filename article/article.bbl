@@ -69,6 +69,29 @@
       \field{title}{Introduction to Kalman Filtering and Extend Kalman Filtering}
       \field{year}{2018}
     \endentry
+    \entry{MEM}{article}{}
+      \name{author}{1}{}{%
+        {{hash=148b249b8c1e0614a03c8bbd0dc55ffc}{%
+           family={T.\bibnamedelimi J.\bibnamedelimi Cornwell},
+           familyi={T\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={K.\bibnamedelimi F.\bibnamedelimi Evans},
+           giveni={K\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{148b249b8c1e0614a03c8bbd0dc55ffc}
+      \strng{fullhash}{148b249b8c1e0614a03c8bbd0dc55ffc}
+      \strng{bibnamehash}{148b249b8c1e0614a03c8bbd0dc55ffc}
+      \strng{authorbibnamehash}{148b249b8c1e0614a03c8bbd0dc55ffc}
+      \strng{authornamehash}{148b249b8c1e0614a03c8bbd0dc55ffc}
+      \strng{authorfullhash}{148b249b8c1e0614a03c8bbd0dc55ffc}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Astro. Astrophys.}
+      \field{title}{A simple maximum entropy devoncolution algorithm}
+      \field{year}{1985}
+      \field{dateera}{ce}
+    \endentry
     \entry{iono}{article}{}
       \name{author}{1}{}{%
         {{hash=1afb1d8acd76ede29979f4a6997afcfb}{%
