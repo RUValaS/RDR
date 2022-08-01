@@ -56,6 +56,7 @@
 \renewcommand{\H}{\boldsymbol{\mathsf{H}}}
 \newcommand{\A}{\boldsymbol{\mathsf{A}}}
 \newcommand{\I}{\boldsymbol{\mathsf{I}}}
+\newcommand{\K}{\boldsymbol{\mathsf{K}}}
 
 \newcommand{\x}{\boldsymbol{x}}
 \newcommand{\y}{\boldsymbol{y}}
@@ -131,7 +132,9 @@
 	
 	Operator $\moy{\bullet}$ represents the mean value/vector/matrix of the given $\bullet$ set.\\
 	
-	When a 2-D matrix element is indexed with a single coordinate, it designates the reshaped matrix in a 1-D vector.
+	When a 2-D matrix element is indexed with a single coordinate, it designates the reshaped matrix in a 1-D vector.\\
+	
+	$\mathbb{I}$ is the identity matrix.
 	
 	
 		\subsection{Hadamard product}
@@ -258,7 +261,7 @@
 	$$
 	And the covariance matrix :
 	$$
-		\Pp = \autocorr{\xp - \x_k} = H\Pa H^H + \Q_k
+		\Pp = \autocorr{\xp - \x_k} = \A\Pa \A^H + \Q_k
 	$$
 	This result can be computed using least-square estimation of the prediction error covariance\cite{intro_KF}
 	
@@ -350,6 +353,39 @@
 	\begin{equation}
 		\H^* = \H\odot\C 
 	\end{equation}
+
+	By the same calculation than before \cite{intro_KF}, position error being decorrelated with other errors or noise, the equations become :
+	\begin{subequations}
+		\begin{equation}\label{xpe}
+			\xp^* = \A\xa + \moy{\w_k}
+		\end{equation}\begin{equation}
+			\yp^* = \H^*\xp^* + \moy{\v_k}
+		\end{equation}\begin{equation}
+			\Pp^* = \A\Pa^*\A^H + \Q_k
+		\end{equation}\begin{equation}
+			\K_k^* = \Pp^*\left(\H^*\right)^H\left(\H^*\Pp^*\left(\H^*\right)^H\right)^{-1}
+		\end{equation}\begin{equation}
+			\Pe^* = \Pp^* + \K_k^*\H^*\Pp^*\left(\H^*\right)^H\left(\K_k^*\right)^H + \K_k^*\R_k\left(\K_k^*\right)^H
+		\end{equation}\begin{equation}
+			\xe^* = \xp^* + \K_k^*(\y_k - \yp^*)
+		\end{equation}
+	\end{subequations}
+
+	To evaluate reconstruction quality, we can introduce the following errors :
+	\begin{equation}
+		\vbeps^{\K}_k = \K_k^* - \K_k
+	\end{equation}
+	\begin{equation}\label{errX}
+		\vbeps^{\x}_k = \xe^* - \xe
+	\end{equation}
+
+	Respectively gain error and estimation error.\\
+	Using equation (\ref{xpe}), (\ref{errX}) can be rewritten :
+	\begin{equation}
+		\vbeps^{\x}_k = \vbeps^{\K}_k\y_k + \left(\mathbb{I} - \K_k^*\H^*\right)\xp^* - \left(\mathbb{I} - \K_k\H\right)\xp
+	\end{equation}
+
+	To evaluate the reconstruction error evolution 
 	
 	\subsection{Direction}
 	

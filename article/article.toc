@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {2}Effects of perturbations}{6}{section.3.2}%
 \contentsline {subsection}{\numberline {2.1}Methodology and Parameters}{6}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {2.2}Position}{7}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {2.3}Direction}{7}{subsection.3.2.3}%
-\contentsline {part}{IV\hspace {1em}Experimental correction}{8}{part.4}%
-\contentsline {section}{\numberline {1}implementation}{8}{section.4.1}%
-\contentsline {section}{\numberline {2}Measures}{8}{section.4.2}%
+\contentsline {subsection}{\numberline {2.3}Direction}{8}{subsection.3.2.3}%
+\contentsline {part}{IV\hspace {1em}Experimental correction}{9}{part.4}%
+\contentsline {section}{\numberline {1}implementation}{9}{section.4.1}%
+\contentsline {section}{\numberline {2}Measures}{9}{section.4.2}%

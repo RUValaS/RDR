@@ -2351,10 +2351,11 @@
     <bcf:citekey order="5">bible</bcf:citekey>
     <bcf:citekey order="6">intro_KF</bcf:citekey>
     <bcf:citekey order="7">iono</bcf:citekey>
-    <bcf:citekey order="8">bible</bcf:citekey>
-    <bcf:citekey order="9">MEM</bcf:citekey>
-    <bcf:citekey order="10">intro_KF</bcf:citekey>
-    <bcf:citekey order="11">iono</bcf:citekey>
+    <bcf:citekey order="8">intro_KF</bcf:citekey>
+    <bcf:citekey order="9">bible</bcf:citekey>
+    <bcf:citekey order="10">MEM</bcf:citekey>
+    <bcf:citekey order="11">intro_KF</bcf:citekey>
+    <bcf:citekey order="12">iono</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
