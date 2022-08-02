@@ -2352,10 +2352,11 @@
     <bcf:citekey order="6">intro_KF</bcf:citekey>
     <bcf:citekey order="7">iono</bcf:citekey>
     <bcf:citekey order="8">intro_KF</bcf:citekey>
-    <bcf:citekey order="9">bible</bcf:citekey>
-    <bcf:citekey order="10">MEM</bcf:citekey>
-    <bcf:citekey order="11">intro_KF</bcf:citekey>
-    <bcf:citekey order="12">iono</bcf:citekey>
+    <bcf:citekey order="9">iono</bcf:citekey>
+    <bcf:citekey order="10">bible</bcf:citekey>
+    <bcf:citekey order="11">MEM</bcf:citekey>
+    <bcf:citekey order="12">intro_KF</bcf:citekey>
+    <bcf:citekey order="13">iono</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

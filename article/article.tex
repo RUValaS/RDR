@@ -76,6 +76,7 @@
 
 \newcommand{\vbeps}{\boldsymbol{\varepsilon}}
 \newcommand{\C}{\mathcal{C}}
+\newcommand{\D}{\mathcal{D}}
 
 \title{%
 	Radioastronomical image reconstruction using Kalman filter under ionospheric perturbations}
@@ -113,7 +114,9 @@
 	
 	\part{Introduction}
 	
-	When observing distant objects, instruments resolution matters the most. When using optical telescopes, the determining factor for resolution is the size of the primary mirror. When observing really distant objects, the required size to have a decent resolution becomes unrealistically big. To address this problem, radio interferometry replaces a single optical instrument with multiple antennas collecting electromagnetic waves. When gathering these measures together, we can obtain a better angular resolution than any real single optical instrument could get.
+	When observing distant objects, instruments resolution matters the most. When using optical telescopes, the determining factor for resolution is the size of the primary mirror. When observing really distant objects, the required size to have a decent resolution becomes unrealistically big. To address this problem, radio interferometry replaces a single optical instrument with multiple antennas collecting electromagnetic waves. When gathering these measures together, we can obtain a better angular resolution than any real single optical instrument could get. \\
+	
+	Those distant objects are not fixed in time and a lot of calculations have been done to create evolution models for them. The objective here is not to use observations to confirm models, but to assume a model is known and get better results from the knowledge of observations and model. 
 	
 		A Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more accurate result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
 		One objective of this paper is to evaluate if measure conditions and results are compatible with the filtering.
@@ -329,11 +332,15 @@
 	Different images gave similar results if they followed the conditions cited above.\\
 
 	First the basic parameters and matrices are computed : antenna grid, directions cosines, baseline vectors.\\ Next, perfect base matrices are computed : errorless observation matrix $\H$, reference observations using the errorless $\H$, error covariance matrices. The latter are computed perfectly using known simulated noise, and errors from ALS estimation are neglected. A set of perfect images are also computed to measure reconstruction absolute error.\\
-	Initial image $\x_0$ and covariance $\P_0$ are computed as stated in equation (\ref{p0}).
+	Initial image $\x_0$ and covariance $\P_0$ are computed as stated in equation (\ref{p0}).\\
+	
+	The next step is the generation of an inaccurate matrix normally distributed around the true one - position or direction here. From this matrix is generated an inaccurate  $\H^*$ observations matrix if needed, and Kalman filter is run two times, the first using perfect parameters and the second one using inaccurate ones. In order to smooth out random noise effects this step is repeated 100 times. \\
+	
+	We can then get the mean error values, measured using a distance defined above, and standard deviations needed.
 	
 	\subsection{Position}
 	
-	The first error studied is the position error. A normally distributed error $\vbeps$ is introduced in the antennas positions matrix, giving :
+	The first error studied is the position error. A normally distributed error $\vbeps$ is introduced on the antennas positions matrix, giving :
 	
 	$$
 		\z_k^* = \z_k + \vbeps_k
@@ -366,7 +373,7 @@
 			\K_k^* = \Pp^*\left(\H^*\right)^H\left(\H^*\Pp^*\left(\H^*\right)^H\right)^{-1}
 		\end{equation}\begin{equation}
 			\Pe^* = \Pp^* + \K_k^*\H^*\Pp^*\left(\H^*\right)^H\left(\K_k^*\right)^H + \K_k^*\R_k\left(\K_k^*\right)^H
-		\end{equation}\begin{equation}
+		\end{equation}\begin{equation}\label{finKal}
 			\xe^* = \xp^* + \K_k^*(\y_k - \yp^*)
 		\end{equation}
 	\end{subequations}
@@ -384,16 +391,48 @@
 	\begin{equation}
 		\vbeps^{\x}_k = \vbeps^{\K}_k\y_k + \left(\mathbb{I} - \K_k^*\H^*\right)\xp^* - \left(\mathbb{I} - \K_k\H\right)\xp
 	\end{equation}
-
-	To evaluate the reconstruction error evolution 
+	
+	Computing these equations gives the following results :
+	
+	% figure
+	
+	% discussion
+	
 	
 	\subsection{Direction}
+	
+	Direction error can be caused by a misaligned antenna, or a small displacement, but will mostly come from ionospheric perturbation\cite{iono}. To study the effects of these perturbations, a normally distributed error $\vbeps$ is introduced on the direction matrix :
+	
+	\begin{equation}
+		\I_q^* = \I_q + \vbeps_q
+	\end{equation}
+
+	The observations matrix becomes :
+	$$
+		\H_{j,q}^* = \exp(-i\frac{2\pi}{\lambda}\dz_{j}\dotproduct\I_q^*) = \exp(-i\frac{2\pi}{\lambda}\dz_{j}\dotproduct\I_q)\exp(-i\frac{2\pi}{\lambda}\dz_{j}\dotproduct\vbeps_q)
+	$$
+	A directional distortion matrix can be defined such as :
+	\begin{equation}
+		\H^* = \H \odot \D
+	\end{equation}
+
+	Kalman equations from (\ref{xpe}) to (\ref{finKal}) stay the same.\\
+	
+	To further measure the effect of this error, it will be introduced on a single direction first, then on 5 directions, then on all of them. 
+	
+	\subsubsection{One direction}
 	
 	\newpage
 	\part{Experimental correction}
 	\section{implementation}
 	\section{Measures}
 	
+	\newpage
+	\part{Further insights}
+	
+	% err dir 1 antenne plutôt que sur 1 dir
+	% smoother
+	% deep
 	
 	\newpage
 	\printbibliography
