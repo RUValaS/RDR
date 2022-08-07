@@ -116,13 +116,17 @@
 	
 	When observing distant objects, instruments resolution matters the most. When using optical telescopes, the determining factor for resolution is the size of the primary mirror. When observing really distant objects, the required size to have a decent resolution becomes unrealistically big. To address this problem, radio interferometry replaces a single optical instrument with multiple antennas collecting electromagnetic waves. When gathering these measures together, we can obtain a better angular resolution than any real single optical instrument could get. \\
 	
-	Those distant objects are not fixed in time and a lot of calculations have been done to create evolution models for them. The objective here is not to use observations to confirm models, but to assume a model is known and get better results from the knowledge of observations and model. 
+	Those distant objects are not fixed in time and a lot of calculations have been done to create evolution models for them. The goal here is not to use observations to confirm models, but to assume a model is known and get better results considering the knowledge of both observations and model. \\ 
 	
-		A Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more accurate result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
-		One objective of this paper is to evaluate if measure conditions and results are compatible with the filtering.
+	A (non extended) Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more accurate result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
+		
+	A sensitive part of the filter is the observations model, needing precise knowledge of antennas positions and directions. An objective of this work is to determine how inaccuracies in these measurements affect image reconstruction, and if it is realistically usable in radio astronomical imagery. \\
 	
 	\newpage
 	\part{SATIE}
+	
+	SATIE stands for \emph{laboratoire des Systèmes et Applications des Technologies de l'Information et de l'Energie} (Information and Energy Technology Systems and Applications Laboratory).\\
+	Created in 1975 under the name \emph{Laboratoire d'Electricité de l'ENSET}, then renamed \emph{LESiR} in 1984 at the time of its association with CNRS, then finally SATIE in 2002, the laboratory studies
 	
 	\newpage
 	\part{Notations and problem}
@@ -311,7 +315,7 @@
 	
 	Different images gave similar results if they followed the conditions cited above.\\
 	
-	Data simulation will be done as stated in [REF TER]. First the visibilities matrix is computed using the reference image and the UV-plane of the antenna mesh. To simulate visibilities at different snapshots, we apply the wanted transformation without noise and use the same UV-plane matrix to compute visibilities.\\
+	Data simulation will be done as stated in \cite{TER}. First the visibilities matrix is computed using the reference image and the UV-plane of the antenna mesh. To simulate visibilities at different snapshots, we apply the wanted transformation without noise and use the same UV-plane matrix to compute visibilities.\\
 	
 	To add noise, a normally distributed random matrix is generated and the covariance of that matrix is added to the visibilities one. This matrix could also be directly generated using Wishart distribution. \\ 
 	
@@ -321,7 +325,7 @@
 	
 	When reviewing performances under certain errors, all other inputs of the filter - including $\x_0$ - must be errorless. The simplest way of doing that for $\x_0$ is to use the reference image as input. \\
 	
-	When reviewing Kalman filter performances under real conditions, the reference image is not considered as knwon, and we need to reconstruct the image from the visibilities matrix. While different methods exist [REF TER], the ones used here are MVDR reconstructions followed by Maximum Entropy deconvolution.
+	When reviewing Kalman filter performances under real conditions, the reference image is not considered as knwon, and we need to reconstruct the image from the visibilities matrix. While different methods exist \cite{TER}, the ones used here are MVDR reconstructions followed by Maximum Entropy deconvolution.
 	
 	\newpage
 	\part{Reliability of Kalman Filter under perturbations}
@@ -450,6 +454,12 @@
 	% err dir 1 antenne plutôt que sur 1 dir
 	% smoother
 	% deep
+	
+	\paragraph{Directional error on one antenna :} on larger arrays, ionospheric perturbations might not affect all antennas the same, thus studying the reliability when one antenna has errors might be an idea to explore.
+	
+	\paragraph{Use of smoothers :} when using a Kalman filter, only prior knowledge of data is needed. When all measures at different snapshots are done, a \emph{smoother}\cite{RTS} can be used to give better Kalman results, their reliability under perturbations needs to be discussed. 
+	
+	\paragraph{Deep learning :} In image processing, deep learning and artificial intelligence are getting more effective and reliable. In particular, model based deep learning \cite{deep} can be an effective way of rebuilding images when an evolution model is known.
 	
 	\newpage
 	\printbibliography

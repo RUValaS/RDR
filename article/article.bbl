@@ -69,6 +69,92 @@
       \field{title}{Introduction to Kalman Filtering and Extend Kalman Filtering}
       \field{year}{2018}
     \endentry
+    \entry{TER}{report}{}
+      \name{author}{1}{}{%
+        {{hash=b85b92a43dc7967c5feb2cd2b9a0330f}{%
+           family={M.\bibnamedelimi Marchesseau},
+           familyi={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={G.Robert-Dautun},
+           giveni={G\bibinithyphendelim D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {ENS Paris-Saclay}%
+      }
+      \strng{namehash}{b85b92a43dc7967c5feb2cd2b9a0330f}
+      \strng{fullhash}{b85b92a43dc7967c5feb2cd2b9a0330f}
+      \strng{bibnamehash}{b85b92a43dc7967c5feb2cd2b9a0330f}
+      \strng{authorbibnamehash}{b85b92a43dc7967c5feb2cd2b9a0330f}
+      \strng{authornamehash}{b85b92a43dc7967c5feb2cd2b9a0330f}
+      \strng{authorfullhash}{b85b92a43dc7967c5feb2cd2b9a0330f}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Reconstruction dynamique d’images radioastronomiques de trous noirs}
+      \field{type}{Report}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb example.com
+      \endverb
+      \verb{url}
+      \verb example.com
+      \endverb
+    \endentry
+    \entry{deep}{report}{}
+      \name{author}{1}{}{%
+        {{hash=0317a621bb628dfecc2e58e46308a155}{%
+           family={Nir\bibnamedelima Shlezinger},
+           familyi={N\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Stephen\bibnamedelimb P.\bibnamedelimi Boyd},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim B\bibinitperiod},
+           suffix={Yonina\bibnamedelimb C.\bibnamedelimi Eldar},
+           suffixi={Y\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{0317a621bb628dfecc2e58e46308a155}
+      \strng{fullhash}{0317a621bb628dfecc2e58e46308a155}
+      \strng{bibnamehash}{0317a621bb628dfecc2e58e46308a155}
+      \strng{authorbibnamehash}{0317a621bb628dfecc2e58e46308a155}
+      \strng{authornamehash}{0317a621bb628dfecc2e58e46308a155}
+      \strng{authorfullhash}{0317a621bb628dfecc2e58e46308a155}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{arXiv:2205.02640v1}
+      \field{title}{Model-Based Deep Learning: On the Intersection of Deep Learning and Optimization}
+      \field{type}{preprint}
+      \field{year}{2022}
+      \field{dateera}{ce}
+    \endentry
+    \entry{RTS}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=89f4b98fe43f3c9f7ffdc081904d4781}{%
+           family={Särkkä},
+           familyi={S\bibinitperiod},
+           given={Simo},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{89f4b98fe43f3c9f7ffdc081904d4781}
+      \strng{fullhash}{89f4b98fe43f3c9f7ffdc081904d4781}
+      \strng{bibnamehash}{89f4b98fe43f3c9f7ffdc081904d4781}
+      \strng{authorbibnamehash}{89f4b98fe43f3c9f7ffdc081904d4781}
+      \strng{authornamehash}{89f4b98fe43f3c9f7ffdc081904d4781}
+      \strng{authorfullhash}{89f4b98fe43f3c9f7ffdc081904d4781}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{Optimal Smoothing}
+      \field{type}{Lecture}
+      \field{year}{2011}
+      \field{dateera}{ce}
+    \endentry
     \entry{MEM}{article}{}
       \name{author}{1}{}{%
         {{hash=148b249b8c1e0614a03c8bbd0dc55ffc}{%

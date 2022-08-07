@@ -29,3 +29,6 @@
 \contentsline {section}{\numberline {1}implementation}{11}{section.5.1}%
 \contentsline {section}{\numberline {2}Measures}{11}{section.5.2}%
 \contentsline {part}{VI\hspace {1em}Further insights}{12}{part.6}%
+\contentsline {paragraph}{Directional error on one antenna :}{12}{section*.9}%
+\contentsline {paragraph}{Use of smoothers :}{12}{section*.10}%
+\contentsline {paragraph}{Deep learning :}{12}{section*.11}%
