@@ -121,7 +121,8 @@
 		A Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more accurate result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
 		One objective of this paper is to evaluate if measure conditions and results are compatible with the filtering.
 	
-	
+	\newpage
+	\part{SATIE}
 	
 	\newpage
 	\part{Notations and problem}
@@ -183,7 +184,7 @@
 	$$
 	
 	%Ainsi que la distance $d_2$ :
-	In order to measure influence of a specific element, the ??? distance $d_2$ is the following :
+	In order to measure influence of a specific element, the additive distance $d_2$ is the following :
 	$$
 	\forall(A,B)\in\left(\mathcal{M}_{m,n}(\mathbb{K})\right)^2\quad d_2(A,B) = \sum_{
 		\mathclap{
@@ -211,7 +212,7 @@
 		\item $\dz_{ij}$ is the baseline : $\dz_{ij} = \z_i - \z_j$. 
 		\item $\I$ is the directions matrix, represented as normalised direction cosines.
 	\end{itemize}
-	
+		
 	\section{Evolution model and Kalman filtering}
 	
 	We consider a set $\{\x_k\}$ of $n$ vector as theoretical images taken at a regular time interval. Those images are measured by an antenna mesh $\{\z_k\}$ which UV plane will be written $H$, more generally written as observation model. Measurements vectors will be designated by $n$ measures $\{\y_k\}$.\\
@@ -291,6 +292,36 @@
 		\end{cases}
 	\end{equation}
 	
+		\section{Data simulation and Image reconstruction}
+	\subsection{Simulation}
+	
+	In order to simulate data, an image is introduced as the "reference image", this image will only be used in order to compute simulated observations. The selected picture must respect the following conditions :
+	\begin{itemize}
+		\item mostly black background, to give realistic results for space imagery
+		\item no convolution effect, as all directions are considered sources of different intensities, only real sources must appear
+	\end{itemize}
+	The following picture is the one used :
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\linewidth]{src/bh_square}
+		\caption{Selected image for simulation}
+		\label{fig:bhsquare}
+	\end{figure}
+	
+	Different images gave similar results if they followed the conditions cited above.\\
+	
+	Data simulation will be done as stated in [REF TER]. First the visibilities matrix is computed using the reference image and the UV-plane of the antenna mesh. To simulate visibilities at different snapshots, we apply the wanted transformation without noise and use the same UV-plane matrix to compute visibilities.\\
+	
+	To add noise, a normally distributed random matrix is generated and the covariance of that matrix is added to the visibilities one. This matrix could also be directly generated using Wishart distribution. \\ 
+	
+	\subsection{Reconstruction}
+	
+	To obtain the initial image $\x_0$ two methods are used depending on the goal of the measure. \\
+	
+	When reviewing performances under certain errors, all other inputs of the filter - including $\x_0$ - must be errorless. The simplest way of doing that for $\x_0$ is to use the reference image as input. \\
+	
+	When reviewing Kalman filter performances under real conditions, the reference image is not considered as knwon, and we need to reconstruct the image from the visibilities matrix. While different methods exist [REF TER], the ones used here are MVDR reconstructions followed by Maximum Entropy deconvolution.
 	
 	\newpage
 	\part{Reliability of Kalman Filter under perturbations}
@@ -314,22 +345,6 @@
 	These perturbations create errors on the matrices used in reconstruction and prediction with Kalman filtering. The goal of this part is to evaluate how much these error affect prediction and reconstruction, to determine if Kalman filtering can be realistically used in radio-astronomic context. \\
 	
 	\subsection{Methodology and Parameters}
-
-	In order to simulate data, an image is introduced as the "reference image", this image will only be used in order to compute simulated observations. The selected picture must respect the following conditions :
-	\begin{itemize}
-		\item mostly black background, to give realistic results for space imagery
-		\item no convolution effect, as all directions are considered sources of different intensities, only real sources must appear
-	\end{itemize}
-	The following picture is the one used :
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.5\linewidth]{src/bh_square}
-		\caption{Selected image for simulation}
-		\label{fig:bhsquare}
-	\end{figure}
-	
-	Different images gave similar results if they followed the conditions cited above.\\
 
 	First the basic parameters and matrices are computed : antenna grid, directions cosines, baseline vectors.\\ Next, perfect base matrices are computed : errorless observation matrix $\H$, reference observations using the errorless $\H$, error covariance matrices. The latter are computed perfectly using known simulated noise, and errors from ALS estimation are neglected. A set of perfect images are also computed to measure reconstruction absolute error.\\
 	Initial image $\x_0$ and covariance $\P_0$ are computed as stated in equation (\ref{p0}).\\
@@ -418,9 +433,11 @@
 
 	Kalman equations from (\ref{xpe}) to (\ref{finKal}) stay the same.\\
 	
-	To further measure the effect of this error, it will be introduced on a single direction first, then on 5 directions, then on all of them. 
+	To further measure the effect of this error, it will be introduced on a single direction first, then on all of them. 
 	
 	\subsubsection{One direction}
+	
+	\subsubsection{All directions}
 	
 	\newpage
 	\part{Experimental correction}

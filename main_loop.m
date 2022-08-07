@@ -39,7 +39,7 @@ A = matA(z,I,D,f,c);
 % erreurs = [0.001 0.003 0.005 0.01 0.03 0.05 0.1 0.3];
 % erreurs = [0.001 0.003 0.005 0.008 0.01 0.03];
 % erreurs = [0.001 0.3 0.05];
-erreurs = [0.01];
+erreurs = [0.001];
 npos = numel(erreurs);
 
 % calcul invariants kalman
@@ -47,7 +47,8 @@ H = matF(J,D,z,lambda,I);
 
 [nY,nR,nQ,tX] = dataGen_im(H,J,N,D,vadapted,A_ev,Nreal,SNR,RATIO);
 % X_0 = true_image ;
-X_mvdr = MEM(MVDR(A,reshape(nY(:,1),J,J),Mx,My),iMEM);
+% X_mvdr = MEM(MVDR(A,reshape(nY(:,1),J,J),Mx,My),iMEM);
+X_mvdr = MVDR(A,reshape(nY(:,1),J,J),Mx,My);
 X_mvdr = normarr(abs(X_mvdr));
 X_0 = vadapted;
 % tX(:,1) = vadapted;
@@ -104,26 +105,34 @@ for err = 1:npos
         % Calcul Hcorr
         % 1. poser pb
         
-        y = H_err*X_0;
-        Iv = I(:);
+%         y = H_err*X_mvdr;
+        y = nY(:,1);
+        
+        Iv = reshape(I_err,[],1);
 
         prb = @(x)prb_f(x,y,Iv,dz,J,D,lambda);
 
 
         % 2. init
-        x0 = [zeros(1,2*D) reshape(X_mvdr,1,[])];
+        dbiasPrio = zeros(1,2*D)*err/100;
+        xparfait = I_err-I;
+        dbiasPrioInit = reshape(xparfait,1,2*D) + dbiasPrio;
+        x0 = [dbiasPrioInit reshape(X_mvdr,1,[])];
         lb = [-0.1*ones(1,2*D) zeros(1,D)];
         ub = [0.1*ones(1,2*D) ones(1,D)];
 
         % 3. lsqnonlin
-
-        x = lsqnonlin(prb,x0,lb,ub);
+        options = optimoptions(@lsqnonlin,'Display','Iter','FiniteDifferenceType','central');
+%         options = optimoptions(@lsqnonlin,'MaxIterations',1000,'StepTolerance',1e-18,'Display','Iter','FunctionTolerance',1e-20,'MaxFunctionEvaluations',1e6,'FiniteDifferenceType','central');
+        % ,'Algorithm','levenberg-marquardt'
+        x = lsqnonlin(prb,x0,lb,ub,options);
 
         % 4. nouveau X_0, calcul Hcorr
         X_0 = x(2*D+1:3*D);
-        Icorr = reshape(x(1:2*D),D,2) + I;
+        Icorr = - reshape(x(1:2*D),D,2) + I_err;
         Hcorr = matF(J,D,z_err,lambda,Icorr);
-
+        
+        amel(I_err,Icorr,I)
 %         C = H ./ H_err;
         
         % 2. Tourner Kalman_XPU
