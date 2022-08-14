@@ -110,19 +110,7 @@
 	\newpage
 	\tableofcontents
 	
-	\newpage
-	
-	\part{Introduction}
-	
-	When observing distant objects, instruments resolution matters the most. When using optical telescopes, the determining factor for resolution is the size of the primary mirror. When observing really distant objects, the required size to have a decent resolution becomes unrealistically big. To address this problem, radio interferometry replaces a single optical instrument with multiple antennas collecting electromagnetic waves. When gathering these measures together, we can obtain a better angular resolution than any real single optical instrument could get. \\
-	
-	Those distant objects are not fixed in time and a lot of calculations have been done to create evolution models for them. The goal here is not to use observations to confirm models, but to assume a model is known and get better results considering the knowledge of both observations and model. \\ 
-	
-	A (non extended) Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more accurate result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
-		
-	A sensitive part of the filter is the observations model, needing precise knowledge of antennas positions and directions. An objective of this work is to determine how inaccuracies in these measurements affect image reconstruction, and if it is realistically usable in radio astronomical imagery. \\
-	
-	\newpage
+		\newpage
 	\part{SATIE}
 	
 	SATIE stands for \emph{laboratoire des Systèmes et Applications des Technologies de l'Information et de l'Energie} (Information and Energy Technology Systems and Applications Laboratory).\\
@@ -136,19 +124,34 @@
 		\caption{Geographic sites of SATIE (copyright E. Vourc'h)}
 		\label{fig:sitesgeoosatie}
 	\end{figure}
-
+	
 	Research in SATIE is dispatched around two main divisions :
 	
 	\begin{tabular}{|c||c|c|} % a traduire ffs
 		\hline
-		Divisions & Components and Systems for electrical energy & Multi-scale information and analysis systems \\
+		Divisions & Components and Systems for electrical energy & Multi-scale information and analysis systems \\ & (CSEE) & (SIAME) \\\hline
 		Research fields & \begin{tabular}{@{}c@{}}
-			sujet 1 \\ sujet 2 \\ sujet 3
+			Materials: from synthesis to application\vspace{8px} \\ Power electronics: integration, \\ usage constraints, interfaces\vspace{8px} \\ Transducers and energy systems: \\ methodologies, design and control
 		\end{tabular} & \begin{tabular}{@{}c@{}}
-			sujet 4 \\ sujet 5
+			Instrumentation and imagery\vspace{5px} \\ Methods and tools for signals and systems\\ (MOSS)
+		\end{tabular}
+		\\\hline
 	\end{tabular}
-	\end{tabular}
+	\vspace{7px}\\
+	I did my internship in the SIAME/MOSS division. \\
+	The SIAME/MOSS division is focused on getting a better understanding and mastering complex systems. The three main topics of the division are :
+	\paragraph{Data and image analysis:} this topic's main goal is to estimate physical or semantic quantities from observations data. This data is incomplete, inaccurate, and not absolutely reliable. When data is generated using multi-sensor systems, it presents similarities and complementarities that can be used to get better estimations.
 	
+	\newpage
+	\part{Introduction}
+	
+	When observing distant objects, instruments resolution matters the most. When using optical telescopes, the determining factor for resolution is the size of the primary mirror. When observing really distant objects, the required size to have a decent resolution becomes unrealistically big. To address this problem, radio interferometry replaces a single optical instrument with multiple antennas collecting electromagnetic waves. When gathering these measures together, we can obtain a better angular resolution than any real single optical instrument could get. \\
+	
+	Those distant objects are not fixed in time and a lot of calculations have been done to create evolution models for them. The goal here is not to use observations to confirm models, but to assume a model is known and get better results considering the knowledge of both observations and model. \\ 
+	
+	A (non extended) Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more accurate result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
+		
+	A sensitive part of the filter is the observations model, needing precise knowledge of antennas positions and directions. A of this goal work is to determine how inaccuracies in these measurements affect image reconstruction, and if it is realistically usable in radio astronomical imagery. \\
 	
 	\newpage
 	\part{Notations and problem}

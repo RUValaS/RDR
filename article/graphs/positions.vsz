@@ -1,5 +1,5 @@
 # Veusz saved document (version 3.4)
-# Saved at 2022-08-07T21:45:53.305657
+# Saved at 2022-08-14T23:17:18.929676
 
 SetCompatLevel(1)
 AddImportPath('C:\\Users\\Gabriel\\Documents\\GitHub\\RDR\\article\\graphs')
@@ -72,6 +72,7 @@ Set('Line/hide', False)
 To('..')
 Add('axis', name='y', autoadd=False)
 To('y')
+Set('min', 1e-06)
 Set('max', 0.004)
 Set('log', True)
 Set('direction', 'vertical')

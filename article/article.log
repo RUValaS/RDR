@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  7 AUG 2022 21:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.24)  14 AUG 2022 19:15
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1194,34 +1194,34 @@ Package biblatex Info: Reference segment=0 on input line 84.
 {c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./article.toc
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 6.
+(Font)              scaled to size 9.19998pt on input line 7.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 6.
+(Font)              scaled to size 6.99199pt on input line 7.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 6.
+(Font)              scaled to size 5.51999pt on input line 7.
 LaTeX Font Info:    Trying to load font information for FML+futmi on input line
- 6.
+ 7.
  (c:/texlive/2021/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 6.
+(Font)              scaled to size 9.19998pt on input line 7.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 6.
+(Font)              scaled to size 6.99199pt on input line 7.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 6.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+(Font)              scaled to size 5.51999pt on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+esvect on input line 
-6.
+7.
 
 (c:/texlive/2021/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
@@ -1233,134 +1233,139 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.113 	\newpage
-                [1]
+l.113 		\newpage
+                 [1]
 Package marginnote Info: Using workaround for absolute page number on input lin
 e 113.
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 128--130
-
- []
-
-<src/sites_geoo_satie.png, id=147, 867.24pt x 578.16pt>
+<src/sites_geoo_satie.png, id=141, 867.24pt x 578.16pt>
 File: src/sites_geoo_satie.png Graphic file (type png)
 <use src/sites_geoo_satie.png>
-Package pdftex.def Info: src/sites_geoo_satie.png  used on input line 135.
+Package pdftex.def Info: src/sites_geoo_satie.png  used on input line 123.
 (pdftex.def)             Requested size: 328.82707pt x 219.21786pt.
-[3 <./src/sites_geoo_satie.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+Overfull \hbox (10.18437pt too wide) in paragraph at lines 130--143
+[][]
+ []
+
+[2 <./src/sites_geoo_satie.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+futs on input line 
-216.
+231.
 (c:/texlive/2021/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
-Overfull \hbox (0.14433pt too wide) in paragraph at lines 219--220
+Overfull \hbox (0.14433pt too wide) in paragraph at lines 234--235
 []\T1/futs/m/n/10 The first im-age used for Kalman will be com-puted us-ing Min
 -i-mum Vari-ance Dis-tor-tion-less Re-sponse (MVDR)
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--271
+Underfull \hbox (badness 10000) in paragraph at lines 284--286
 
  []
 
 [5]
-<src/bh_square.jpg, id=180, 602.25pt x 602.25pt>
+<src/bh_square.jpg, id=181, 602.25pt x 602.25pt>
 File: src/bh_square.jpg Graphic file (type jpg)
 <use src/bh_square.jpg>
-Package pdftex.def Info: src/bh_square.jpg  used on input line 321.
+Package pdftex.def Info: src/bh_square.jpg  used on input line 336.
 (pdftex.def)             Requested size: 234.8775pt x 234.87654pt.
  [6]
-Underfull \hbox (badness 10000) in paragraph at lines 326--327
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
+Underfull \hbox (badness 10000) in paragraph at lines 343--344
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
+Underfull \hbox (badness 10000) in paragraph at lines 349--350
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--337
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
 
  []
 
 [7 <./src/bh_square.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--365
+Underfull \hbox (badness 10000) in paragraph at lines 378--380
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 448--449
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
 
  []
 
 [9] [10] [11] [12]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-75.
+90.
  (c:/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -1368,14 +1373,14 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 AED: lastpage setting LastPage
 [13] (./article.aux)
 Package rerunfilecheck Info: File `article.out' has not changed.
-(rerunfilecheck)             Checksum: A84F8D1D6C5D074005685101ACAF8242;3711.
+(rerunfilecheck)             Checksum: 3F3679A3DA3A8F6CE527016A0169CC68;3711.
 Package logreq Info: Writing requests to 'article.run.xml'.
 \openout1 = `article.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28786 strings out of 478278
- 515128 string characters out of 5850546
+ 28787 strings out of 478278
+ 515139 string characters out of 5850546
  1312842 words of memory out of 5000000
  46441 multiletter control sequences out of 15000+600000
  566284 words of font info for 120 fonts, out of 8000000 for 9000
@@ -1394,10 +1399,10 @@ st/fonts/type1/adobe/utopia/putbi8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1
 /adobe/utopia/putr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/adobe/utopia/p
 utr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb><c:/
 texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on article.pdf (14 pages, 312589 bytes).
+Output written on article.pdf (14 pages, 313778 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
- 306 compressed objects within 4 object streams
- 78 named destinations out of 1000 (max. 500000)
+ 357 PDF objects out of 1000 (max. 8388607)
+ 308 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
  215 words of extra memory for PDF output out of 10000 (max. 10000000)
 
