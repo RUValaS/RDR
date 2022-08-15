@@ -373,7 +373,7 @@
 	
 	These perturbations create errors on the matrices used in reconstruction and prediction with Kalman filtering. The goal of this part is to evaluate how much these error affect prediction and reconstruction, to determine if Kalman filtering can be realistically used in radio-astronomic context. \\
 	
-	\subsection{Methodology and Parameters}
+	\subsection{Methodology details}
 
 	First the basic parameters and matrices are computed : antenna grid, directions cosines, baseline vectors.\\ Next, perfect base matrices are computed : errorless observation matrix $\H$, reference observations using the errorless $\H$, error covariance matrices. The latter are computed perfectly using known simulated noise, and errors from ALS estimation are neglected. A set of perfect images are also computed to measure reconstruction absolute error.\\
 	Initial image $\x_0$ and covariance $\P_0$ are computed as stated in equation (\ref{p0}).\\
@@ -436,12 +436,63 @@
 		\vbeps^{\x}_k = \vbeps^{\K}_k\y_k + \left(\mathbb{I} - \K_k^*\H^*\right)\xp^* - \left(\mathbb{I} - \K_k\H\right)\xp
 	\end{equation}
 	
+	In order to measure the performances under positional inaccuracies, the distance $d_1$ is used to evaluate the error between matrices and images :
+	\begin{itemize}
+		\item Reconstruction error : 
+		$$
+			\varepsilon_k^{\x} = d_1\left(\xe^*,\x_k\right)
+		$$
+		\item Additional error : 
+		$$
+			\varepsilon_k^{\x\x} = d_1\left(\xe^*,\xe\right)
+		$$
+	\end{itemize}
+
+	Even if $\{\x_k\}$ are real numbers, computing $\{\xe\}$ using $\H$ yields complex matrices. This induces that these errors are not ordered : we can get results like $\varepsilon_k^{\x} < \varepsilon_k^{\x\x}$. 
 	Computing these equations gives the following results :
 	
-	% figure
+	% figures
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includesvg[width=.9\linewidth]{graphs/positions_x_e.svg}
+			\caption{Distance to true image}
+			\label{fig:p_e_x_e}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includesvg[width=.9\linewidth]{graphs/positions_xx.svg}
+			\caption{Distance to "perfect" reconstruction}
+		\end{subfigure}
+	\caption{Simulation results for positional inaccuracy}
+	\end{figure}
 	
 	% discussion
+	For these simulations, reconstruction error without inaccuracies is 
+	$$ % expval ? => ptet mettre <.> ?
+	\left\langle d_1\left(\xe,\x_k\right)\right\rangle = 8,46\times10^{-4}
+	$$
+	and is represented by the blue line in (\ref{fig:p_e_x_e}).\\
 	
+	The first interesting observations on these graphs are the extremities convergences : above 0,05m position error standard deviation, errors approach a distance of 0,1. The $d_1$ distance being normalised (as $\x$ and $\xe$ are normalised between 0 and 1), this distance means 10\% reconstruction error. This error level represents non reliable reconstruction. It can be illustrated by the following reconstruction :
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[width=.7\linewidth]{src/t_im.png}
+			\caption{True image}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[width=.7\linewidth]{src/t_err.png}
+			\caption{Reconstruction at 0,1 distance of the true image}
+		\end{subfigure}
+		\caption{Image reconstruction at unreliable distance}
+	\end{figure}
+
+	This distance around 0,1 is actually expected, as the mean distance $d_1$ between two random matrices in $\mathcal{M}_{10}([0;1])$ can be computed and gives 1,167. The random effects of position errors getting more important, the reconstruction using this inaccurate positions matrix is becoming random thus converging to this value of 1,167.
 	
 	\subsection{Direction}
 	

@@ -1,5 +1,5 @@
 # Veusz saved document (version 3.4)
-# Saved at 2022-08-14T23:17:18.929676
+# Saved at 2022-08-15T15:53:38.258410
 
 SetCompatLevel(1)
 AddImportPath('C:\\Users\\Gabriel\\Documents\\GitHub\\RDR\\article\\graphs')
@@ -29,6 +29,10 @@ To('xy1')
 Set('xData', 'err_pos')
 Set('yData', 'e_x_e')
 Set('PlotLine/hide', True)
+To('..')
+Add('function', name='refdist', autoadd=False)
+To('refdist')
+Set('function', '8.46e-4')
 To('..')
 To('..')
 To('..')
