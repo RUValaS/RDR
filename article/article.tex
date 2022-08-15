@@ -482,7 +482,7 @@
 		\begin{subfigure}{.5\textwidth}
 			\centering
 			\includegraphics[width=.7\linewidth]{src/t_im.png}
-			\caption{True image}
+			\caption{Errorless reconstruction}
 		\end{subfigure}%
 		\begin{subfigure}{.5\textwidth}
 			\centering
@@ -492,7 +492,9 @@
 		\caption{Image reconstruction at unreliable distance}
 	\end{figure}
 
-	This distance around 0,1 is actually expected, as the mean distance $d_1$ between two random matrices in $\mathcal{M}_{10}([0;1])$ can be computed and gives 1,167. The random effects of position errors getting more important, the reconstruction using this inaccurate positions matrix is becoming random thus converging to this value of 1,167.
+	This distance around 0,1 is actually expected, as the mean distance $d_1$ between two random matrices in $\mathcal{M}_{10}([0;1])$ can be computed and gives 1,167.\footnote{computed as the mean $d_1$ distance between two randomly generated matrices using matlab function \mintinline{matlab}|rand|, repeated $10^4$ times} The random effects of position errors getting more important, the reconstruction using this inaccurate positions matrix is becoming random thus converging to this value of 1,167. \\
+	
+	On the other side of the graph, the distance seems to converge to a value around $3\times10^{-4}$. This value is rather unexpected, as it is below the errorless reconstruction error. This may be explained by the complex nature of the reconstructed image, but no certain explanation was found. The convergence part is also uncertain, as the mean values seems to converge but the standard deviation expands. The convergence at non-zero distance of the errorless reconstruction is also unexplained.
 	
 	\subsection{Direction}
 	
@@ -517,12 +519,17 @@
 	
 	\subsubsection{One direction}
 	
+	Ionospheric perturbations being local and direction-dependent, it can be interesting to measure the effect of a single direction being inaccurate. To evaluate the reconstruction error, the $d_2$ distance is used, as it is additive: the total distance between two reconstructions is the sum of the distance of each direction.
+	
 	\subsubsection{All directions}
 	
 	\newpage
 	\part{Experimental correction}
 	\section{implementation}
 	\section{Measures}
+	
+	\newpage
+	\part{Conclusion}
 	
 	\newpage
 	\part{Further insights}
