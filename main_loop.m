@@ -110,16 +110,21 @@ for err = 1:npos
         
         Iv = reshape(I_err,[],1);
 
-        prb = @(x)prb_f(x,y,Iv,dz,J,D,lambda);
+        prb = @(x)prb_f(x,y,Iv,dz,J,D,lambda,X_mvdr);
 
 
         % 2. init
-        dbiasPrio = zeros(1,2*D)*err/100;
-        xparfait = I_err-I;
-        dbiasPrioInit = reshape(xparfait,1,2*D) + dbiasPrio;
-        x0 = [dbiasPrioInit reshape(X_mvdr,1,[])];
-        lb = [-0.1*ones(1,2*D) zeros(1,D)];
-        ub = [0.1*ones(1,2*D) ones(1,D)];
+%         dbiasPrio = zeros(1,2*D)*err/100;
+%         xparfait = I_err-I;
+%         dbiasPrioInit = reshape(xparfait,1,2*D) + dbiasPrio;
+%         x0 = [dbiasPrioInit reshape(X_mvdr,1,[])];
+%         lb = [-0.1*ones(1,2*D) zeros(1,D)];
+%         ub = [0.1*ones(1,2*D) ones(1,D)];
+
+        x0 = zeros(1,2*D);
+        lb = [-0.1*ones(1,2*D)];
+        ub = [0.1*ones(1,2*D)];
+
 
         % 3. lsqnonlin
         options = optimoptions(@lsqnonlin,'Display','Iter','FiniteDifferenceType','central');
@@ -128,7 +133,7 @@ for err = 1:npos
         x = lsqnonlin(prb,x0,lb,ub,options);
 
         % 4. nouveau X_0, calcul Hcorr
-        X_0 = x(2*D+1:3*D);
+%         X_0 = x(2*D+1:3*D);
         Icorr = - reshape(x(1:2*D),D,2) + I_err;
         Hcorr = matF(J,D,z_err,lambda,Icorr);
         
@@ -173,14 +178,14 @@ for err = 1:npos
 %     save(nom,"wK","wK_err","wX","wX_err","e_x","e_K","e_x_e","de_x","de_K","de_x_e","e_th","de_xx","e_xx"); % ajouter Xp Xp_e
 end % end err
 
-function s = prb_f(x,y,Iv,dz,J,D,lambda)
+function s = prb_f(x,y,Iv,dz,J,D,lambda,xMVDR)
 %         prb = @(x)([real(y); imag(y)] - [cos(-2*(pi/lambda)*(dz(:,1)*(Iv(1:D) - x(1:D)) + dz(:,2)*(Iv(D+1:D*2) - x(D+1:2*D))));
 %             sin(-2*(pi/lambda)*(dz(:,1)*(Iv(1:D) - x(1:D)) + dz(:,2)*(Iv(D+1:D*2) - x(D+1:2*D))))] * x(2*D+1:3*D));
 Hmodif = zeros(J^2,D);
 for q=1:D
     Hmodif(: ,q) = exp(-1i*2*pi/lambda*(dz(:,1)*(Iv(q) - x(q))+dz(:,2)*(Iv(D+q) - x(D+q))));
 end % .* aussi non ?
-ymodif = Hmodif*x(2*D+1:3*D)';
+ymodif = Hmodif*xMVDR;
 s = [real(y);imag(y)] - [real(ymodif);imag(ymodif)];
     
 end

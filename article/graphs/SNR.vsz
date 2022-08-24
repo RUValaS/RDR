@@ -1,0 +1,57 @@
+# Veusz saved document (version 3.4)
+# Saved at 2022-08-24T17:24:44.795479
+
+SetCompatLevel(1)
+AddImportPath('D:\\Users\\Gabriel\\Documents\\GitHub\\RDR\\article\\graphs')
+ImportString('SNR(numeric)','''
+1.000000e+02
+5.000000e+01
+3.000000e+01
+1.000000e+01
+5.000000e+00
+3.000000e+00
+1.000000e+00
+5.000000e-01
+3.000000e-01
+1.000000e-01
+''')
+ImportString('it(numeric)','''
+4.000000e+00
+4.000000e+00
+4.000000e+00
+4.000000e+00
+4.000000e+00
+4.003000e+00
+4.024000e+00
+4.050000e+00
+4.060000e+00
+4.070000e+00
+''')
+Set('colorTheme', 'default-latest')
+Set('StyleSheet/axis-function/autoRange', 'next-tick')
+Add('page', name='page1', autoadd=False)
+To('page1')
+Add('graph', name='graph1', autoadd=False)
+To('graph1')
+Add('axis', name='x', autoadd=False)
+To('x')
+Set('label', 'SNR')
+Set('min', 0.09)
+Set('max', 110.0)
+Set('log', True)
+To('..')
+Add('axis', name='y', autoadd=False)
+To('y')
+Set('label', 'Iteration of max PSNR')
+Set('min', 3.98)
+Set('max', 4.1)
+Set('direction', 'vertical')
+To('..')
+Add('xy', name='xy1', autoadd=False)
+To('xy1')
+Set('xData', 'SNR')
+Set('yData', 'it')
+Set('PlotLine/hide', True)
+To('..')
+To('..')
+To('..')

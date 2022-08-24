@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZpc{} init}
+\PYG{n}{x0}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{D}\PYG{p}{);}
+\PYG{n}{lb}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.1}\PYG{o}{*}\PYG{n+nb}{ones}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{D}\PYG{p}{)];}
+\PYG{n}{ub}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mf}{0.1}\PYG{o}{*}\PYG{n+nb}{ones}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{D}\PYG{p}{)];}
+
+\PYG{c}{\PYGZpc{} problem definition}
+\PYG{n}{Iv}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{reshape}\PYG{p}{(}\PYG{n}{I\PYGZus{}err}\PYG{p}{,[],}\PYG{l+m+mi}{1}\PYG{p}{);}\PYG{+w}{ }\PYG{c}{\PYGZpc{} I\PYGZus{}err is I with errors}
+\PYG{n}{prb}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{@(}\PYG{n}{x}\PYG{p}{)}\PYG{n}{prb\PYGZus{}f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{Iv}\PYG{p}{,}\PYG{n}{dz}\PYG{p}{,}\PYG{n}{J}\PYG{p}{,}\PYG{n}{D}\PYG{p}{,}\PYG{n}{lambda}\PYG{p}{,}\PYG{n}{X\PYGZus{}mvdr}\PYG{p}{);}\PYG{+w}{ }\PYG{c}{\PYGZpc{} creation of function f(x) = y\PYGZhy{}H(x)*x\PYGZus{}MVDR with static inputs}
+
+\PYG{c}{\PYGZpc{} lsqnonlin}
+\PYG{n}{options}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{optimoptions}\PYG{p}{(@}\PYG{n}{lsqnonlin}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}Display\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}Iter\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}FiniteDifferenceType\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}central\PYGZsq{}}\PYG{p}{);}\PYG{+w}{ }\PYG{c}{\PYGZpc{} FiniteDifferenceType central computes on both sides of the gradient, did not help but a bit more precise}
+\PYG{n}{x}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{lsqnonlin}\PYG{p}{(}\PYG{n}{prb}\PYG{p}{,}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{lb}\PYG{p}{,}\PYG{n}{ub}\PYG{p}{,}\PYG{n}{options}\PYG{p}{);}\PYG{+w}{ }\PYG{c}{\PYGZpc{} solve f(x)=0}
+
+\PYG{c}{\PYGZpc{} result extraction}
+\PYG{n}{Icorr}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nb}{reshape}\PYG{p}{(}\PYG{n}{x}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{D}\PYG{p}{),}\PYG{n}{D}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{I\PYGZus{}err}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} I\PYGZus{}corr is I corrected}
+\PYG{n}{Hcorr}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{matF}\PYG{p}{(}\PYG{n}{J}\PYG{p}{,}\PYG{n}{D}\PYG{p}{,}\PYG{n}{z\PYGZus{}err}\PYG{p}{,}\PYG{n}{lambda}\PYG{p}{,}\PYG{n}{Icorr}\PYG{p}{);}\PYG{+w}{ }\PYG{c}{\PYGZpc{} matF computes H}
+
+\PYG{p}{.}
+\PYG{p}{.}
+\PYG{p}{.}
+
+\PYG{c}{\PYGZpc{} function definition at the end of the file}
+\PYG{k}{function}\PYG{+w}{ }s\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nf}{prb\PYGZus{}f}\PYG{p}{(}x,y,Iv,dz,J,D,lambda,xMVDR\PYG{p}{)}
+\PYG{n}{Hmodif}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{n}{J}\PYGZca{}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{n}{D}\PYG{p}{);}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n}{q}\PYG{p}{=}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{D}
+\PYG{n}{Hmodif}\PYG{p}{(:}\PYG{+w}{ }\PYG{p}{,}\PYG{n}{q}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}1\PYG{n+nb}{i}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n+nb}{pi}\PYG{o}{/}\PYG{n}{lambda}\PYG{o}{*}\PYG{p}{(}\PYG{n}{dz}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{Iv}\PYG{p}{(}\PYG{n}{q}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{(}\PYG{n}{q}\PYG{p}{))}\PYG{o}{+}\PYG{n}{dz}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{Iv}\PYG{p}{(}\PYG{n}{D}\PYG{o}{+}\PYG{n}{q}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{(}\PYG{n}{D}\PYG{o}{+}\PYG{n}{q}\PYG{p}{))));}
+\PYG{k}{end}
+\PYG{n}{ymodif}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{Hmodif}\PYG{o}{*}\PYG{n}{xMVDR}\PYG{p}{;}
+\PYG{n}{s}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{n+nb}{real}\PYG{p}{(}\PYG{n}{y}\PYG{p}{);}\PYG{n+nb}{imag}\PYG{p}{(}\PYG{n}{y}\PYG{p}{)]}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{p}{[}\PYG{n+nb}{real}\PYG{p}{(}\PYG{n}{ymodif}\PYG{p}{);}\PYG{n+nb}{imag}\PYG{p}{(}\PYG{n}{ymodif}\PYG{p}{)];}
+\PYG{k}{end}
+
+\end{Verbatim}

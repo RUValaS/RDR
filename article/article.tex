@@ -61,6 +61,7 @@
 \newcommand{\x}{\boldsymbol{x}}
 \newcommand{\y}{\boldsymbol{y}}
 \newcommand{\z}{\boldsymbol{z}}
+\renewcommand{\u}{\boldsymbol{u}}
 
 \newcommand{\dz}{\Delta\boldsymbol{z}}
 
@@ -121,7 +122,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\linewidth]{src/sites_geoo_satie}
-		\caption{Geographic sites of SATIE (copyright E. Vourc'h)}
+		\caption{Geographic sites of SATIE (\textcopyright E. Vourc'h)}
 		\label{fig:sitesgeoosatie}
 	\end{figure}
 	
@@ -140,18 +141,49 @@
 	\vspace{7px}\\
 	I did my internship in the SIAME/MOSS division. \\
 	The SIAME/MOSS division is focused on getting a better understanding and mastering complex systems. The three main topics of the division are :
-	\paragraph{Data and image analysis:} this topic's main goal is to estimate physical or semantic quantities from observations data. This data is incomplete, inaccurate, and not absolutely reliable. When data is generated using multi-sensor systems, it presents similarities and complementarities that can be used to get better estimations.
+	\paragraph{Data and image analysis:} this topic's main goal is to estimate physical or semantic quantities from observations data. This data is incomplete, inaccurate, and not absolutely reliable. When data is generated using multi-sensor systems, it presents similarities and complementarities that can be used to get better estimations. \\
+	The applications are :
+	\begin{itemize}
+		\item Geolocation
+		\item Non-destructive testing
+		\item radio telescopes calibration
+		\item image analysis for shape detection
+	\end{itemize}
+
+	\paragraph{Algorithms-architectures-uses adequacy:} This topic's goal is the design of autonomous systems with matching algorithms and algorithms. They develop tools and methods for multi-sensor instrumentation, embedded computing architectures and data flux synchronisation. Their work is divided in 4 points :
+	
+	\paragraph{Perception systems for mobility:} The last research axis is mostly aimed at the development of autonomous vehicles. Its goal is to conceive the hardware part of a perception system, and the software analysis sequence to optimise the system. \\
+	
+	The SATIE places a great importance on experimentation, and notably concerning the autonomous vehicles conception, as all results must be confirmed with experimentation, the lab has many electrical cars mounted with instruments and automated controls. \\
+	
+	This organisation can be summarised as follows :
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.7\linewidth]{src/satie_org}
+		\caption{lab's organisation}
+	\end{figure}
+
+	The lab is also involved in many masters in Université Paris-Saclay, ENS Paris-Saclay, or ENS Rennes etc. These masters cover the topics: signal processing; electronics, sensors; electrical energy; mechatronics and higher education (M2FESUP). It also accepts some PhD students and interns.
 	
 	\newpage
 	\part{Introduction}
 	
 	When observing distant objects, instruments resolution matters the most. When using optical telescopes, the determining factor for resolution is the size of the primary mirror. When observing really distant objects, the required size to have a decent resolution becomes unrealistically big. To address this problem, radio interferometry replaces a single optical instrument with multiple antennas collecting electromagnetic waves. When gathering these measures together, we can obtain a better angular resolution than any real single optical instrument could get. \\
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.5\linewidth]{src/radioastro}
+		\caption{Radio telescope in New Mexico, Very Large Array (VLG)}
+	\end{figure}
+	
 	Those distant objects are not fixed in time and a lot of calculations have been done to create evolution models for them. The goal here is not to use observations to confirm models, but to assume a model is known and get better results considering the knowledge of both observations and model. \\ 
 	
-	A (non extended) Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more accurate result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
+	A Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more accurate result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
 		
 	A sensitive part of the filter is the observations model, needing precise knowledge of antennas positions and directions. A of this goal work is to determine how inaccuracies in these measurements affect image reconstruction, and if it is realistically usable in radio astronomical imagery. \\
+	
+	As of today, many optimisations have been done to improve Kalman filter, such as smoothers \cite{RTS}, and models to describe accretion disks evolution. This raises the question about the feasibility of using a Kalman filter to enhance radio astronomic pictures of dynamic systems.
 	
 	\newpage
 	\part{Notations and problem}
@@ -224,6 +256,20 @@
 	}\abs{A_{ij} - B_{i,j}}
 	$$
 	
+	Similar to $d_1$, but better known, to measure the quality of image reconstruction, the Peak to Signal Noise Ratio (PSNR) can be computed :
+	
+	$$
+		PSNR = 10\cdot\log_{10}\left(\frac{d^2}{EQM}\right)
+	$$
+	
+	where $EQM$ is the mean quadratic error between reference image $I_{ref}$ and reconstruction $I_{rec}$ :
+	
+	$$
+		EQM = \frac{1}{M_xM_y}\sum_{i=0}^{M_x-1}\sum_{j=0}^{M_y-1}( I_{ref}(i,j) - I_{rec}(i,j) )^2
+	$$
+	
+	$d$ is the dynamic of each pixel (here 1), $M_X$ and $M_Y$ the size of the image along respectively axis $X$ and $Y$ in pixels. 
+	
 	\section{Measure and parameters}
 	
 	In order to measure precisely the effects, the following parameters will be used :
@@ -241,6 +287,12 @@
 		\item $\dz_{ij}$ is the baseline : $\dz_{ij} = \z_i - \z_j$. 
 		\item $\I$ is the directions matrix, represented as normalised direction cosines.
 	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.5\linewidth]{src/antennes}
+		\caption{Illustration of the antennas mesh}
+	\end{figure}
 		
 	\section{Evolution model and Kalman filtering}
 	
@@ -281,7 +333,7 @@
 		\end{cases}
 	$$
 	
-	Those inputs are not \emph{a priori} known, but it has been shown that using the \emph{autocovariance least-squares} (ALS) method provides a good estimate of those matrices. [CITATION NEEDED] \\
+	Those inputs are not \emph{a priori} known, but it has been shown that using the \emph{autocovariance least-squares} (ALS) method provides a good estimate of those matrices. \cite{ALS} \\
 	We will assume that these inputs are known perfectly except when specified otherwise.\\
 	
 	Kalman filtering works in 2 steps :
@@ -363,7 +415,7 @@
 		\P_0 = \autocorr{\x_0} - \moy{\x_0}\moy{\x_0}^H
 	\end{equation}
 	
-	\paragraph{Error covariance matrices} : as mentioned above, these matrices set can be estimated with good accuracy using ALS algorithms [CITATION NEEDED]. It is to be noted that errors on these matrices will not induce new errors in the estimated images, as they are only used to compute the Kalman gain. This implies that inaccurate error matrices can only spread already existing errors on estimated images.
+	\paragraph{Error covariance matrices} : as mentioned above, these matrices set can be estimated with good accuracy using ALS algorithms \cite{ALS}. It is to be noted that errors on these matrices will not induce new errors in the estimated images, as they are only used to compute the Kalman gain. This implies that inaccurate error matrices can only spread already existing errors on estimated images.
 	
 	\paragraph{Antennas informations} : Multiple equations in Kalman filtering relies on the observation model $\H$, which is computed as the UV plane FFT covered by the antenna mesh. The limited knowledge of this mesh can create errors in $\H$, particularly when antennas positions and directions cannot be perfectly measured.
 	
@@ -381,6 +433,43 @@
 	The next step is the generation of an inaccurate matrix normally distributed around the true one - position or direction here. From this matrix is generated an inaccurate  $\H^*$ observations matrix if needed, and Kalman filter is run two times, the first using perfect parameters and the second one using inaccurate ones. In order to smooth out random noise effects this step is repeated 100 times. \\
 	
 	We can then get the mean error values, measured using a distance defined above, and standard deviations needed.
+	
+	\subsection{Initialisation error}
+	
+	When using the Kalman filter, having the most accurate initialisation is important. This part has two goals: measure how an initialisation error affects reconstruction; and verify that the filter works correctly by eliminating these errors after a few snapshots. \\
+	To measure this, every parameter is considered perfect except the initial $\x_0$ and $\P_0$ computed accordingly. This test was done using a $3\times 3$ image of a \mintinline{matlab}|linspace|\footnote{This was done before the methodology establishment}, to which a $90\deg$ rotation was applied each snapshot. The error on the initial image was introduced by changing the Signal to Noise Ratio (SNR) during reconstruction. \\
+	
+	The following reconstruction can be observed :
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.8\linewidth]{src/K_ev}
+		\caption{Kalman filtering at different snapshots}
+		\label{fig:K_ev}
+	\end{figure}
+
+	On this figure (\ref{fig:K_ev}), the top line represents the original images set with the first replaced with inaccurate reconstruction, and the bottom line is the Kalman reconstruction at the same snapshots, titles of bottom images are the PSNR of these measures. \\
+	
+	This figure illustrates how the initialisation error spreads between snapshots and how the filtering rapidly compensate it. This evolution can be plotted :
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.5\linewidth]{src/evPSNR}
+		\caption{PSNR evolution of 1 simulation with inaccurate initialisation}
+	\end{figure}
+
+	On this figure, it can be observed that the error is compensated after 4 iterations. \\
+	
+	To determine the number of snapshots in which the initialisation error was not the most corrected, a set of measures was done using different SNR :
+	
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=.65\linewidth]{graphs/SNR.svg}
+		\caption{Number of iteration needed to reach the best PSNR}
+	\end{figure}
+
+	An important observation made during experimentation is that the number of snapshots needed was never observed over 5. It mostly stays around 4 and sometimes is 5, so this is the number of snapshots we will consider for stabilisation of initial error. \\
+	The measure of the maximum PSNR can also be measured, but was not in this work.
 	
 	\subsection{Position}
 	
@@ -490,6 +579,7 @@
 			\caption{Reconstruction at 0,1 distance of the true image}
 		\end{subfigure}
 		\caption{Image reconstruction at unreliable distance}
+		\label{fig:high_err}
 	\end{figure}
 
 	This distance around 0,1 is actually expected, as the mean distance $d_1$ between two random matrices in $\mathcal{M}_{10}([0;1])$ can be computed and gives 1,167.\footnote{computed as the mean $d_1$ distance between two randomly generated matrices using matlab function \mintinline{matlab}|rand|, repeated $10^4$ times} The random effects of position errors getting more important, the reconstruction using this inaccurate positions matrix is becoming random thus converging to this value of 1,167. \\
@@ -519,9 +609,55 @@
 	
 	\subsubsection{One direction}
 	
-	Ionospheric perturbations being local and direction-dependent, it can be interesting to measure the effect of a single direction being inaccurate. To evaluate the reconstruction error, the $d_2$ distance is used, as it is additive: the total distance between two reconstructions is the sum of the distance of each direction.
+	Ionospheric perturbations being local and direction-dependent, it can be interesting to measure the effect of a single direction being inaccurate. To evaluate the reconstruction error, the $d_2$ distance is used, as it is additive: the total distance between two reconstructions is the sum of the distance of each direction. The maximum distance is thus not normalised and errors superior to 1 appear, these errors cannot be compared to directional errors above. The results are the following :
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includesvg[width=.9\linewidth]{graphs/dir4_tot.svg}
+			\caption{Distance to true image}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includesvg[width=.9\linewidth]{graphs/dir4_1.svg}
+			\caption{Distance of inaccurate direction to the true direction}
+		\end{subfigure}
+		\caption{Simulation results for directional inaccuracy on one direction}
+	\end{figure}
+
+	The first notable observation is that the standard deviation of reconstruction error under directional perturbation is important, even after averaging 100 simulations : the reconstruction is thus more sensitive to directional perturbation. Another observation is that past the 0.05 direction error, the average reconstruction error is basically the same, with very small variations of the confidence interval. This is in fact the same case as figure (\ref{fig:high_err}), where the error is only the mean distance between two random images as the reconstruction is not reliable any more, being mostly errors. \\
+	
+	Another remarkable observation is that the error on the single direction seems to grow slightly faster than the total error. This can be verified when computing the average percentage of the single direction error in the total one :
+	
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=.65\linewidth]{graphs/dir4_perc.svg}
+		\caption{Part of the single direction reconstruction error in the total one}
+	\end{figure}
+
+	This figure also shows that the reconstruction error in the erroneous direction is more important than on the others as it was expected (out of 100 directions, the mean error should be 1\% in each direction). This indicates that prior knowledge on the error may help identifying outliers in order to ignore them if their value makes no sense in regard of the other directions.
 	
 	\subsubsection{All directions}
+	
+	To better understand the reconstruction error sensitivity to direction inaccuracies, the same simulation was done with errors on all directions, using $d_1$ distance for normalisation and reference to position error. The results are the following :
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includesvg[width=.9\linewidth]{graphs/dirA_x_e.svg}
+			\caption{Distance to true image}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includesvg[width=.9\linewidth]{graphs/dirA_xx.svg}
+			\caption{Distance to unperturbed reconstruction}
+		\end{subfigure}
+		\caption{Simulation results for directional inaccuracy on all direction}
+	\end{figure}
+
+	It can be observed that the error tends faster towards the random error case seen in (\ref{fig:high_err}). This can be qualified as directional resolution was equal to $2/10=0.2$ (direction cosines) between two directions, and positional resolution was $1.472$m between two  antennas. With this taken into account, the reconstruction is still more sensitive to directional error than positional error. 
 	
 	\newpage
 	\part{Experimental correction}
@@ -529,15 +665,50 @@
 	The filter being sensitive to directional error, the goal of this part is to use prior knowledge to estimate this error. The idea is to use a known $\y$, measured with the inaccessible $\H$, and a MVDR reconstruction $\x_{MVDR}$ \cite{TER} from this measure and solve the problem :
 
 	% IDEA : tourner sans bouger x_MVDR
+	% => ça marche pas
 	
-	\section{implementation}
-	\section{Measures}
+	$$
+		\y - \H^d*\x_{MVDR} = 0
+	$$
+	Where :
+	
+	$$
+		\H_{j,q}^d = \exp(-i\frac{2\pi}{\lambda}\Delta\z_j\dotproduct(\I_q^* - \u_q))
+	$$
+	
+	The resulting vector $\u$ should be the correction vector such as :
+	$$
+		\I = \I^*-\u
+	$$
+	
+	This problem being not linear, its analytic resolution is complicated. To solve it, it was implemented under Matlab using \mintinline{matlab}|lsqnonlin| function. This function does not support complex values, so the problem had to be broken up into real and complex parts (solved simultaneously), see code details in appendix.\\
+	
+	However, after numerous tests, solving this problem does not seem feasible, at least using this function and these parameters: all the tests presented a solution worse than simply keeping the inaccurate matrix. The average deterioration has been measured :
+	
+	$$
+		\left\langle d_1(\I,\I^*) - d_1(\I,\I^*-\u)\right\rangle = -4.12\times 10^{-4}
+	$$
+	
+	To alleviate this issue, introducing an \emph{a priori} on the initial solution has been tested, without notable amelioration: the deterioration was only slightly weaker. \\
+	
+	Some other solutions that were tried without being able to solve the problem:
+	\begin{itemize}
+		\item lowering function tolerance
+		\item lowering/raising step size and tolerance
+		\item switch from trust region reflective algorithm to Levenberg-Maquardt
+		\item raising max iterations and max evaluations to allow the algorithm to reach solutions with these parameters
+	\end{itemize}
 	
 	\newpage
+
 	\part{Conclusion}
 	
+	The results of this study demonstrate multiple points regarding the usability of a Kalman filter in the radio astronomic context. The first conclusion is that errors in the initial picture, even in good conditions, can continue to spread errors up to the fifth snapshot. Then, antennas positions should be known with at least 0.5\% relative precision, as an inaccuracy superior to that will create non-negligible errors in the final reconstruction. Concerning directions, those must be known with at least 0.1\% relative precision for the same reason. \\
+	
+	Trying to estimate the error on directions could be a good way to get better results, however, analytic solution or a different resolution algorithm should be found, as both algorithms (trust region reflective and Levenberg-Maquardt) used by \mintinline{matlab}|lsqnonlin| does not produce conclusive results.
+
 	\newpage
-	\part{Further insights}
+	\part{Recommended future works}
 	
 	% err dir 1 antenne plutôt que sur 1 dir
 	% smoother
@@ -548,6 +719,44 @@
 	\paragraph{Use of smoothers :} when using a Kalman filter, only prior knowledge of data is needed. When all measures at different snapshots are done, a \emph{smoother}\cite{RTS} can be used to give better Kalman results, their reliability under perturbations needs to be discussed. 
 	
 	\paragraph{Deep learning :} In image processing, deep learning and artificial intelligence are getting more effective and reliable. In particular, model based deep learning \cite{deep} can be an effective way of rebuilding images when an evolution model is known.
+	
+	\newpage
+	\part{Appendices}
+	\section{Experimental correction code}
+	
+\begin{minted}{matlab}
+% init
+x0 = zeros(1,2*D);
+lb = [-0.1*ones(1,2*D)];
+ub = [0.1*ones(1,2*D)];
+
+% problem definition
+Iv = reshape(I_err,[],1); % I_err is I with errors
+prb = @(x)prb_f(x,y,Iv,dz,J,D,lambda,X_mvdr); % creation of function f(x) = y-H(x)*x_MVDR with static inputs
+
+% lsqnonlin
+options = optimoptions(@lsqnonlin,'Display','Iter','FiniteDifferenceType','central'); % FiniteDifferenceType central computes on both sides of the gradient, did not help but a bit more precise
+x = lsqnonlin(prb,x0,lb,ub,options); % solve f(x)=0
+
+% result extraction
+Icorr = - reshape(x(1:2*D),D,2) + I_err; % I_corr is I corrected
+Hcorr = matF(J,D,z_err,lambda,Icorr); % matF computes H 
+
+.
+.
+.
+
+% function definition at the end of the file
+function s = prb_f(x,y,Iv,dz,J,D,lambda,xMVDR)
+Hmodif = zeros(J^2,D);
+for q=1:D
+Hmodif(: ,q) = exp(-1i*2*pi/lambda*(dz(:,1)*(Iv(q) - x(q))+dz(:,2)*(Iv(D+q) - x(D+q))));
+end 
+ymodif = Hmodif*xMVDR;
+s = [real(y);imag(y)] - [real(ymodif);imag(ymodif)];
+end
+
+\end{minted}
 	
 	\newpage
 	\printbibliography

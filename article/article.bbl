@@ -131,6 +131,33 @@
       \field{year}{2022}
       \field{dateera}{ce}
     \endentry
+    \entry{ALS}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=4ca624bbabaf2d6e81a25ed82c07db02}{%
+           family={Rajmani},
+           familyi={R\bibinitperiod},
+           given={Mulari},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Wisconsin-Madison}%
+      }
+      \strng{namehash}{4ca624bbabaf2d6e81a25ed82c07db02}
+      \strng{fullhash}{4ca624bbabaf2d6e81a25ed82c07db02}
+      \strng{bibnamehash}{4ca624bbabaf2d6e81a25ed82c07db02}
+      \strng{authorbibnamehash}{4ca624bbabaf2d6e81a25ed82c07db02}
+      \strng{authornamehash}{4ca624bbabaf2d6e81a25ed82c07db02}
+      \strng{authorfullhash}{4ca624bbabaf2d6e81a25ed82c07db02}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{Data-based Techniques to Improve State Estimation in Model Predictive Control}
+      \field{type}{PhD Thesis}
+      \field{year}{2007}
+      \field{dateera}{ce}
+    \endentry
     \entry{RTS}{misc}{}
       \name{author}{1}{}{%
         {{hash=89f4b98fe43f3c9f7ffdc081904d4781}{%
