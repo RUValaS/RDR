@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.10)  24 AUG 2022 23:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.10)  24 AUG 2022 23:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1285,7 +1285,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--137
 
  []
 
-<src/sites_geoo_satie.png, id=161, 867.24pt x 578.16pt>
+<src/sites_geoo_satie.png, id=156, 867.24pt x 578.16pt>
 File: src/sites_geoo_satie.png Graphic file (type png)
 <use src/sites_geoo_satie.png>
 Package pdftex.def Info: src/sites_geoo_satie.png  used on input line 142.
@@ -1317,7 +1317,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
-<src/satie_org.jpg, id=170, 1927.2pt x 1284.8pt>
+<src/satie_org.jpg, id=165, 1927.2pt x 1284.8pt>
 File: src/satie_org.jpg Graphic file (type jpg)
 <use src/satie_org.jpg>
 Package pdftex.def Info: src/satie_org.jpg  used on input line 181.
@@ -1335,7 +1335,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
-<src/radioastro.jpg, id=181, 385.44pt x 289.08pt>
+<src/radioastro.jpg, id=176, 385.44pt x 289.08pt>
 File: src/radioastro.jpg Graphic file (type jpg)
 <use src/radioastro.jpg>
 Package pdftex.def Info: src/radioastro.jpg  used on input line 194.
@@ -1392,7 +1392,7 @@ Package fancyhdr Warning: \headheight is too small (13.07225pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.52774pt}.
 
 [5]
-<src/antennes.png, id=203, 523.9575pt x 295.1025pt>
+<src/antennes.png, id=198, 523.9575pt x 295.1025pt>
 File: src/antennes.png Graphic file (type png)
 <use src/antennes.png>
 Package pdftex.def Info: src/antennes.png  used on input line 311.
@@ -1425,7 +1425,7 @@ Package fancyhdr Warning: \headheight is too small (13.07225pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.52774pt}.
 
 [7]
-<src/bh_square.jpg, id=228, 602.25pt x 602.25pt>
+<src/bh_square.jpg, id=223, 602.25pt x 602.25pt>
 File: src/bh_square.jpg Graphic file (type jpg)
 <use src/bh_square.jpg>
 Package pdftex.def Info: src/bh_square.jpg  used on input line 406.
@@ -1518,7 +1518,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 457--459
 
  []
 
-<src/K_ev.jpg, id=265, 1230.84843pt x 607.51968pt>
+<src/K_ev.jpg, id=260, 1230.84843pt x 607.51968pt>
 File: src/K_ev.jpg Graphic file (type jpg)
 <use src/K_ev.jpg>
 Package pdftex.def Info: src/K_ev.jpg  used on input line 464.
@@ -1528,7 +1528,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 469--470
 
  []
 
-<src/evPSNR.png, id=267, 421.575pt x 316.18124pt>
+<src/evPSNR.png, id=262, 421.575pt x 316.18124pt>
 File: src/evPSNR.png Graphic file (type png)
 <use src/evPSNR.png>
 Package pdftex.def Info: src/evPSNR.png  used on input line 475.
@@ -1549,7 +1549,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 479--480
 Package svg Info: Last page of `./svg-inkscape/SNR_svg-tex.pdf' is 1 on input l
 ine 485.
 (./svg-inkscape/SNR_svg-tex.pdf_tex
-<./svg-inkscape/SNR_svg-tex.pdf, id=277, page=1, 423.3366pt x 409.6053pt>
+<./svg-inkscape/SNR_svg-tex.pdf, id=272, page=1, 423.3366pt x 409.6053pt>
 File: ./svg-inkscape/SNR_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/SNR_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/SNR_svg-tex.pdf , page1 used on input l
@@ -1569,7 +1569,7 @@ Package svg Info: Last page of `./svg-inkscape/positions_x_e_svg-tex.pdf' is 1
 on input line 567.
 
 (./svg-inkscape/positions_x_e_svg-tex.pdf_tex
-<./svg-inkscape/positions_x_e_svg-tex.pdf, id=301, page=1, 418.56375pt x 409.65
+<./svg-inkscape/positions_x_e_svg-tex.pdf, id=295, page=1, 418.56375pt x 409.65
 045pt>
 File: ./svg-inkscape/positions_x_e_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/positions_x_e_svg-tex.pdf, page 1>
@@ -1581,7 +1581,7 @@ Package svg Info: Last page of `./svg-inkscape/positions_xx_svg-tex.pdf' is 1 o
 n input line 573.
 
 (./svg-inkscape/positions_xx_svg-tex.pdf_tex
-<./svg-inkscape/positions_xx_svg-tex.pdf, id=303, page=1, 418.54117pt x 409.650
+<./svg-inkscape/positions_xx_svg-tex.pdf, id=297, page=1, 418.54117pt x 409.650
 45pt>
 File: ./svg-inkscape/positions_xx_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/positions_xx_svg-tex.pdf, page 1>
@@ -1602,12 +1602,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 583--585
 
  []
 
-<src/t_im.png, id=323, 68.4156pt x 50.589pt>
+<src/t_im.png, id=318, 68.4156pt x 50.589pt>
 File: src/t_im.png Graphic file (type png)
 <use src/t_im.png>
 Package pdftex.def Info: src/t_im.png  used on input line 591.
 (pdftex.def)             Requested size: 164.41353pt x 121.58896pt.
-<src/t_err.png, id=324, 68.4156pt x 50.589pt>
+<src/t_err.png, id=319, 68.4156pt x 50.589pt>
 File: src/t_err.png Graphic file (type png)
 <use src/t_err.png>
 Package pdftex.def Info: src/t_err.png  used on input line 596.
@@ -1647,7 +1647,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 626--627
 Package svg Info: Last page of `./svg-inkscape/dir4_tot_svg-tex.pdf' is 1 on in
 put line 638.
 (./svg-inkscape/dir4_tot_svg-tex.pdf_tex
-<./svg-inkscape/dir4_tot_svg-tex.pdf, id=358, page=1, 404.28288pt x 411.81854pt
+<./svg-inkscape/dir4_tot_svg-tex.pdf, id=353, page=1, 404.28288pt x 411.81854pt
 >
 File: ./svg-inkscape/dir4_tot_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/dir4_tot_svg-tex.pdf, page 1>
@@ -1659,7 +1659,7 @@ Package svg Info: Last page of `./svg-inkscape/dir4_1_svg-tex.pdf' is 1 on inpu
 t line 643.
 
 (./svg-inkscape/dir4_1_svg-tex.pdf_tex
-<./svg-inkscape/dir4_1_svg-tex.pdf, id=360, page=1, 418.46588pt x 411.78844pt>
+<./svg-inkscape/dir4_1_svg-tex.pdf, id=355, page=1, 418.46588pt x 411.78844pt>
 File: ./svg-inkscape/dir4_1_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/dir4_1_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/dir4_1_svg-tex.pdf , page1 used on inpu
@@ -1682,7 +1682,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 649--650
 Package svg Info: Last page of `./svg-inkscape/dir4_perc_svg-tex.pdf' is 1 on i
 nput line 655.
 (./svg-inkscape/dir4_perc_svg-tex.pdf_tex
-<./svg-inkscape/dir4_perc_svg-tex.pdf, id=372, page=1, 414.87498pt x 411.80351p
+<./svg-inkscape/dir4_perc_svg-tex.pdf, id=367, page=1, 414.87498pt x 411.80351p
 t>
 File: ./svg-inkscape/dir4_perc_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/dir4_perc_svg-tex.pdf, page 1>
@@ -1706,7 +1706,7 @@ usion: multiple pdfs with page group included in a single page
 Package svg Info: Last page of `./svg-inkscape/dirA_x_e_svg-tex.pdf' is 1 on in
 put line 669.
  (./svg-inkscape/dirA_x_e_svg-tex.pdf_tex
-<./svg-inkscape/dirA_x_e_svg-tex.pdf, id=402, page=1, 418.56375pt x 409.74832pt
+<./svg-inkscape/dirA_x_e_svg-tex.pdf, id=397, page=1, 418.56375pt x 409.74832pt
 >
 File: ./svg-inkscape/dirA_x_e_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/dirA_x_e_svg-tex.pdf, page 1>
@@ -1718,7 +1718,7 @@ Package svg Info: Last page of `./svg-inkscape/dirA_xx_svg-tex.pdf' is 1 on inp
 ut line 674.
 
 (./svg-inkscape/dirA_xx_svg-tex.pdf_tex
-<./svg-inkscape/dirA_xx_svg-tex.pdf, id=404, page=1, 418.54117pt x 409.71066pt>
+<./svg-inkscape/dirA_xx_svg-tex.pdf, id=399, page=1, 418.54117pt x 409.71066pt>
 
 File: ./svg-inkscape/dirA_xx_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/dirA_xx_svg-tex.pdf, page 1>
@@ -1851,8 +1851,14 @@ Package fancyhdr Warning: \headheight is too small (13.07225pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.52774pt}.
 
 [23] (./article.aux)
-Package rerunfilecheck Info: File `article.out' has not changed.
-(rerunfilecheck)             Checksum: FC9FE7E12DD67A0BF05A35FBD39A490D;4098.
+
+Package rerunfilecheck Warning: File `article.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `article.out':
+(rerunfilecheck)             Before: 07B37350E9FC44F0E694ABADC79CB656;3900
+(rerunfilecheck)             After:  DA52F35A5561C1E42AB5C40E86967D18;3895.
 runsystem(del article.pyg)...executed.
 
 Package logreq Info: Writing requests to 'article.run.xml'.
@@ -1860,10 +1866,10 @@ Package logreq Info: Writing requests to 'article.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29228 strings out of 478276
- 526185 string characters out of 5850489
- 1311637 words of memory out of 5000000
- 46775 multiletter control sequences out of 15000+600000
+ 29227 strings out of 478276
+ 526172 string characters out of 5850489
+ 1311634 words of memory out of 5000000
+ 46774 multiletter control sequences out of 15000+600000
  593253 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,13n,92p,1196b,1863s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1883,10 +1889,10 @@ opia/putr8a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb
 021/texmf-dist/fonts/type1/public/cm-super/sfit1095.pfb><d:/texlive/2021/texmf-
 dist/fonts/type1/public/cm-super/sftt0900.pfb><d:/texlive/2021/texmf-dist/fonts
 /type1/public/cm-super/sftt1095.pfb>
-Output written on article.pdf (26 pages, 1252983 bytes).
+Output written on article.pdf (26 pages, 1252469 bytes).
 PDF statistics:
- 588 PDF objects out of 1000 (max. 8388607)
- 473 compressed objects within 5 object streams
+ 584 PDF objects out of 1000 (max. 8388607)
+ 469 compressed objects within 5 object streams
  109 named destinations out of 1000 (max. 500000)
- 346 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 338 words of extra memory for PDF output out of 10000 (max. 10000000)
 

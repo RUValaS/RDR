@@ -36,5 +36,4 @@
 \contentsline {paragraph}{Use of smoothers :}{21}{section*.26}%
 \contentsline {paragraph}{Deep learning :}{21}{section*.27}%
 \contentsline {paragraph}{Model error :}{21}{section*.28}%
-\contentsline {part}{VIII\hspace {1em}Appendices}{22}{part.8}%
-\contentsline {section}{\numberline {1}Experimental correction code}{22}{section.8.1}%
+\contentsline {part}{VIII\hspace {1em}Appendice}{22}{part.8}%
