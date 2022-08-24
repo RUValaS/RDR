@@ -2344,31 +2344,32 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">article.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">RTS</bcf:citekey>
-    <bcf:citekey order="2">bible</bcf:citekey>
-    <bcf:citekey order="3">MEM</bcf:citekey>
-    <bcf:citekey order="4">ALS</bcf:citekey>
-    <bcf:citekey order="5">intro_KF</bcf:citekey>
+    <bcf:citekey order="1">TER</bcf:citekey>
+    <bcf:citekey order="2">RTS</bcf:citekey>
+    <bcf:citekey order="3">bible</bcf:citekey>
+    <bcf:citekey order="4">MEM</bcf:citekey>
+    <bcf:citekey order="5">ALS</bcf:citekey>
     <bcf:citekey order="6">intro_KF</bcf:citekey>
-    <bcf:citekey order="7">TER</bcf:citekey>
+    <bcf:citekey order="7">intro_KF</bcf:citekey>
     <bcf:citekey order="8">TER</bcf:citekey>
-    <bcf:citekey order="9">bible</bcf:citekey>
-    <bcf:citekey order="10">intro_KF</bcf:citekey>
-    <bcf:citekey order="11">ALS</bcf:citekey>
-    <bcf:citekey order="12">iono</bcf:citekey>
-    <bcf:citekey order="13">intro_KF</bcf:citekey>
-    <bcf:citekey order="14">iono</bcf:citekey>
-    <bcf:citekey order="15">TER</bcf:citekey>
-    <bcf:citekey order="16">RTS</bcf:citekey>
-    <bcf:citekey order="17">deep</bcf:citekey>
-    <bcf:citekey order="18">RTS</bcf:citekey>
-    <bcf:citekey order="19">bible</bcf:citekey>
-    <bcf:citekey order="20">MEM</bcf:citekey>
-    <bcf:citekey order="21">ALS</bcf:citekey>
-    <bcf:citekey order="22">intro_KF</bcf:citekey>
-    <bcf:citekey order="23">TER</bcf:citekey>
-    <bcf:citekey order="24">iono</bcf:citekey>
-    <bcf:citekey order="25">deep</bcf:citekey>
+    <bcf:citekey order="9">TER</bcf:citekey>
+    <bcf:citekey order="10">bible</bcf:citekey>
+    <bcf:citekey order="11">intro_KF</bcf:citekey>
+    <bcf:citekey order="12">ALS</bcf:citekey>
+    <bcf:citekey order="13">iono</bcf:citekey>
+    <bcf:citekey order="14">intro_KF</bcf:citekey>
+    <bcf:citekey order="15">iono</bcf:citekey>
+    <bcf:citekey order="16">TER</bcf:citekey>
+    <bcf:citekey order="17">RTS</bcf:citekey>
+    <bcf:citekey order="18">deep</bcf:citekey>
+    <bcf:citekey order="19">TER</bcf:citekey>
+    <bcf:citekey order="20">RTS</bcf:citekey>
+    <bcf:citekey order="21">bible</bcf:citekey>
+    <bcf:citekey order="22">MEM</bcf:citekey>
+    <bcf:citekey order="23">ALS</bcf:citekey>
+    <bcf:citekey order="24">intro_KF</bcf:citekey>
+    <bcf:citekey order="25">iono</bcf:citekey>
+    <bcf:citekey order="26">deep</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

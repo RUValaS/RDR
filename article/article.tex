@@ -1,4 +1,4 @@
-\documentclass[titlepage]{article}
+\documentclass[titlepage,11pt]{article}
 \usepackage[upright]{fourier}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -15,6 +15,7 @@
 \def\mathbi#1{\textbf{\em #1}}
 
 \setlength\parindent{0pt}
+\fontsize{11pt}{14pt}\selectfont
 
 %%%%%%%%%%%% PARAMETRES
 \newcommand{\UE}{4XX}
@@ -93,7 +94,10 @@
 	
 	\vspace{1cm}
 	\LARGE
-	G. Robert-Dautun
+	G. Robert-Dautun\\
+	\vspace*{22px}
+	\normalsize
+	This work follows the TER work \cite{TER}. All notations and results should be included but I recommend reading the report prior to reading this work. (see ref) \\	
 	
 	\vfill
 	\large
@@ -107,7 +111,21 @@
 	July 2022
 	
 	\end{titlepage}
+	\section*{Acknowledgements}
+	\vspace*{\fill}
+	Major thanks to I. Vin, who suggested the topic and supervised me during the TER and the internship.\\
 	
+	Thanks to M. Marchesseau for collaborating on the TER. \\
+	
+	Thanks to the SATIE lab for welcoming me for this internship.
+	\vspace*{\fill}
+	%	
+	
+	\newpage
+	\begin{abstract}
+		Radio astronomy use multiple sensors to observe distant cosmic objects. These objects are not fixed in time, they are constantly evolving, and models based on modern astrophysics allow the prediction of this evolution. A Kalman filter creates more likely output based on these observations and models. This study test whether this filter can be used in radio astronomy or not. Different scenarios were computed, introducing different inaccuracies that can happen in the real world, with a focus on ionospheric perturbations, and Kalman filter performances were assessed in these conditions. This study shows that errors on initialisation are partially corrected within a few snapshots, and that position and direction must be known with at least 0.5\% relative precision. A solution to estimate the introduced error to correct it before filtering was tested but did not produce notable results. A Kalman filter can thus be used for radio astronomy as long as antennas positions and directions and ionospheric perturbations are well known. This study does not explore analytic resolution for error estimation and does not use deep learning for image enhancement.
+	\end{abstract}
+
 	\newpage
 	\tableofcontents
 	
@@ -140,7 +158,7 @@
 	\end{tabular}
 	\vspace{7px}\\
 	I did my internship in the SIAME/MOSS division. \\
-	The SIAME/MOSS division is focused on getting a better understanding and mastering complex systems. The three main topics of the division are :
+	The SIAME/MOSS division is focused on getting a better understanding and mastering complex systems. The three main topics of the division are:
 	\paragraph{Data and image analysis:} this topic's main goal is to estimate physical or semantic quantities from observations data. This data is incomplete, inaccurate, and not absolutely reliable. When data is generated using multi-sensor systems, it presents similarities and complementarities that can be used to get better estimations. \\
 	The applications are :
 	\begin{itemize}
@@ -150,7 +168,7 @@
 		\item image analysis for shape detection
 	\end{itemize}
 
-	\paragraph{Algorithms-architectures-uses adequacy:} This topic's goal is the design of autonomous systems with matching algorithms and algorithms. They develop tools and methods for multi-sensor instrumentation, embedded computing architectures and data flux synchronisation. Their work is divided in 4 points :
+	\paragraph{Algorithms-architectures-uses adequacy:} This topic's goal is the design of autonomous systems with matching algorithms and algorithms. They develop tools and methods for multi-sensor instrumentation, embedded computing architectures and data flux synchronisation.
 	
 	\paragraph{Perception systems for mobility:} The last research axis is mostly aimed at the development of autonomous vehicles. Its goal is to conceive the hardware part of a perception system, and the software analysis sequence to optimise the system. \\
 	
@@ -169,7 +187,7 @@
 	\newpage
 	\part{Introduction}
 	
-	When observing distant objects, instruments resolution matters the most. When using optical telescopes, the determining factor for resolution is the size of the primary mirror. When observing really distant objects, the required size to have a decent resolution becomes unrealistically big. To address this problem, radio interferometry replaces a single optical instrument with multiple antennas collecting electromagnetic waves. When gathering these measures together, we can obtain a better angular resolution than any real single optical instrument could get. \\
+	When observing distant objects, instruments resolution matters the most. When using optical telescopes, the determining factor for resolution is the size of the primary mirror. When observing really distant objects, the required size to have a decent resolution becomes unrealistically large. To address this problem, radio interferometry replaces a single optical instrument with multiple antennas collecting electromagnetic waves. When gathering these measures together, we can obtain a better angular resolution than any real single optical instrument could get. \\
 	
 	\begin{figure}[H]
 		\centering
@@ -179,9 +197,9 @@
 	
 	Those distant objects are not fixed in time and a lot of calculations have been done to create evolution models for them. The goal here is not to use observations to confirm models, but to assume a model is known and get better results considering the knowledge of both observations and model. \\ 
 	
-	A Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more accurate result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
+	A Kalman filter is a linear quadratic estimator, using observations, state-transition model and knowledge about noise and errors to compute a more likely result than observations alone. Radio astronomical measures being prone to noise and errors, usage of this filtering method seems \emph{a priori} a good way to improve accuracy of reconstruction. \\
 		
-	A sensitive part of the filter is the observations model, needing precise knowledge of antennas positions and directions. A of this goal work is to determine how inaccuracies in these measurements affect image reconstruction, and if it is realistically usable in radio astronomical imagery. \\
+	A sensitive part of the filter is the observations model, needing precise knowledge of antennas positions and directions. A goal of this work is to determine how inaccuracies in these measurements affect image reconstruction, and if it is realistically usable in radio astronomical imagery. \\
 	
 	As of today, many optimisations have been done to improve Kalman filter, such as smoothers \cite{RTS}, and models to describe accretion disks evolution. This raises the question about the feasibility of using a Kalman filter to enhance radio astronomic pictures of dynamic systems.
 	
@@ -376,7 +394,7 @@
 		\section{Data simulation and Image reconstruction}
 	\subsection{Simulation}
 	
-	In order to simulate data, an image is introduced as the "reference image", this image will only be used in order to compute simulated observations. The selected picture must respect the following conditions :
+	In order to simulate data, an image is introduced as the "reference image", this image will only be used in order to compute simulated observations. The selected picture must respect the following conditions:
 	\begin{itemize}
 		\item mostly black background, to give realistic results for space imagery
 		\item no convolution effect, as all directions are considered sources of different intensities, only real sources must appear
@@ -402,7 +420,7 @@
 	
 	When reviewing performances under certain errors, all other inputs of the filter - including $\x_0$ - must be errorless. The simplest way of doing that for $\x_0$ is to use the reference image as input. \\
 	
-	When reviewing Kalman filter performances under real conditions, the reference image is not considered as knwon, and we need to reconstruct the image from the visibilities matrix. While different methods exist \cite{TER}, the ones used here are MVDR reconstructions followed by Maximum Entropy deconvolution.
+	When reviewing Kalman filter performances under real conditions, the reference image is not considered as known, and we need to reconstruct the image from the visibilities matrix. While different methods exist \cite{TER}, the ones used here are MVDR reconstructions followed by Maximum Entropy deconvolution.
 	
 	\newpage
 	\part{Reliability of Kalman Filter under perturbations}
@@ -584,7 +602,9 @@
 
 	This distance around 0,1 is actually expected, as the mean distance $d_1$ between two random matrices in $\mathcal{M}_{10}([0;1])$ can be computed and gives 1,167.\footnote{computed as the mean $d_1$ distance between two randomly generated matrices using matlab function \mintinline{matlab}|rand|, repeated $10^4$ times} The random effects of position errors getting more important, the reconstruction using this inaccurate positions matrix is becoming random thus converging to this value of 1,167. \\
 	
-	On the other side of the graph, the distance seems to converge to a value around $3\times10^{-4}$. This value is rather unexpected, as it is below the errorless reconstruction error. This may be explained by the complex nature of the reconstructed image, but no certain explanation was found. The convergence part is also uncertain, as the mean values seems to converge but the standard deviation expands. The convergence at non-zero distance of the errorless reconstruction is also unexplained.
+	On the other side of the graph, the distance seems to converge to a value around $3\times10^{-4}$. This value is rather unexpected, as it is below the errorless reconstruction error. This may be explained by the complex nature of the reconstructed image, but no certain explanation was found. The convergence part is also uncertain, as the mean values seems to converge but the standard deviation expands. The convergence at non-zero distance of the errorless reconstruction is also unexplained. \\
+	
+	A relative precision of 0.5\% is then the minimum to obtain a result almost unaffected by the lack of knowledge in the antennas positions.
 	
 	\subsection{Direction}
 	
@@ -657,7 +677,9 @@
 		\caption{Simulation results for directional inaccuracy on all direction}
 	\end{figure}
 
-	It can be observed that the error tends faster towards the random error case seen in (\ref{fig:high_err}). This can be qualified as directional resolution was equal to $2/10=0.2$ (direction cosines) between two directions, and positional resolution was $1.472$m between two  antennas. With this taken into account, the reconstruction is still more sensitive to directional error than positional error. 
+	It can be observed that the error tends faster towards the random error case seen in (\ref{fig:high_err}). This can be qualified as directional resolution was equal to $2/10=0.2$ (direction cosines) between two directions, and positional resolution was $1.472$m between two  antennas. With this taken into account, the reconstruction is still more sensitive to directional error than positional error. \\
+	
+	To obtain results without too much additional error, a 0.1\% relative precision is thus needed. As it becomes a simple translation of the positional errors graph.
 	
 	\newpage
 	\part{Experimental correction}
@@ -705,7 +727,9 @@
 	
 	The results of this study demonstrate multiple points regarding the usability of a Kalman filter in the radio astronomic context. The first conclusion is that errors in the initial picture, even in good conditions, can continue to spread errors up to the fifth snapshot. Then, antennas positions should be known with at least 0.5\% relative precision, as an inaccuracy superior to that will create non-negligible errors in the final reconstruction. Concerning directions, those must be known with at least 0.1\% relative precision for the same reason. \\
 	
-	Trying to estimate the error on directions could be a good way to get better results, however, analytic solution or a different resolution algorithm should be found, as both algorithms (trust region reflective and Levenberg-Maquardt) used by \mintinline{matlab}|lsqnonlin| does not produce conclusive results.
+	Trying to estimate the error on directions could be a good way to get better results, however, analytic solution or a different resolution algorithm should be found, as both algorithms (trust region reflective and Levenberg-Maquardt) used by \mintinline{matlab}|lsqnonlin| does not produce conclusive results. \\
+	
+	The Kalman filter can thus be used in radio astronomy under the condition that positions, directions, and ionospheric perturbations are well-known.
 
 	\newpage
 	\part{Recommended future works}
@@ -720,6 +744,8 @@
 	
 	\paragraph{Deep learning :} In image processing, deep learning and artificial intelligence are getting more effective and reliable. In particular, model based deep learning \cite{deep} can be an effective way of rebuilding images when an evolution model is known.
 	
+	\paragraph{Model error :} This aspect has not been studied in this paper, and is an important lead to follow, as models are not perfect with limited input and knowledge of certain phenomena.
+	
 	\newpage
 	\part{Appendices}
 	\section{Experimental correction code}
@@ -732,10 +758,13 @@ ub = [0.1*ones(1,2*D)];
 
 % problem definition
 Iv = reshape(I_err,[],1); % I_err is I with errors
-prb = @(x)prb_f(x,y,Iv,dz,J,D,lambda,X_mvdr); % creation of function f(x) = y-H(x)*x_MVDR with static inputs
+prb = @(x)prb_f(x,y,Iv,dz,J,D,lambda,X_mvdr); % creation of function f(x) = y-H(x)*x_MVDR 
+% with static inputs
 
 % lsqnonlin
-options = optimoptions(@lsqnonlin,'Display','Iter','FiniteDifferenceType','central'); % FiniteDifferenceType central computes on both sides of the gradient, did not help but a bit more precise
+options = optimoptions(@lsqnonlin,'Display','Iter','FiniteDifferenceType','central'); 
+% FiniteDifferenceType central computes on both sides of the gradient,
+% did not help but a bit more precise
 x = lsqnonlin(prb,x0,lb,ub,options); % solve f(x)=0
 
 % result extraction
@@ -757,6 +786,8 @@ s = [real(y);imag(y)] - [real(ymodif);imag(ymodif)];
 end
 
 \end{minted}
+
+	The full code can be found \href{https://github.com/RUValaS/RDR}{here}.
 	
 	\newpage
 	\printbibliography

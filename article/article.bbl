@@ -95,10 +95,10 @@
       \field{year}{2022}
       \field{dateera}{ce}
       \verb{urlraw}
-      \verb example.com
+      \verb https://drive.google.com/file/d/1wX9jrd8hQLxSini0j5Myl91bsIHUKUY2/view?usp=sharing
       \endverb
       \verb{url}
-      \verb example.com
+      \verb https://drive.google.com/file/d/1wX9jrd8hQLxSini0j5Myl91bsIHUKUY2/view?usp=sharing
       \endverb
     \endentry
     \entry{deep}{report}{}
