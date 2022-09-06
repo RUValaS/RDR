@@ -3,7 +3,7 @@ close all
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PARAMETRES
-Mx = 10; %My auto (ratio)
+Mx = 2; %My auto (ratio) -- nombre de pixels
 J_b = 6; % On suppose le réseau d'antennes carré de côté
 % max 11 GPU atm
 c= 3e8;
@@ -50,7 +50,8 @@ H = matF(J,D,z,lambda,I);
 % X_mvdr = MEM(MVDR(A,reshape(nY(:,1),J,J),Mx,My),iMEM);
 X_mvdr = MVDR(A,reshape(nY(:,1),J,J),Mx,My);
 X_mvdr = normarr(abs(X_mvdr));
-X_0 = vadapted;
+% X_0 = vadapted;
+X_0 = X_mvdr;
 % tX(:,1) = vadapted;
 
 P_0 = X_0*X_0' - mean(X_0,'all');
@@ -98,8 +99,8 @@ for err = 1:npos
         z_err = z;
 %         z_err = z+ randn(size(z))*poids;
 %         I_err = I;
-%         I_err(4,:) = I_err(4,:) + randn(size(I_err(4,:)))*poids;
-        I_err = I + randn(size(I))*poids;
+        I_err(4,:) = I_err(4,:) + randn(size(I_err(4,:)))*poids;
+%         I_err = I + randn(size(I))*poids;
         H_err = matF(J,D,z_err,lambda,I_err);
 
         % Calcul Hcorr
@@ -141,8 +142,8 @@ for err = 1:npos
 %         C = H ./ H_err;
         
         % 2. Tourner Kalman_XPU
-        [X,K,Xp] = Kalman_GPU_V6(A_ev,H,X_0,P_0,nY,nR,nQ,D,N);
-        [X_e,K_e,Xp_e] = Kalman_GPU_V6(A_ev,H_err,X_0,P_0,nY,nR,nQ,D,N);
+        [X,K,Xp] = Kalman_CPU_V6(A_ev,H,X_0,P_0,nY,nR,nQ,D,N);
+        [X_e,K_e,Xp_e] = Kalman_CPU_V6(A_ev,H_err,X_0,P_0,nY,nR,nQ,D,N);
 
         % 3. Calcul erreurs
         for k = 1:N
